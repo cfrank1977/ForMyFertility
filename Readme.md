@@ -7,4 +7,4 @@ In the project directory, you can install dependencies:
 
 In the project directory, you can run: (this has only been tested with iOS)
 
-### `react-native run-ios`
+### `expo ios`
