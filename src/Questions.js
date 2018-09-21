@@ -12,8 +12,22 @@ import {
     FormInput,
     FormValidationMessage
 } from 'react-native-elements';
+import { API, graphqlOperation } from 'aws-amplify'
+
+const query = `
+mutation add {
+    createQuestions(input: {
+      gender: "male",
+      age: 39,
+      yearChildlessSex: "yes",
+      yearsSubfertile: 15,
+      currentIVF: "yes"
+  }) { id }
+  }
+`
 
 export default class Questions extends Component {
+
     state = {
         gender: false,
         age: 18,
@@ -21,12 +35,26 @@ export default class Questions extends Component {
         yearsSubfertile: 0,
         currentIVF: false,
     }
+
     onSubmit() {
         let apiData = { gender: this.state.gender, age: this.state.age, yearChildlessSex: this.state.yearChildlessSex, yearsSubfertile: this.state.yearsSubfertile, currentIVF: this.state.currentIVF };
         let json = JSON.stringify(apiData);
+        let query = `
+            mutation add {
+                createQuestions(input: {
+                    gender: "${apiData.gender}",
+                    age: ${apiData.age},
+                    yearChildlessSex: "${apiData.yearChildlessSex}",
+                    yearsSubfertile: ${apiData.yearsSubfertile},
+                    currentIVF: "${apiData.currentIVF}"
+                }) { id }
+            }
+        `
+        console.log(`Gender within JSON = '${apiData.gender}'`)
+        API.graphql(graphqlOperation(query))
         console.log(`Submit button pressed! API JSON ${json}`)
     }
-   
+
 
     render() {
         return (
@@ -37,12 +65,12 @@ export default class Questions extends Component {
                         values={['Male', 'Female']}
                         gender={this.state.selectedIndex}
                         onChange={(event) => {
-                            if(event.nativeEvent.selectedSegmentIndex === 0) {
+                            if (event.nativeEvent.selectedSegmentIndex === 0) {
                                 this.setState({ gender: 'male' });
                             } else {
                                 this.setState({ gender: 'female' });
                             }
-                            
+
                         }}
                     />
                     <FormValidationMessage>{'This field is required'}</FormValidationMessage>
@@ -63,7 +91,7 @@ export default class Questions extends Component {
                         values={['Yes', 'No']}
                         yearChildlessSex={this.state.selectedIndex}
                         onChange={(event) => {
-                            if(event.nativeEvent.selectedSegmentIndex === 0) {
+                            if (event.nativeEvent.selectedSegmentIndex === 0) {
                                 this.setState({ yearChildlessSex: 'yes' });
                             } else {
                                 this.setState({ yearChildlessSex: 'no' });
@@ -79,7 +107,7 @@ export default class Questions extends Component {
                         maximumValue={20}
                         value={this.state.yearsSubfertile}
                         onValueChange={val => this.setState({ yearsSubfertile: val })}
-                    
+
                     />
                     <Text style={styles.welcome}>
                         {this.state.yearsSubfertile}
@@ -89,7 +117,7 @@ export default class Questions extends Component {
                         values={['Yes', 'No']}
                         currentIVF={this.state.selectedIndex}
                         onChange={(event) => {
-                            if(event.nativeEvent.selectedSegmentIndex === 0) {
+                            if (event.nativeEvent.selectedSegmentIndex === 0) {
                                 this.setState({ currentIVF: 'yes' });
                             } else {
                                 this.setState({ currentIVF: 'no' });
@@ -99,7 +127,7 @@ export default class Questions extends Component {
                     <FormValidationMessage>{'This field is required'}</FormValidationMessage>
                 </View>
                 <View style={styles.button}>
-                    <Button raised icon={{name: 'cached'}} title='Submit' onPress={this.onSubmit.bind(this)} />
+                    <Button raised icon={{ name: 'cached' }} title='Submit' onPress={this.onSubmit.bind(this)} />
                 </View>
             </View>
 
@@ -128,9 +156,9 @@ const styles = StyleSheet.create({
         fontSize: 10,
         textAlign: 'left',
         margin: 5,
-      },
-      button: {
+    },
+    button: {
         bottom: 0,
         position: 'absolute',
-      },
+    },
 });
