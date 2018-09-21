@@ -22,11 +22,11 @@ export default class Questions extends Component {
         currentIVF: false,
     }
     onSubmit() {
-        console.log('The submit button has been pressed!')
+        let apiData = { gender: this.state.gender, age: this.state.age, yearChildlessSex: this.state.yearChildlessSex, yearsSubfertile: this.state.yearsSubfertile, currentIVF: this.state.currentIVF };
+        let json = JSON.stringify(apiData);
+        console.log(`Submit button pressed! API JSON ${json}`)
     }
-    getSliderVal(val) {
-        console.log(val);
-    }
+   
 
     render() {
         return (
@@ -35,9 +35,14 @@ export default class Questions extends Component {
                     <FormLabel>What is your gender?</FormLabel>
                     <SegmentedControlIOS
                         values={['Male', 'Female']}
-                        gender={this.state.gender}
+                        gender={this.state.selectedIndex}
                         onChange={(event) => {
-                            this.setState({ gender: event.nativeEvent.gender });
+                            if(event.nativeEvent.selectedSegmentIndex === 0) {
+                                this.setState({ gender: 'male' });
+                            } else {
+                                this.setState({ gender: 'female' });
+                            }
+                            
                         }}
                     />
                     <FormValidationMessage>{'This field is required'}</FormValidationMessage>
@@ -49,7 +54,6 @@ export default class Questions extends Component {
                         maximumValue={71}
                         value={this.state.age}
                         onValueChange={val => this.setState({ age: val })}
-                        onSlidingComplete={val => this.getSliderVal(val)}
                     />
                     <Text style={styles.welcome}>
                         {this.state.age}
@@ -57,9 +61,13 @@ export default class Questions extends Component {
                     <FormLabel>Have you experienced at least 1 year of involuntary childlessness following unprotected and regular intercourse?</FormLabel>
                     <SegmentedControlIOS
                         values={['Yes', 'No']}
-                        yearChildlessSex={this.state.yearChildlessSex}
+                        yearChildlessSex={this.state.selectedIndex}
                         onChange={(event) => {
-                            this.setState({ yearChildlessSex: event.nativeEvent.yearChildlessSex });
+                            if(event.nativeEvent.selectedSegmentIndex === 0) {
+                                this.setState({ yearChildlessSex: 'yes' });
+                            } else {
+                                this.setState({ yearChildlessSex: 'no' });
+                            }
                         }}
                     />
                     <FormValidationMessage>{'This field is required'}</FormValidationMessage>
@@ -71,7 +79,7 @@ export default class Questions extends Component {
                         maximumValue={20}
                         value={this.state.yearsSubfertile}
                         onValueChange={val => this.setState({ yearsSubfertile: val })}
-                        onSlidingComplete={val => this.getSliderVal(val)}
+                    
                     />
                     <Text style={styles.welcome}>
                         {this.state.yearsSubfertile}
@@ -79,9 +87,13 @@ export default class Questions extends Component {
                     <FormLabel>Have you and/or are you currently undergoing IVF?</FormLabel>
                     <SegmentedControlIOS
                         values={['Yes', 'No']}
-                        currentIVF={this.state.currentIVF}
+                        currentIVF={this.state.selectedIndex}
                         onChange={(event) => {
-                            this.setState({ currentIVF: event.nativeEvent.currentIVF });
+                            if(event.nativeEvent.selectedSegmentIndex === 0) {
+                                this.setState({ currentIVF: 'yes' });
+                            } else {
+                                this.setState({ currentIVF: 'no' });
+                            }
                         }}
                     />
                     <FormValidationMessage>{'This field is required'}</FormValidationMessage>
