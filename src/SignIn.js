@@ -1,93 +1,92 @@
 
 import React, { Component } from 'react';
 import {
-  TextInput,
+  Container,
   Button,
-  StyleSheet,
   Text,
-  View
-} from 'react-native';
+  Header,
+  Content,
+  Form,
+  Item,
+  Input,
+  Label
+} from 'native-base';
 
-import { Auth } from 'aws-amplify' 
-
+import { Auth } from 'aws-amplify'
 
 export default class SignIn extends Component {
-  state = {
-    username: '',
-    password: '',
-    confirmationCode: '',
-    user: {}
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLoading: false,
+      email: "",
+      password: "",
+    };
   }
-  onChangeText(key,value) {
+
+  validateForm() {
+    return this.state.email.length > 0 && this.state.password.length > 0;
+  }
+
+  handleChange = event => {
     this.setState({
-      [key]: value
-    })
+      [event.target.id]: event.target.value
+    });
   }
-  signIn() {
-    const { username, password } = this.state
-    Auth.signIn(username, password)
-    .then(user => {
-        this.setState({ user})
-        console.log('successful sign in!')
-    })
-    .catch(err => console.log('error signing in!: ', err))
-  }
-  confirmSignIn() {
-    Auth.confirmSignIn(this.state.user,this.state.confirmationCode)
-    .then(() => {
+
+  handleSubmit = async event => {
+    event.preventDefault();
+    this.setState({ isLoading: true })
+    try {
+      await Auth.signIn(this.state.email, this.state.password);
+      console.log('successful sign in!')
       this.props.screenProps.authenticate(true)
-      console.log('successful confirming sign up!')
-    })
-    .catch(err => console.log('error confirming signing up!: ', err))
+    } catch (e) {
+      alert(e.message);
+      this.setState({ isLoading: false });
+    }
   }
+
   render() {
     return (
-        <View style={styles.container}>
-          <TextInput
-          onChangeText={value => this.onChangeText('username', value)}
-          style={styles.input}
-          placeholder='username' 
-          />
-          <TextInput
-          onChangeText={value => this.onChangeText('password', value)}
-          style={styles.input}
-          secureTextEntry={true}
-          placeholder='password' 
-          />
-          <Button title='Sign In' onPress={this.signIn.bind(this)} />
-          <TextInput
-          onChangeText={value => this.onChangeText('confirmationCode', value)}
-          style={styles.input}
-          placeholder='Confirmation Code' 
-          />
-          <Button title='Confirm Sign In' onPress={this.confirmSignIn.bind(this)} />
-        </View>
+      <Container>
+        <Header />
+        <Content>
+          <Form>
+            <Item stackedLabel>
+              <Label>Email</Label>
+              <Input
+                autoFocus = {true}
+                keyboardType="email-address"
+                autoCorrect={false}
+                autoCapitalize="none"
+                onChangeText={(email) => { this.setState({ email }); }}
+                value={this.state.email}
+              />
+            </Item>
+            <Item stackedLabel last>
+              <Label>Password</Label>
+              <Input
+                secureTextEntry
+                onChangeText={(password) => { this.setState({ password }); }}
+                value={this.state.password}
+              />
+            </Item>
+          </Form>
+          <Button
+            block
+            success
+            disabled={!this.validateForm()}
+            isLoading={this.state.isLoading}
+            onPress={this.handleSubmit}
+          >
+            <Text>
+              Sign Ip
+              </Text>
+          </Button>
+        </Content>
+      </Container>
     );
   }
 }
-
-
-
-const styles = StyleSheet.create({
-  input: {
-    height: 50,
-    borderBottomWidth: 2,
-    borderBottomColor: '#2196F3',
-    margin: 10
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});

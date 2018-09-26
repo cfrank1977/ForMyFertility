@@ -11,7 +11,7 @@ import AppSyncConfig from './appsync-config' // NEW
 Amplify.configure({ ...config, ...AppSyncConfig }) // UPDATED
 
 import Tabs from './src/Tabs'
-import Questions from './src/Questions';
+import Questions from './src/QuestionCards';
 
 export default class App extends Component {
   state = {
@@ -25,7 +25,7 @@ export default class App extends Component {
     if(this.state.isAuthenticated) {
       console.log('Auth: ', Auth)
       return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}} >
+        <View style={{ flex: 1}} >
          <Questions />
         </View>
       )
