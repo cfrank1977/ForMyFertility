@@ -1,13 +1,13 @@
 import React from "react";
-import { Image } from "react-native";
 import { Container, Content, Text, List, ListItem} from "native-base";
-const routes = [ "SignIn", "SignUp", "Logout", "Questions"];
 export default class SideBar extends React.Component {
+  
   render() {
+     routes = this.props.items.map(x => x.routeName)
+    console.log(routes)
     return (
       <Container>
         <Content padder>
-          
           <List
             dataArray={routes}
             renderRow={data => {

@@ -6,6 +6,7 @@ import config from './aws-exports'
 import AppSyncConfig from './appsync-config' // NEW
 Amplify.configure({ ...config, ...AppSyncConfig }) // UPDATED
 import HomeScreen from './src/index';
+import Questions from './src/Questions';
 
 export default class App extends Component {
   state = {
@@ -14,14 +15,13 @@ export default class App extends Component {
   }
   authenticate(isAuthenticated) {
     this.setState({ isAuthenticated })
+    this.props.navigation.navigate('App');
   }
   render() {
-    if(this.state.isAuthenticated) {
-      console.log('Auth: ', Auth)
-      return (
-         <HomeScreen />
-      )
-    }
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated
+    };
     return (
         
          <HomeScreen 

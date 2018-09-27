@@ -80,7 +80,7 @@ export default class SignUp extends Component {
       await Auth.confirmSignUp(this.state.email, this.state.confirmationCode);
       await Auth.signIn(this.state.email, this.state.password);
 
-      this.props.userHasAuthenticated(true);
+      this.props.screenProps.authenticate(true)
 
     } catch (e) {
       alert(e.message);
