@@ -4,8 +4,13 @@ import {
   Container,
   Button,
   Text,
+  Body,
   Header,
   Content,
+  Right,
+  Left,
+  Title,
+  Icon,
   Form,
   Item,
   Input,
@@ -86,8 +91,20 @@ export default class SignUp extends Component {
   renderConfirmationForm() {
     return (
       <Container>
-        <Header />
-        <Content>
+        <Header>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.toggleDrawer()}>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Sign Up</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content padder>
           <Form>
             <Item stackedLabel>
               <Label>Confirmation Code</Label>
@@ -117,8 +134,20 @@ export default class SignUp extends Component {
   renderForm() {
     return (
       <Container>
-        <Header />
-        <Content>
+      <Header>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.toggleDrawer()}>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Sign Up</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content padder>
           <Form>
             <Item stackedLabel>
               <Label>Email</Label>
@@ -126,7 +155,7 @@ export default class SignUp extends Component {
                 keyboardType="email-address"
                 autoCorrect={false}
                 autoCapitalize="none"
-                onChangeText={(email) => {this.setState({email}); }}
+                onChangeText={(email) => { this.setState({ email }); }}
                 value={this.state.email}
               />
             </Item>
@@ -134,7 +163,7 @@ export default class SignUp extends Component {
               <Label>Password</Label>
               <Input
                 secureTextEntry
-                onChangeText={(password) => {this.setState({password}); }}
+                onChangeText={(password) => { this.setState({ password }); }}
                 value={this.state.password}
               />
             </Item>
@@ -142,7 +171,7 @@ export default class SignUp extends Component {
               <Label>Confirm Password</Label>
               <Input
                 secureTextEntry
-                onChangeText={(confirmPassword) => {this.setState({confirmPassword}); }}
+                onChangeText={(confirmPassword) => { this.setState({ confirmPassword }); }}
                 value={this.state.confirmPassword}
               />
             </Item>

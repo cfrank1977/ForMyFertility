@@ -1,269 +1,202 @@
 import React, { Component } from 'react';
 import {
+    Body,
+    Button,
+    Card,
+    CardItem,
+    Container,
+    Content,
+    DeckSwiper,
+    Footer,
+    Form,
+    Header,
+    Item,
+    Title,
     Picker,
-    SegmentedControlIOS,
-    Slider,
-    StyleSheet,
-    ScrollView,
+    Icon,
+    Left,
+    Right,
     Text,
     View
-} from 'react-native';
-import {
-    Button,
-    FormLabel,
-    FormInput,
-    FormValidationMessage
-} from 'react-native-elements';
+} from 'native-base';
 import { API, graphqlOperation } from 'aws-amplify';
 
-export default class Questions extends Component {
+const cards = [
+    {
+        text: 'What is your Gender/',
+        name: 'gender',
+        value1: 'male',
+        value2: 'female',
+        label1: 'Male',
+        lavel2: 'Female'
+    },
+    {
+        text: 'Have you experienced at least 1 year of involuntary childlessness following unprotected and regular intercourse?',
+        name: 'yearChildlessSex',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    },
+    {
+        text: 'Have you and/or are you currently undergoing IVF?',
+        name: 'currentIVF',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    },
+    {
+        text: 'Have you ever had a pregnancy?',
+        name: 'hadPregnancy',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    },
+    {
+        text: 'Have you ever had an ectopic pregnancy?',
+        name: 'hadEctopicPregnancy',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    },
+    {
+        text: 'Have you had a previous live birth?',
+        name: 'liveBirth',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    },
+    {
+        text: 'Have you ever had a miscarriage?',
+        name: 'miscarriages',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    },
+    {
+        text: 'Is the husband/partner suffering from any male cause(s) of subfertility?',
+        name: 'maleSubfertility',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    },
 
-    state = {
-        gender: false,
-        age: 18,
-        yearChildlessSex: false,
-        yearsSubfertile: 0,
-        currentIVF: false,
-        hadPregnancy: false,
-        hadEctopicPregnancy: false,
-        liveBirth: false,
-        miscarriages: false,
-        maleSubfertility: false,
-        maleSubfertilitCondition: false
+
+]
+
+export default class Questions extends Component {
+    constructor() {
+        super();
+        this.state = {
+            gender: 'female',
+            age: 18,
+            yearChildlessSex: 'no',
+            yearsSubfertile: 0,
+            currentIVF: 'no',
+            hadPregnancy: 'no',
+            hadEctopicPregnancy: 'no',
+            liveBirth: 'no',
+            miscarriages: 'no',
+            maleSubfertility: 'no',
+            maleSubfertilitCondition: 'none'
+        }
     }
 
     onSubmit() {
-        let apiData = {
-            gender: this.state.gender,
-            age: this.state.age,
-            yearChildlessSex: this.state.yearChildlessSex,
-            yearsSubfertile: this.state.yearsSubfertile,
-            currentIVF: this.state.currentIVF,
-            hadPregnancy: this.state.hadPregnancy,
-            hadEctopicPregnancy: this.state.hadEctopicPregnancy,
-            liveBirth: this.state.liveBirth,
-            miscarriages: this.state.miscarriages,
-            maleSubfertility: this.state.maleSubfertility,
-            maleSubfertilitCondition: this.state.maleSubfertilitCondition
-        };
         let query = `
             mutation add {
                 createQuestions(input: {
-                    gender: "${apiData.gender}",
-                    age: ${apiData.age},
-                    yearChildlessSex: "${apiData.yearChildlessSex}",
-                    yearsSubfertile: ${apiData.yearsSubfertile},
-                    currentIVF: "${apiData.currentIVF}",
-                    hadPregnancy: "${apiData.hadPregnancy}",
-                    hadEctopicPregnancy: "${apiData.hadEctopicPregnancy}",
-                    liveBirth: "${apiData.liveBirth}",
-                    miscarriages: "${apiData.miscarriages}",
-                    maleSubfertility: "${apiData.maleSubfertility}",
-                    maleSubfertilitCondition: "${apiData.maleSubfertilitCondition}",
+                    gender: "${this.state.gender}",
+                    age: ${this.state.age},
+                    yearChildlessSex: "${this.state.yearChildlessSex}",
+                    yearsSubfertile: ${this.state.yearsSubfertile},
+                    currentIVF: "${this.state.currentIVF}",
+                    hadPregnancy: "${this.state.hadPregnancy}",
+                    hadEctopicPregnancy: "${this.state.hadEctopicPregnancy}",
+                    liveBirth: "${this.state.liveBirth}",
+                    miscarriages: "${this.state.miscarriages}",
+                    maleSubfertility: "${this.state.maleSubfertility}",
+                    maleSubfertilitCondition: "${this.state.maleSubfertilitCondition}",
                 }) { id }
             }
         `
 
         API.graphql(graphqlOperation(query))
-        console.log(`Submit button pressed! API JSON ${JSON.stringify(apiData)}`)
+        console.log(`Submit button pressed! API JSON ${JSON.stringify(this.state)}`)
     }
-
 
     render() {
         return (
-            <ScrollView contentContainerStyle={styles.container}>
-                <View style={styles.content} >
-                    <FormLabel>What is your gender?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Male', 'Female']}
-                        gender={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ gender: 'male' });
-                            } else {
-                                this.setState({ gender: 'female' });
-                            }
+            <Container>
+                <Header>
+                    <Left>
+                        <Button
+                            transparent
+                            onPress={() => this.props.navigation.toggleDrawer()}>
+                            <Icon name="menu" />
+                        </Button>
+                    </Left>
+                    <Body>
+                        <Title>Questions</Title>
+                    </Body>
+                    <Right />
+                </Header>
+                <Content padder>
+                    <View>
+                        <DeckSwiper
+                            dataSource={cards}
+                            renderItem={item =>
+                                <Card style={{ elevation: 3 }}>
+                                    <CardItem>
+                                        <Left>
 
-                        }}
-                    />
-                </View>
-                <View style={styles.content} >
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                    <FormLabel>What is your age?</FormLabel>
-                    <Slider
-                        style={{ width: 300 }}
-                        step={1}
-                        minimumValue={18}
-                        maximumValue={71}
-                        value={this.state.age}
-                        onValueChange={val => this.setState({ age: val })}
-                    />
-                    <Text style={styles.welcome}>
-                        {this.state.age}
-                    </Text>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Have you experienced at least 1 year of involuntary childlessness following unprotected and regular intercourse?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Yes', 'No']}
-                        yearChildlessSex={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ yearChildlessSex: 'yes' });
-                            } else {
-                                this.setState({ yearChildlessSex: 'no' });
-                            }
-                        }}
-                    />
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>If yes, how many years have you or your partner been subfertile?</FormLabel>
-                    <Slider
-                        style={{ width: 300 }}
-                        step={1}
-                        minimumValue={1}
-                        maximumValue={20}
-                        value={this.state.yearsSubfertile}
-                        onValueChange={val => this.setState({ yearsSubfertile: val })}
+                                            <Body>
+                                                <Text>{item.text}</Text>
+                                                <Text note>For My Fertility</Text>
+                                            </Body>
+                                        </Left>
+                                    </CardItem>
+                                    <CardItem cardBody>
+                                        <Form>
+                                            <Item picker>
+                                                <Picker
+                                                    mode="dropdown"
+                                                    iosIcon={<Icon name="ios-arrow-down-outline" />}
+                                                    style={{ width: undefined }}
+                                                    placeholder={item.label1}
+                                                    placeholderStyle={{ color: "#bfc6ea" }}
+                                                    placeholderIconColor="#007aff"
 
-                    />
-                    <Text style={styles.welcome}>
-                        {this.state.yearsSubfertile}
-                    </Text>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Have you and/or are you currently undergoing IVF?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Yes', 'No']}
-                        currentIVF={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ currentIVF: 'yes' });
-                            } else {
-                                this.setState({ currentIVF: 'no' });
-                            }
-                        }}
-                    />
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Have you ever had a pregnancy?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Yes', 'No']}
-                        hadPregnancy={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ hadPregnancy: 'yes' });
-                            } else {
-                                this.setState({ hadPregnancy: 'no' });
-                            }
-                        }}
-                    />
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Have you ever had an ectopic pregnancy?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Yes', 'No']}
-                        hadEctopicPregnancy={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ hadEctopicPregnancy: 'yes' });
-                            } else {
-                                this.setState({ hadEctopicPregnancy: 'no' });
-                            }
-                        }}
-                    />
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Have you had a previous live birth?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Yes', 'No']}
-                        liveBirth={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ liveBirth: 'yes' });
-                            } else {
-                                this.setState({ liveBirth: 'no' });
-                            }
-                        }}
-                    />
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Have you ever had a miscarriage?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Yes', 'No']}
-                        miscarriages={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ miscarriages: 'yes' });
-                            } else {
-                                this.setState({ miscarriages: 'no' });
-                            }
-                        }}
-                    />
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Is the husband/partner suffering from any male cause(s) of subfertility?</FormLabel>
-                    <SegmentedControlIOS
-                        values={['Yes', 'No']}
-                        maleSubfertility={this.state.selectedIndex}
-                        onChange={(event) => {
-                            if (event.nativeEvent.selectedSegmentIndex === 0) {
-                                this.setState({ maleSubfertility: 'yes' });
-                            } else {
-                                this.setState({ maleSubfertility: 'no' });
-                            }
-                        }}
-                    />
-                    <FormValidationMessage>{'This field is required'}</FormValidationMessage>
-                </View>
-                <View style={styles.content} >
-                    <FormLabel>Which of the following describes his condition most-appropriately? </FormLabel>
-                    <Picker
-                        selectedValue={this.state.maleSubfertilitCondition}
-                        style={{ height: 50, width: 300 }}
-                        onValueChange={(itemValue, itemIndex) => this.setState({ maleSubfertilitCondition: itemValue })}>
-                        <Picker.Item label="Azoospermia" value="azoospermia" />
-                        <Picker.Item label="Tubal Factors" value="tubalFactors" />
-                        <Picker.Item label="Idiopathy" value="idiopathy" />
-                        <Picker.Item label="Low Sperm Count (oligospermia)" value="lowCount" />
-                        <Picker.Item label="Poor Sperm Quality" value="poorQuality" />
-                        <Picker.Item label="Poor Sperm Motility" value="poorMotility" />
-                    </Picker>
+                                                    gender={this.state.gender}
+                                                    onValueChange={(gender) => { this.setState({ gender }); }}
+                                                >
+                                                    <Picker.Item label={item.label1} value={item.value1} />
+                                                    <Picker.Item label={item.lavel2} value={item.value2} />
 
-                </View>
-                <View style={styles.button}>
-                    <Button raised icon={{ name: 'cached' }} title='Submit' onPress={this.onSubmit.bind(this)} />
-                </View>
-            </ScrollView>
+                                                </Picker>
+                                            </Item>
+                                        </Form>
+                                    </CardItem>
+                                    <CardItem>
+                                        <Button success iconRight onPress={this.onSubmit.bind(this)}>
+                                            <Text>Next</Text>
+                                            <Icon name="ios-arrow-forward" />
+                                        </Button>
+                                    </CardItem>
+                                </Card>
+                            }
+                        />
+                    </View>
+                </Content>
+                <Footer />
+            </Container>
+
         );
     }
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flexGrow: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-    },
-    content: {
-        flex: 1,
-        width: 300,
-        margin: 10,
-    },
-    welcome: {
-        fontSize: 10,
-        textAlign: 'left',
-        margin: 5,
-    },
-    button: {
-        bottom: 0,
-        position: 'absolute',
-    },
-});

@@ -1,17 +1,11 @@
 
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
 
 import Amplify, { Auth } from 'aws-amplify' 
 import config from './aws-exports' 
 import AppSyncConfig from './appsync-config' // NEW
 Amplify.configure({ ...config, ...AppSyncConfig }) // UPDATED
-
-import Tabs from './src/Tabs'
-import Questions from './src/QuestionCards';
+import HomeScreen from './src/index';
 
 export default class App extends Component {
   state = {
@@ -25,26 +19,17 @@ export default class App extends Component {
     if(this.state.isAuthenticated) {
       console.log('Auth: ', Auth)
       return (
-        <View style={{ flex: 1}} >
-         <Questions />
-        </View>
+         <HomeScreen />
       )
     }
     return (
-        <View style={styles.container}>
-         <Tabs 
+        
+         <HomeScreen 
             screenProps={{
               authenticate: this.authenticate.bind(this)
               }}/>
-        </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-});
+

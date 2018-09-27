@@ -2,16 +2,20 @@
 import React, { Component } from 'react';
 import {
   Container,
+  Body,
   Button,
   Text,
   Header,
   Content,
   Form,
+  Icon,
+  Title,
+  Left,
+  Right,
   Item,
   Input,
   Label
 } from 'native-base';
-
 import { Auth } from 'aws-amplify'
 
 export default class SignIn extends Component {
@@ -51,8 +55,20 @@ export default class SignIn extends Component {
   render() {
     return (
       <Container>
-        <Header />
-        <Content>
+      <Header>
+          <Left>
+            <Button
+              transparent
+              onPress={() => this.props.navigation.toggleDrawer()}>
+              <Icon name="menu" />
+            </Button>
+          </Left>
+          <Body>
+            <Title>Sign In</Title>
+          </Body>
+          <Right />
+        </Header>
+        <Content padder>
           <Form>
             <Item stackedLabel>
               <Label>Email</Label>
@@ -82,7 +98,7 @@ export default class SignIn extends Component {
             onPress={this.handleSubmit}
           >
             <Text>
-              Sign Ip
+              Sign In
               </Text>
           </Button>
         </Content>
