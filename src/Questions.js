@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import {
+    ProgressViewIOS,
+} from 'react-native'
+import {
     Body,
     Button,
     Card,
@@ -8,7 +11,6 @@ import {
     Content,
     DeckSwiper,
     Footer,
-    Form,
     Header,
     Item,
     Title,
@@ -23,31 +25,16 @@ import { API, graphqlOperation } from 'aws-amplify';
 
 const cards = [
     {
-        text: 'What is your Gender/',
-        name: 'gender',
-        value1: 'male',
-        value2: 'female',
-        label1: 'Male',
-        lavel2: 'Female'
-    },
-    {
-        text: 'Have you experienced at least 1 year of involuntary childlessness following unprotected and regular intercourse?',
+        text: 'Have you been trying to get pregnate for at least 1 year (unprotected and regular intercourse)?',
         name: 'yearChildlessSex',
         value1: 'yes',
         value2: 'no',
         label1: 'Yes',
-        lavel2: 'No'
+        lavel2: 'No',
+        progressBarProgress: 0.1
     },
     {
-        text: 'Have you and/or are you currently undergoing IVF?',
-        name: 'currentIVF',
-        value1: 'yes',
-        value2: 'no',
-        label1: 'Yes',
-        lavel2: 'No'
-    },
-    {
-        text: 'Have you ever had a pregnancy?',
+        text: 'Have you ever been pregnate before?',
         name: 'hadPregnancy',
         value1: 'yes',
         value2: 'no',
@@ -63,14 +50,6 @@ const cards = [
         lavel2: 'No'
     },
     {
-        text: 'Have you had a previous live birth?',
-        name: 'liveBirth',
-        value1: 'yes',
-        value2: 'no',
-        label1: 'Yes',
-        lavel2: 'No'
-    },
-    {
         text: 'Have you ever had a miscarriage?',
         name: 'miscarriages',
         value1: 'yes',
@@ -79,13 +58,22 @@ const cards = [
         lavel2: 'No'
     },
     {
-        text: 'Is the husband/partner suffering from any male cause(s) of subfertility?',
-        name: 'maleSubfertility',
+        text: 'Have you ever given birth before (live birth)?',
+        name: 'liveBirth',
         value1: 'yes',
         value2: 'no',
         label1: 'Yes',
         lavel2: 'No'
     },
+
+    {
+        text: 'Have you and/or are you currently undergoing IVF?',
+        name: 'currentIVF',
+        value1: 'yes',
+        value2: 'no',
+        label1: 'Yes',
+        lavel2: 'No'
+    }
 
 
 ]
@@ -104,7 +92,7 @@ export default class Questions extends Component {
             liveBirth: 'no',
             miscarriages: 'no',
             maleSubfertility: 'no',
-            maleSubfertilitCondition: 'none'
+            maleSubfertilitCondition: 'none',
         }
     }
 
@@ -134,66 +122,50 @@ export default class Questions extends Component {
     render() {
         return (
             <Container>
-                <Header>
-                    <Left>
-                        <Button
-                            transparent
-                            onPress={() => this.props.navigation.toggleDrawer()}>
-                            <Icon name="menu" />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Questions</Title>
-                    </Body>
-                    <Right />
-                </Header>
-                <Content padder>
-                    <View>
-                        <DeckSwiper
-                            dataSource={cards}
-                            renderItem={item =>
-                                <Card style={{ elevation: 3 }}>
-                                    <CardItem>
-                                        <Left>
-
-                                            <Body>
-                                                <Text>{item.text}</Text>
-                                                <Text note>For My Fertility</Text>
-                                            </Body>
-                                        </Left>
-                                    </CardItem>
-                                    <CardItem cardBody>
-                                        <Form>
-                                            <Item picker>
-                                                <Picker
-                                                    mode="dropdown"
-                                                    iosIcon={<Icon name="ios-arrow-down-outline" />}
-                                                    style={{ width: undefined }}
-                                                    placeholder={item.label1}
-                                                    placeholderStyle={{ color: "#bfc6ea" }}
-                                                    placeholderIconColor="#007aff"
-
-                                                    gender={this.state.gender}
-                                                    onValueChange={(gender) => { this.setState({ gender }); }}
-                                                >
-                                                    <Picker.Item label={item.label1} value={item.value1} />
-                                                    <Picker.Item label={item.lavel2} value={item.value2} />
-
-                                                </Picker>
-                                            </Item>
-                                        </Form>
-                                    </CardItem>
-                                    <CardItem>
-                                        <Button success iconRight onPress={this.onSubmit.bind(this)}>
-                                            <Text>Next</Text>
-                                            <Icon name="ios-arrow-forward" />
-                                        </Button>
-                                    </CardItem>
-                                </Card>
-                            }
-                        />
-                    </View>
+                <Header />
+                <Content >
+                    <Card style={{ elevation: 3 }}>
+                        <CardItem header bordered >
+                            <View style={{ alignSelf: "center" }}>
+                                <Text>Question 1 of 8</Text>
+                                <ProgressViewIOS progress={0.125} progressTintColor={'#86B2CA'} />
+                            </View>
+                        </CardItem>
+                        <CardItem bordered>
+                            <Body>
+                                <Text>Have you been trying to get pregnate for at least 1 year (unprotected and regular intercourse)?</Text>
+                                <Item picker>
+                                    <Picker
+                                        mode="dropdown"
+                                        iosHeader='No'
+                                        iosIcon={<Icon name="arrow-dropdown-circle" style={{ color: "#007aff", fontSize: 25 }} />}
+                                        style={{ width: undefined }}
+                                        placeholderStyle={{ color: "#bfc6ea" }}
+                                        placeholderIconColor="#007aff"
+                                        selectedValue={this.state.yearChildlessSex}
+                                        onValueChange={(yearChildlessSex) => { this.setState({ yearChildlessSex }); }}
+                                    >
+                                        <Picker.Item label={'No'} value={'no'} />
+                                        <Picker.Item label={'Yes'} value={'yes'} />
+                                    </Picker>
+                                </Item>
+                            </Body>
+                        </CardItem>
+                        <CardItem footer bordered>
+                            <Icon name="medkit" style={{ color: '#ED4A6A' }} />
+                        </CardItem>
+                    </Card>
                 </Content>
+                <View style={{ flexDirection: "row", flex: 1, position: "absolute", bottom: 50, left: 0, right: 0, justifyContent: 'space-between', padding: 15 }}>
+                    <Button iconLeft onPress={() => this._deckSwiper._root.swipeLeft()}>
+                        <Icon name="arrow-back" />
+                        <Text>Swipe Left</Text>
+                    </Button>
+                    <Button iconRight onPress={() => this._deckSwiper._root.swipeRight()}>
+                        <Text>Swipe Right</Text>
+                        <Icon name="arrow-forward" />
+                    </Button>
+                </View>
                 <Footer />
             </Container>
 
