@@ -78,7 +78,7 @@ export default class Questions extends Component {
     }
 
     render() {
-        let question = 'age';
+        let question = 'miscarriages';
 
         if (question === 'age') {
             return (
@@ -108,32 +108,87 @@ export default class Questions extends Component {
                     <Header />
                     <Content >
                         <View style={{ alignSelf: "center" }}>
-                            <Text>Question 1 of 8</Text>
-                            <ProgressViewIOS progress={0.125} progressTintColor={'#86B2CA'} />
+                            <Text>Question 3 of 8</Text>
+                            <ProgressViewIOS progress={0.25} progressTintColor={'#86B2CA'} />
                         </View>
-                        <Body>
                             <Text>Have you been trying to get pregnate for at least 1 year (unprotected and regular intercourse)?</Text>
-                            <Item picker>
-                                <PickerIOS
-                                    mode="dropdown"
-                                    iosHeader='No'
-                                    iosIcon={<Icon name="arrow-dropdown-circle" style={{ color: "#007aff", fontSize: 25 }} />}
-                                    style={{ width: undefined }}
-                                    placeholderStyle={{ color: "#bfc6ea" }}
-                                    placeholderIconColor="#007aff"
+                                <Picker
                                     selectedValue={this.state.yearChildlessSex}
                                     onValueChange={(yearChildlessSex) => { this.setState({ yearChildlessSex }); }}
                                 >
                                     <Picker.Item label={'No'} value={'no'} />
                                     <Picker.Item label={'Yes'} value={'yes'} />
-                                </PickerIOS>
-                            </Item>
-                        </Body>
+                                </Picker>
                     </Content>
                     <Footer />
                 </Container>
             );
         }
-
+        if (question === 'hadPregnancy') {
+            return (
+                <Container>
+                    <Header />
+                    <Content >
+                        <View style={{ alignSelf: "center" }}>
+                            <Text>Question 3 of 8</Text>
+                            <ProgressViewIOS progress={0.375} progressTintColor={'#86B2CA'} />
+                        </View>
+                            <Text>Have you been pregnant before?</Text>
+                                <Picker
+                                    selectedValue={this.state.hadPregnancy}
+                                    onValueChange={(hadPregnancy) => { this.setState({ hadPregnancy }); }}
+                                >
+                                    <Picker.Item label={'No'} value={'no'} />
+                                    <Picker.Item label={'Yes'} value={'yes'} />
+                                </Picker>
+                    </Content>
+                    <Footer />
+                </Container>
+            );
+        }
+        if (question === 'hadEctopicPregnancy') {
+            return (
+                <Container>
+                    <Header />
+                    <Content >
+                        <View style={{ alignSelf: "center" }}>
+                            <Text>Question 4 of 8</Text>
+                            <ProgressViewIOS progress={0.5} progressTintColor={'#86B2CA'} />
+                        </View>
+                            <Text>Have you ever had an ectopic pregnancy?</Text>
+                                <Picker
+                                    selectedValue={this.state.hadEctopicPregnancy}
+                                    onValueChange={(hadEctopicPregnancy) => { this.setState({ hadEctopicPregnancy }); }}
+                                >
+                                    <Picker.Item label={'No'} value={'no'} />
+                                    <Picker.Item label={'Yes'} value={'yes'} />
+                                </Picker>
+                    </Content>
+                    <Footer />
+                </Container>
+            );
+        }
+        if (question === 'miscarriages') {
+            return (
+                <Container>
+                    <Header />
+                    <Content >
+                        <View style={{ alignSelf: "center" }}>
+                            <Text>Question 5 of 8</Text>
+                            <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
+                        </View>
+                            <Text>Have you ever had a miscarriage?</Text>
+                                <Picker
+                                    selectedValue={this.state.miscarriages}
+                                    onValueChange={(miscarriages) => { this.setState({ miscarriages }); }}
+                                >
+                                    <Picker.Item label={'No'} value={'no'} />
+                                    <Picker.Item label={'Yes'} value={'yes'} />
+                                </Picker>
+                    </Content>
+                    <Footer />
+                </Container>
+            );
+        }
     }
 }
