@@ -4,7 +4,6 @@ export default class SideBar extends React.Component {
   
   render() {
      routes = this.props.items.map(x => x.routeName)
-    console.log(routes)
     return (
       <Container>
         <Content padder>
