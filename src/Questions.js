@@ -4,21 +4,11 @@ import {
     Picker,
 } from 'react-native'
 import {
-    Body,
-    Button,
-    Card,
-    CardItem,
+    
     Container,
     Content,
-    DatePicker,
     Footer,
     Header,
-    Item,
-
-
-    Icon,
-    Left,
-    Right,
     Text,
     View
 } from 'native-base';
@@ -78,7 +68,7 @@ export default class Questions extends Component {
     }
 
     render() {
-        let question = 'miscarriages';
+        let question = 'currentIVF';
 
         if (question === 'age') {
             return (
@@ -86,7 +76,7 @@ export default class Questions extends Component {
                     <Header />
                     <Content >
                         <View style={{ alignSelf: "center" }}>
-                            <Text>Question 1 of 8</Text>
+                            <Text>Question 1 of 7</Text>
                             <ProgressViewIOS progress={0.125} progressTintColor={'#86B2CA'} />
                         </View>
 
@@ -108,7 +98,7 @@ export default class Questions extends Component {
                     <Header />
                     <Content >
                         <View style={{ alignSelf: "center" }}>
-                            <Text>Question 3 of 8</Text>
+                            <Text>Question 3 of 7</Text>
                             <ProgressViewIOS progress={0.25} progressTintColor={'#86B2CA'} />
                         </View>
                             <Text>Have you been trying to get pregnate for at least 1 year (unprotected and regular intercourse)?</Text>
@@ -130,7 +120,7 @@ export default class Questions extends Component {
                     <Header />
                     <Content >
                         <View style={{ alignSelf: "center" }}>
-                            <Text>Question 3 of 8</Text>
+                            <Text>Question 3 of 7</Text>
                             <ProgressViewIOS progress={0.375} progressTintColor={'#86B2CA'} />
                         </View>
                             <Text>Have you been pregnant before?</Text>
@@ -152,7 +142,7 @@ export default class Questions extends Component {
                     <Header />
                     <Content >
                         <View style={{ alignSelf: "center" }}>
-                            <Text>Question 4 of 8</Text>
+                            <Text>Question 4 of 7</Text>
                             <ProgressViewIOS progress={0.5} progressTintColor={'#86B2CA'} />
                         </View>
                             <Text>Have you ever had an ectopic pregnancy?</Text>
@@ -174,13 +164,57 @@ export default class Questions extends Component {
                     <Header />
                     <Content >
                         <View style={{ alignSelf: "center" }}>
-                            <Text>Question 5 of 8</Text>
+                            <Text>Question 5 of 7</Text>
                             <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                         </View>
                             <Text>Have you ever had a miscarriage?</Text>
                                 <Picker
                                     selectedValue={this.state.miscarriages}
                                     onValueChange={(miscarriages) => { this.setState({ miscarriages }); }}
+                                >
+                                    <Picker.Item label={'No'} value={'no'} />
+                                    <Picker.Item label={'Yes'} value={'yes'} />
+                                </Picker>
+                    </Content>
+                    <Footer />
+                </Container>
+            );
+        }
+        if (question === 'liveBirth') {
+            return (
+                <Container>
+                    <Header />
+                    <Content >
+                        <View style={{ alignSelf: "center" }}>
+                            <Text>Question 6 of 7</Text>
+                            <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
+                        </View>
+                            <Text>Have you ever given birth before (live birth)?</Text>
+                                <Picker
+                                    selectedValue={this.state.liveBirth}
+                                    onValueChange={(liveBirth) => { this.setState({ liveBirth }); }}
+                                >
+                                    <Picker.Item label={'No'} value={'no'} />
+                                    <Picker.Item label={'Yes'} value={'yes'} />
+                                </Picker>
+                    </Content>
+                    <Footer />
+                </Container>
+            );
+        }
+        if (question === 'currentIVF') {
+            return (
+                <Container>
+                    <Header />
+                    <Content >
+                        <View style={{ alignSelf: "center" }}>
+                            <Text>Question 7 of 7</Text>
+                            <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
+                        </View>
+                            <Text>Hare you and/or are you currently undergoing IVF?</Text>
+                                <Picker
+                                    selectedValue={this.state.currentIVF}
+                                    onValueChange={(currentIVF) => { this.setState({ currentIVF }); }}
                                 >
                                     <Picker.Item label={'No'} value={'no'} />
                                     <Picker.Item label={'Yes'} value={'yes'} />
