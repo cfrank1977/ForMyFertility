@@ -6,19 +6,8 @@ export default class HomeScreen extends React.Component {
   render() {
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.toggleDrawer()}>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>ForMyFertility</Title>
-          </Body>
-          <Right />
-        </Header>
+        <Header />
+          
         <Content >
           <Header>
             <Text>I want to:</Text>

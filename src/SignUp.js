@@ -91,19 +91,8 @@ export default class SignUp extends Component {
   renderConfirmationForm() {
     return (
       <Container>
-        <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.toggleDrawer()}>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Sign Up</Title>
-          </Body>
-          <Right />
-        </Header>
+        <Header />
+          
         <Content padder>
           <Form>
             <Item stackedLabel>

@@ -6,7 +6,8 @@ import config from './aws-exports'
 import AppSyncConfig from './appsync-config' // NEW
 Amplify.configure({ ...config, ...AppSyncConfig }) // UPDATED
 import HomeScreen from './src/index';
-import Questions from './src/Questions';
+import BottomTabs from './src/BottomTabs'
+
 
 export default class App extends Component {
   state = {
@@ -24,7 +25,7 @@ export default class App extends Component {
     };
     return (
         
-         <HomeScreen 
+         <BottomTabs 
             screenProps={{
               authenticate: this.authenticate.bind(this)
               }}/>

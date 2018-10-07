@@ -46,7 +46,7 @@ export default class SignIn extends Component {
       await Auth.signIn(this.state.email, this.state.password);
       console.log('successful sign in!')
      
-      this.props.navigation.navigate('App');
+      this.props.navigation.navigate('Questions');
     } catch (e) {
       alert(e.message);
       this.setState({ isLoading: false });
@@ -56,19 +56,7 @@ export default class SignIn extends Component {
   render() {
     return (
       <Container>
-      <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.toggleDrawer()}>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Sign In</Title>
-          </Body>
-          <Right />
-        </Header>
+      <Header />
         <Content padder>
           <Form>
             <Item stackedLabel>
