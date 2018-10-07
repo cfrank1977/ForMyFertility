@@ -1,5 +1,7 @@
 import React from "react";
-import { Container, Body, Content, Text, Card, CardItem, Header, Left, Right, Button, Icon, Title } from "native-base";
+import { StyleSheet } from "react-native";
+import { Container, Body, Content, Text, Header, Left, Right, Button, Icon, Title, Footer } from "native-base";
+
 export default class HomeScreen extends React.Component {
   render() {
     return (
@@ -13,22 +15,37 @@ export default class HomeScreen extends React.Component {
             </Button>
           </Left>
           <Body>
-            <Title>HomeScreen</Title>
+            <Title>ForMyFertility</Title>
           </Body>
           <Right />
         </Header>
-        <Content padder>
-          <Card>
-            <CardItem>
-              <Body>
-                <Text>Information about our app will be here!</Text>
-              </Body>
-            </CardItem>
-          </Card>
+        <Content >
+          <Header>
+            <Text>I want to:</Text>
+          </Header>
+          
+            <Button full rounded primary
+            style={{ marginTop: 10 }}
+            onPress={() => this.props.navigation.navigate("SignIn")}>
+              <Text>Get pregnant</Text>
+            </Button>
+          
+            <Button full rounded disabled style={{ marginTop: 10 }}>
+              <Text>Follow my pregnancy</Text>
+            </Button>
+          
+            <Button full rounded disabled style={{ marginTop: 10 }}>
+              <Text>Track my cycle</Text>
+            </Button>
+
+          <Footer>
+            <Text>By continuing, you agree to
+              the Privacy Policy and the Terms of Service
+          </Text>
+          </Footer>
 
         </Content>
       </Container>
     );
   }
 }
-
