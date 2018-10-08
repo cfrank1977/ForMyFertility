@@ -2,9 +2,9 @@ import React from "react";
 
 import { createDrawerNavigator, createSwitchNavigator } from "react-navigation";
 
-import Questions from "./Questions.js";
+import Questions from "./QuesitonsContainer";
 import HomeScreen from "./HomeScreen.js";
-import SignIn from "./SignIn"
+import SignIn from "./BottomTabs"
 import SignUp from "./SignUp"
 import SideBar from "./SideBar";
 

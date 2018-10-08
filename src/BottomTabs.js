@@ -5,7 +5,6 @@ import SignIn from './SignIn'
 import SignUp from './SignUp'
 
 const config = {
-    Home: { screen: HomeScreen },
     SignIn: { screen: SignIn},
     SignUp: { screen: SignUp}
 }

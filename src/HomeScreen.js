@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import { Container, Body, Content, Text, Header, Left, Right, Button, Icon, Title, Footer } from "native-base";
+import { Container, Content, Text, Header, Button, Footer } from "native-base";
+import bottomTabs from './BottomTabs'
 
 export default class HomeScreen extends React.Component {
   render() {
@@ -14,16 +14,16 @@ export default class HomeScreen extends React.Component {
           </Header>
           
             <Button full rounded primary
-            style={{ marginTop: 10 }}
+            style={{ marginTop: 20 }}
             onPress={() => this.props.navigation.navigate("SignIn")}>
               <Text>Get pregnant</Text>
             </Button>
           
-            <Button full rounded disabled style={{ marginTop: 10 }}>
+            <Button full rounded disabled style={{ marginTop: 20 }}>
               <Text>Follow my pregnancy</Text>
             </Button>
           
-            <Button full rounded disabled style={{ marginTop: 10 }}>
+            <Button full rounded disabled style={{ marginTop: 20 }}>
               <Text>Track my cycle</Text>
             </Button>
 

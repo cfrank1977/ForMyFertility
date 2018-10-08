@@ -92,10 +92,19 @@ export default class SignUp extends Component {
     return (
       <Container>
         <Header />
-          
         <Content padder>
           <Form>
-            <Item stackedLabel>
+            <Body style={{ marginTop: 10 }}>
+              <Text>
+                We take securing and protecting
+                your information very seriously.
+                Which is why we're asking you to
+                create a free account before we
+                ask you private questions about your
+                body and fertility history.
+            </Text>
+            </Body>
+            <Item stackedLabel style={{ marginTop: 30 }}>
               <Label>Confirmation Code</Label>
               <Input
                 onChange={this.handleChange}
@@ -123,22 +132,20 @@ export default class SignUp extends Component {
   renderForm() {
     return (
       <Container>
-      <Header>
-          <Left>
-            <Button
-              transparent
-              onPress={() => this.props.navigation.toggleDrawer()}>
-              <Icon name="menu" />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Sign Up</Title>
-          </Body>
-          <Right />
-        </Header>
+        <Header />
         <Content padder>
           <Form>
-            <Item stackedLabel>
+            <Body style={{ marginTop: 10 }}>
+              <Text>
+                We take securing and protecting
+                your information very seriously.
+                Which is why we're asking you to
+                create a free account before we
+                ask you private questions about your
+                body and fertility history.
+            </Text>
+            </Body>
+            <Item stackedLabel style={{ marginTop: 30 }}>
               <Label>Email</Label>
               <Input
                 keyboardType="email-address"
