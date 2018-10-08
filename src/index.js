@@ -2,7 +2,7 @@ import React from "react";
 
 import { createDrawerNavigator, createSwitchNavigator } from "react-navigation";
 
-import Questions from "./QuesitonsContainer";
+import Questions from "./QuesitonsForm";
 import HomeScreen from "./HomeScreen.js";
 import SignIn from "./BottomTabs"
 import SignUp from "./SignUp"

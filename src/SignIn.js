@@ -8,10 +8,6 @@ import {
   Header,
   Content,
   Form,
-  Icon,
-  Title,
-  Left,
-  Right,
   Item,
   Input,
   Label

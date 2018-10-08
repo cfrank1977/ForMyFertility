@@ -1,6 +1,5 @@
 import React from "react";
 import { Container, Content, Text, Header, Button, Footer } from "native-base";
-import bottomTabs from './BottomTabs'
 
 export default class HomeScreen extends React.Component {
   render() {

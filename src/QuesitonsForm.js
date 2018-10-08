@@ -1,29 +1,19 @@
 import React, { Component } from 'react';
-import { Alert } from 'react-native';
-import {
-    Picker,
-} from 'react-native'
+import PropTypes from 'prop-types';
 import {
     Container,
     Content,
-    Button,
-    Body,
-    Footer,
-    Header,
-    Left,
-    Right,
-    Title,
-    Icon,
-    Text,
-    View
 } from 'native-base';
 import { API, graphqlOperation } from 'aws-amplify';
-import Questions from './Questions'
+import Age from './Questions/Age'
+import YearTrying from './Questions/YearTrying'
+import Pregnant from './Questions/Pregnant'
 
-export default class QuestionsContainer extends Component {
-    constructor() {
-        super();
-        
+class QuestionsForm extends Component {
+    constructor(props) {
+        super(props);
+        this.nextPage = this.nextPage.bind(this);
+        this.previousPage = this.previousPage.bind(this);
         this.state = {
             gender: 'female',
             age: 1996,
@@ -36,21 +26,10 @@ export default class QuestionsContainer extends Component {
             miscarriages: 'no',
             maleSubfertility: 'no',
             maleSubfertilitCondition: 'none',
-            question: 'age',
+            page: 1,
             ages: [],
         }
     }
-
-    componentDidMount() {
-        let ages = [];
-        for (let i = 2005; i >= 1955; i--) {
-            ages.push(<Picker.Item key={i} label={`${i}`} value={i} />)
-        }
-        this.setState({
-            ages: ages
-        });
-    }
-
     onSubmit() {
         let query = `
             mutation add {
@@ -73,42 +52,40 @@ export default class QuestionsContainer extends Component {
         console.log(`Submit button pressed! API JSON ${JSON.stringify(this.state)}`)
     }
 
-    alert = (msg) => {
-        console.log(msg)
+    nextPage() {
+        this.setState({ page: this.state.page + 1 });
     }
 
-    handleChange(value) {
-        console.log(value)
-        this.setState({age: value})
+    previousPage() {
+        this.setState({ page: this.state.page - 1 });
     }
 
     render() {
-        let next = 'yearChildlessSex'
+        const { onSubmit } = this.props;
+        const { page } = this.state;
         return (
             <Container>
-                <Header>
-                    <Left>
-                        <Button
-                            transparent
-                            onPress={() => this.props.navigation.actions.goBack()}>
-                            <Icon name="arrow-back" />
-                        </Button>
-                    </Left>
-                    <Body>
-                        <Title>Previous</Title>
-                    </Body>
-                    <Right />
-                </Header>
                 <Content >
-                    <Questions props={this.state} />
-                    <Button full rounded success
-                        style={{ marginTop: 30 }}
-                        onPress={() => this.setState((state) => {return {question: 'yearChildlessSex'};})}>
-
-                        <Text>Next</Text>
-                    </Button>
+                    {page === 1 && <Age
+                        onSubmit={this.nextPage} />}
+                    {page === 2 &&
+                        <YearTrying
+                            previousPage={this.previousPage}
+                            onSubmit={this.nextPage}
+                        />}
+                    {page === 3 &&
+                        <Pregnant
+                            previousPage={this.previousPage}
+                            onSubmit={onSubmit}
+                        />}
                 </Content>
             </Container>
         );
     }
 }
+
+QuestionsForm.propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
+export default QuestionsForm;

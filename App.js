@@ -1,11 +1,12 @@
 
 import React, { Component } from 'react';
-
+import { Provider } from "react-redux";
 import Amplify, { Auth } from 'aws-amplify' 
 import config from './aws-exports' 
 import AppSyncConfig from './appsync-config' // NEW
 Amplify.configure({ ...config, ...AppSyncConfig }) // UPDATED
 import HomeScreen from './src/index';
+import store from "./src/Store";
 
 
 
@@ -24,11 +25,13 @@ export default class App extends Component {
       userHasAuthenticated: this.userHasAuthenticated
     };
     return (
-        
-         <HomeScreen 
+        <Provider store={store}>
+        <HomeScreen 
             screenProps={{
               authenticate: this.authenticate.bind(this)
               }}/>
+        </Provider>
+         
     );
   }
 }
