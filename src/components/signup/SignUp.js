@@ -77,6 +77,7 @@ export default class SignUp extends Component {
       await Auth.signIn(this.state.email, this.state.password);
 
       this.props.screenProps.authenticate(true)
+      this.props.navigation.navigate('FertilityForm');
 
     } catch (e) {
       alert(e.message);

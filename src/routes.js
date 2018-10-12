@@ -2,11 +2,11 @@ import React from "react";
 
 import { createDrawerNavigator, createSwitchNavigator } from "react-navigation";
 
-import Questions from "./QuesitonsForm";
-import HomeScreen from "./HomeScreen.js";
-import SignIn from "./BottomTabs"
-import SignUp from "./SignUp"
-import SideBar from "./SideBar";
+import FertilityForm from "./components/form/FertilityForm";
+import HomeScreen from "./components/home/HomeScreen.js";
+import SignIn from "./components/common/BottomTabs"
+import SignUp from "./components/signup/SignUp"
+import SideBar from "./components/common/SideBar";
 
 const AuthDrawer = createDrawerNavigator(
   {
@@ -21,7 +21,7 @@ const AuthDrawer = createDrawerNavigator(
 );
 const AppDrawer = createDrawerNavigator(
   {
-    Questions: { screen: Questions },
+    FertilityForm: { screen: FertilityForm },
     SignOut: { screen: SignIn },
     
   },

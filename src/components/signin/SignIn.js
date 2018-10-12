@@ -41,8 +41,8 @@ export default class SignIn extends Component {
     try {
       await Auth.signIn(this.state.email, this.state.password);
       console.log('successful sign in!')
-
-      this.props.navigation.navigate('Questions');
+      this.props.screenProps.authenticate(true)
+      this.props.navigation.navigate('FertilityForm');
     } catch (e) {
       alert(e.message);
       this.setState({ isLoading: false });

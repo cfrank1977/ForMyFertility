@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from 'react-navigation'
 
-import SignIn from './SignIn'
-import SignUp from './SignUp'
+import SignIn from '../signin/SignIn'
+import SignUp from '../signup/SignUp'
 
 const config = {
     SignIn: { screen: SignIn},

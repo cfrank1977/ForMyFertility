@@ -5,8 +5,8 @@ import Amplify, { Auth } from 'aws-amplify'
 import config from './aws-exports' 
 import AppSyncConfig from './appsync-config' // NEW
 Amplify.configure({ ...config, ...AppSyncConfig }) // UPDATED
-import HomeScreen from './src/index';
-import store from "./src/Store";
+import HomeScreen from './src/routes';
+import store from "./src/components/store/Store";
 
 
 

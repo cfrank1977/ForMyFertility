@@ -9,7 +9,7 @@ import Age from './Questions/Age'
 import YearTrying from './Questions/YearTrying'
 import Pregnant from './Questions/Pregnant'
 
-class QuestionsForm extends Component {
+class FertilityForm extends Component {
     constructor(props) {
         super(props);
         this.nextPage = this.nextPage.bind(this);
@@ -84,7 +84,7 @@ class QuestionsForm extends Component {
     }
 }
 
-QuestionsForm.propTypes = {
+FertilityForm.propTypes = {
     onSubmit: PropTypes.func.isRequired,
   };
 
