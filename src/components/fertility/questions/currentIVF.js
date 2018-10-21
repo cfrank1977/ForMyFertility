@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import { Alert } from 'react-native';
+import {
+    Control,
+    Form,
+    actions,
+} from 'react-redux-form/native';
 import {
     ProgressViewIOS,
     Picker,
@@ -12,7 +16,9 @@ import {
 
 
 export default class Questions extends Component {
-
+    handleSubmit(values) {
+        this.props.dispatch(actions.submit('fertilityQuestions', values));
+    }
     render() {
         return (
             <Content >
@@ -20,14 +26,14 @@ export default class Questions extends Component {
                     <Text>Question 7 of 7</Text>
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
+                
+                <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                 <Text>Have you and/or are you currently undergoing IVF?</Text>
-                <Picker
-                    selectedValue={this.props.props.currentIVF}
-                    onValueChange={(currentIVF) => { this.setState({ currentIVF }); }}
-                >
-                    <Picker.Item label={'No'} value={'no'} />
-                    <Picker.Item label={'Yes'} value={'yes'} />
-                </Picker>
+                    <Control.Picker model=".currentIVF">
+                        <Picker.Item label='No' value='no' />
+                        <Picker.Item label='Yes' value='yes' />
+                    </Control.Picker>
+                </Form >
             </Content>
         );
     }

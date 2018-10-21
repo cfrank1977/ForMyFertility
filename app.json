@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "ForMyFertility",
-    "description": "This project is to support couples through the fertilization process.",
-    "slug": "ForMyFertility",
+    "name": "FormTest",
+    "description": "This project is really great.",
+    "slug": "FormTest",
     "privacy": "public",
     "sdkVersion": "30.0.0",
     "platforms": ["ios", "android"],
@@ -21,8 +21,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.formylife360.formyfertility"
+      "supportsTablet": true
     }
   }
 }
