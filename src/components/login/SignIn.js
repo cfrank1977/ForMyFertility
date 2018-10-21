@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import {
   Container,
+  Body,
   Button,
   Text,
   Header,
@@ -11,7 +12,6 @@ import {
   Input,
   Label
 } from 'native-base';
-
 import { Auth } from 'aws-amplify'
 
 export default class SignIn extends Component {
@@ -41,7 +41,8 @@ export default class SignIn extends Component {
     try {
       await Auth.signIn(this.state.email, this.state.password);
       console.log('successful sign in!')
-      this.props.screenProps.authenticate(true)
+
+      this.props.navigation.navigate('Questions');
     } catch (e) {
       alert(e.message);
       this.setState({ isLoading: false });
@@ -52,12 +53,22 @@ export default class SignIn extends Component {
     return (
       <Container>
         <Header />
-        <Content>
+        <Content padder >
           <Form>
-            <Item stackedLabel>
+            <Body style={{ marginTop: 10 }}>
+              <Text>
+                We take securing and protecting
+                your information very seriously.
+                Which is why we're asking you to
+                create a free account before we
+                ask you private questions about your
+                body and fertility history.
+            </Text>
+            </Body>
+            <Item stackedLabel style={{ marginTop: 30 }}>
               <Label>Email</Label>
               <Input
-                autoFocus = {true}
+                autoFocus={true}
                 keyboardType="email-address"
                 autoCorrect={false}
                 autoCapitalize="none"
@@ -82,7 +93,7 @@ export default class SignIn extends Component {
             onPress={this.handleSubmit}
           >
             <Text>
-              Sign Ip
+              Sign In
               </Text>
           </Button>
         </Content>

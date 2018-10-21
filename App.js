@@ -1,50 +1,40 @@
-
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  View,
-} from 'react-native';
 
 import Amplify, { Auth } from 'aws-amplify' 
 import config from './aws-exports' 
-import AppSyncConfig from './appsync-config' // NEW
-Amplify.configure({ ...config, ...AppSyncConfig }) // UPDATED
+import AppSyncConfig from './appsync-config'
+Amplify.configure({ ...config, ...AppSyncConfig })
 
-import Tabs from './src/Tabs'
-import Questions from './src/QuestionCards';
+import { Provider } from 'react-redux';
+import configureStore from './src/store/configureStore';
+import initialState from './src/reducers/initialState';
+
+import HomeScreen from './src/components/home/index'
+
+const store = configureStore(initialState);
 
 export default class App extends Component {
   state = {
     isAuthenticated: false
-    
   }
+
   authenticate(isAuthenticated) {
     this.setState({ isAuthenticated })
+    this.props.navigation.navigate('App');
   }
+
   render() {
-    if(this.state.isAuthenticated) {
-      console.log('Auth: ', Auth)
-      return (
-        <View style={{ flex: 1}} >
-         <Questions />
-        </View>
-      )
-    }
+    const childProps = {
+      isAuthenticated: this.state.isAuthenticated,
+      userHasAuthenticated: this.userHasAuthenticated
+    };
+
     return (
-        <View style={styles.container}>
-         <Tabs 
-            screenProps={{
+      <Provider store={store}>
+        <HomeScreen screenProps={{
               authenticate: this.authenticate.bind(this)
               }}/>
-        </View>
+      </Provider>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  
-  container: {
-    flex: 1,
-    backgroundColor: '#F5FCFF',
-  },
-});

@@ -4,6 +4,7 @@ import {
   Container,
   Button,
   Text,
+  Body,
   Header,
   Content,
   Form,
@@ -75,7 +76,7 @@ export default class SignUp extends Component {
       await Auth.confirmSignUp(this.state.email, this.state.confirmationCode);
       await Auth.signIn(this.state.email, this.state.password);
 
-      this.props.userHasAuthenticated(true);
+      this.props.screenProps.authenticate(true)
 
     } catch (e) {
       alert(e.message);
@@ -87,9 +88,19 @@ export default class SignUp extends Component {
     return (
       <Container>
         <Header />
-        <Content>
+        <Content padder>
           <Form>
-            <Item stackedLabel>
+            <Body style={{ marginTop: 10 }}>
+              <Text>
+                We take securing and protecting
+                your information very seriously.
+                Which is why we're asking you to
+                create a free account before we
+                ask you private questions about your
+                body and fertility history.
+            </Text>
+            </Body>
+            <Item stackedLabel style={{ marginTop: 30 }}>
               <Label>Confirmation Code</Label>
               <Input
                 onChange={this.handleChange}
@@ -118,15 +129,25 @@ export default class SignUp extends Component {
     return (
       <Container>
         <Header />
-        <Content>
+        <Content padder>
           <Form>
-            <Item stackedLabel>
+            <Body style={{ marginTop: 10 }}>
+              <Text>
+                We take securing and protecting
+                your information very seriously.
+                Which is why we're asking you to
+                create a free account before we
+                ask you private questions about your
+                body and fertility history.
+            </Text>
+            </Body>
+            <Item stackedLabel style={{ marginTop: 30 }}>
               <Label>Email</Label>
               <Input
                 keyboardType="email-address"
                 autoCorrect={false}
                 autoCapitalize="none"
-                onChangeText={(email) => {this.setState({email}); }}
+                onChangeText={(email) => { this.setState({ email }); }}
                 value={this.state.email}
               />
             </Item>
@@ -134,7 +155,7 @@ export default class SignUp extends Component {
               <Label>Password</Label>
               <Input
                 secureTextEntry
-                onChangeText={(password) => {this.setState({password}); }}
+                onChangeText={(password) => { this.setState({ password }); }}
                 value={this.state.password}
               />
             </Item>
@@ -142,7 +163,7 @@ export default class SignUp extends Component {
               <Label>Confirm Password</Label>
               <Input
                 secureTextEntry
-                onChangeText={(confirmPassword) => {this.setState({confirmPassword}); }}
+                onChangeText={(confirmPassword) => { this.setState({ confirmPassword }); }}
                 value={this.state.confirmPassword}
               />
             </Item>
