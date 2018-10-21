@@ -16,7 +16,7 @@ import currentIVF from './src/components/fertility/questions/currentIVF'
 
 const store = configureStore(initialState);
 
-const ConnectedUserForm = connect(null)(currentIVF);
+const ConnectedUserForm = connect(null)(UserForm);
 
 export default class App extends Component {
   render() {
