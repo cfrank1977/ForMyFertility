@@ -7,6 +7,7 @@ import {
     actions,
 } from 'react-redux-form/native';
 import {
+    Button, 
     Content,
     Text,
     View
@@ -31,6 +32,11 @@ export default class Miscarriage extends Component {
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
+                    <View>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("LiveBirth")}>
+                            <Text>Next</Text>
+                        </Button>
+                    </View>
                 </Form >
             </Content>
         );

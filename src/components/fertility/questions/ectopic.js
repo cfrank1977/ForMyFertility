@@ -9,6 +9,7 @@ import {
     Picker,
 } from 'react-native'
 import {
+    Button,
     Content,
     Text,
     View
@@ -32,6 +33,11 @@ export default class Questions extends Component {
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
+                    <View>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Miscarriage")}>
+                            <Text>Next</Text>
+                        </Button>
+                    </View>
                 </Form >
             </Content>
         );

@@ -8,6 +8,7 @@ import {
 } from 'react-redux-form/native';
 import {
     Content,
+    Button,
     Text,
     View
 } from 'native-base';
@@ -29,6 +30,11 @@ export default class YearTrying extends Component {
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
+                    <View>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Pregnant")}>
+                            <Text>Next</Text>
+                        </Button>
+                    </View>
                 </Form >
             </Content>
         );

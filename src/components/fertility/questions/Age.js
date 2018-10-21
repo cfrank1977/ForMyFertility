@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ProgressViewIOS, Picker } from 'react-native';
+import stacknav from '../fertilityForm';
 
 import {
     Control,
@@ -8,6 +9,7 @@ import {
 } from 'react-redux-form/native';
 import {
     Content,
+    Button,
     Text,
     View
 } from 'native-base';
@@ -18,12 +20,12 @@ for (let i = 2005; i >= 1955; i--) {
 }
 
 export default class Age extends Component {
-
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
     render() {
         return (
+
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
                     <Text>Question 1 of 7</Text>
@@ -34,6 +36,11 @@ export default class Age extends Component {
                     <Control.Picker model=".age">
                         {ages}
                     </Control.Picker>
+                    <View>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("YearTrying")}>
+                            <Text>Next</Text>
+                        </Button>
+                    </View>
                 </Form >
             </Content>
         );
