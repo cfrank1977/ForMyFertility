@@ -22,7 +22,8 @@ for (let i = 2005; i >= 1955; i--) {
 export default class Age extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
-    }
+    };
+    
     render() {
         return (
 
@@ -33,7 +34,7 @@ export default class Age extends Component {
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>What year were you born?</Text>
-                    <Control.Picker model=".age">
+                    <Control.Picker model=".age" >
                         {ages}
                     </Control.Picker>
                     <View>

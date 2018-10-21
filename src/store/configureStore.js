@@ -5,7 +5,7 @@ import logger from 'redux-logger';
 
 export default function configureStore(initialState) {
     return createStore(combineForms({
-    initialState,
+      fertilityQuestions: initialState,
   }), applyMiddleware(thunk, logger)
   );
 }

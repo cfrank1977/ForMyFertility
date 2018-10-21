@@ -1,3 +1,9 @@
 export default {
-    fertilityQuestions: []
+    Age: '',
+    yearChildlessSex: '',
+    hadPregnancy: '',
+    miscarriages: '',
+    liveBirth: '',
+    hadEctopicPregnancy: '',
+    currentIVF: '',
 };
