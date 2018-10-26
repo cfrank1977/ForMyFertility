@@ -31,7 +31,7 @@ export default class YearTrying extends Component {
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Pregnant")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("AmountYearsTrying")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

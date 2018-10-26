@@ -1,40 +1,41 @@
 import React, { Component } from 'react';
-import {
-    ProgressViewIOS,
-    Picker,
-} from 'react-native';
+import { ProgressViewIOS, Picker } from 'react-native';
+
 import {
     Control,
     Form,
     actions,
 } from 'react-redux-form/native';
 import {
-    Button,
     Content,
+    Button,
     Text,
     View
 } from 'native-base';
 
+let years = [];
+for (let i = 1; i > 20; i++) {
+    years.push(<Picker.Item key={i} label={`${i}`} value={i} />)
+}
 
-export default class LiveBirth extends Component {
+export default class AmountYearsTrying extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
     render() {
         return (
-            <Content >
+            <Content>
                 <View style={{ alignSelf: "center", margin: 10 }}>
-                    <Text>Question 6 of 7</Text>
-                    <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
+                    <Text>Question 2 of 7</Text>
+                    <ProgressViewIOS progress={0.25} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Have you ever given birth before (live birth)?</Text>
-                    <Control.Picker model=".liveBirth">
-                        <Picker.Item label='No' value='no' />
-                        <Picker.Item label='Yes' value='yes' />
+                    <Text>How many years have you been trying to get pregnate?</Text>
+                    <Control.Picker model=".amountYearsChildlessSex">
+                        {years}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("GynecologicalCauses")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Pregnant")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
