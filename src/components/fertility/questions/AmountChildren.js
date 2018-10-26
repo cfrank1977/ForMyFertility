@@ -16,7 +16,7 @@ import {
 } from 'native-base';
 
 let children = [];
-for (let i = 1; i > 20; i++) {
+for (let i = 1; i < 20; i++) {
     children.push(<Picker.Item key={i} label={`${i}`} value={i} />)
 }
 
@@ -32,7 +32,7 @@ export default class AmountChildren extends Component {
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Have you ever given birth before (live birth)?</Text>
+                    <Text>How many children have you give birth to (live birth)?</Text>
                     <Control.Picker model=".amountChildren">
                     {children}
                     </Control.Picker>

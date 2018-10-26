@@ -5,7 +5,9 @@ export default {
     hadPregnancy: '',
     miscarriages: '',
     liveBirth: '',
+    amountChildren: '',
     gynecologicalCauses: '',
+    whichGynecologicalCauses: '',
     hadEctopicPregnancy: '',
     currentIVF: '',
 };

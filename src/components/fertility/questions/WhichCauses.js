@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { ProgressViewIOS, Picker } from 'react-native';
-
 import {
     Control,
     Form,

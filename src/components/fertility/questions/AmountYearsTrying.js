@@ -14,7 +14,7 @@ import {
 } from 'native-base';
 
 let years = [];
-for (let i = 1; i > 20; i++) {
+for (let i = 1; i < 20; i++) {
     years.push(<Picker.Item key={i} label={`${i}`} value={i} />)
 }
 
