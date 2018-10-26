@@ -16,6 +16,8 @@ export default createStackNavigator({
     Ectopic: { screen: Ectopic},
     Miscarriage: { screen: Miscarriage},
     LiveBirth: { screen: LiveBirth},
+    AmountChildren: { screen: AmountChildren},
     GynecologicalCauses: { screen: GynecologicalCauses},
+    WhichGynecologicalCauses: { screen: WhichGynecologicalCauses},
     CurrentIVF: { screen: CurrentIVF},
   });

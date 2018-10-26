@@ -33,7 +33,7 @@ export default class GynecologicalCauses extends Component {
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("CurrentIVF")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("WhichGynecologicalCauses")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ProgressViewIOS, Picker } from 'react-native';
-import stacknav from '../fertilityForm';
+import stacknav from '../FertilityForm';
 
 import {
     Control,

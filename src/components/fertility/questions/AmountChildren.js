@@ -15,8 +15,12 @@ import {
     View
 } from 'native-base';
 
+let children = [];
+for (let i = 1; i > 20; i++) {
+    children.push(<Picker.Item key={i} label={`${i}`} value={i} />)
+}
 
-export default class LiveBirth extends Component {
+export default class AmountChildren extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
@@ -29,12 +33,11 @@ export default class LiveBirth extends Component {
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Have you ever given birth before (live birth)?</Text>
-                    <Control.Picker model=".liveBirth">
-                        <Picker.Item label='No' value='no' />
-                        <Picker.Item label='Yes' value='yes' />
+                    <Control.Picker model=".amountChildren">
+                    {children}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("AmountChildren")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("GynecologicalCauses")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
