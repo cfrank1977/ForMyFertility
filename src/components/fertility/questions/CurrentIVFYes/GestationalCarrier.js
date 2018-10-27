@@ -14,8 +14,7 @@ import {
     View
 } from 'native-base';
 
-
-export default class CurrentIVF extends Component {
+export default class GestationalCarrier extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
@@ -26,10 +25,9 @@ export default class CurrentIVF extends Component {
                     <Text>Question 7 of 7</Text>
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
-                
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                <Text>Have you and/or are you currently undergoing IVF?</Text>
-                    <Control.Picker model=".currentIVF">
+                <Text>Are you using a gestational carrier?</Text>
+                    <Control.Picker model=".gestationalcarrier">
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
