@@ -8,6 +8,7 @@ import Ectopic from './questions/Ectopic';
 import GynecologicalCauses from './questions/GynecologicalCauses'
 import LiveBirth from './questions/LiveBirth';
 import Miscarriage from './questions/Miscarriage';
+import Partner from './questions/Partner';
 import Pregnant from './questions/Pregnant';
 import WhichGynecologicalCauses from './questions/WhichCauses'
 import YearTrying from './questions/YearTrying';
@@ -23,5 +24,6 @@ export default createStackNavigator({
     AmountChildren: { screen: AmountChildren},
     GynecologicalCauses: { screen: GynecologicalCauses},
     WhichGynecologicalCauses: { screen: WhichGynecologicalCauses},
+    Partner: { screen: Partner},
     CurrentIVF: { screen: CurrentIVF},
   });

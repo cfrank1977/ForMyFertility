@@ -7,6 +7,7 @@ export default {
     liveBirth: '',
     amountChildren: '',
     gynecologicalCauses: '',
+    partner: '',
     whichGynecologicalCauses: '',
     hadEctopicPregnancy: '',
     currentIVF: '',

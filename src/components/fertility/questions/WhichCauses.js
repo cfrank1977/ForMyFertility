@@ -26,7 +26,7 @@ export default class WhichGynecologicalCauses extends Component {
                 </View>
 
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>A.	Which of the following describe your condition or diagnosis most appropriately? </Text>
+                    <Text>Which of the following describe your condition or diagnosis most appropriately? </Text>
                     <Control.Picker model=".whichGynecologicalCauses">
                         <Picker.Item label='Endometriosis' value='endometriosis' />
                         <Picker.Item label='Tubal Factor' value='tubalfactor' />
