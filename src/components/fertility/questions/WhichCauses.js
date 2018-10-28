@@ -42,7 +42,7 @@ export default class WhichGynecologicalCauses extends Component {
                         <Picker.Item label='Infection of the Uterus' value='uterusinfection' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("CurrentIVF")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Partner")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

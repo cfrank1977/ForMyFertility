@@ -13,10 +13,22 @@ import {
 } from 'native-base';
 
 export default class Partner extends Component {
-    handleSubmit(values) {
-        this.props.dispatch(actions.submit('fertilityQuestions', values));
-    };
-
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            NextPage: "CurrentIVF",
+        };
+      }
+    handleSubmit(answer) {
+        console.log(answer);
+        if (answer === "yes") {
+            this.NextPage = "PartnerIssues"
+        } else {
+            this.NextPage = "CurrentIVF"
+        }
+        return answer;
+    }
     render() {
         return (
 
@@ -27,16 +39,26 @@ export default class Partner extends Component {
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Is the husband/partner suffering from any male cause(s) of subfertility?</Text>
-                    <Control.Picker model=".partner" >
+                    <Control
+                    component={Picker}
+                        mapProps={{
+                            onResponderGrant: ({ onFocus }) => onFocus,
+                            onResponderRelease: ({ onBlur }) => onBlur,
+                            selectedValue: ({ modelValue }) => this.handleSubmit(modelValue),
+                            onValueChange: ({ onChange }) => onChange,
+                            onChange: undefined,
+                        }} 
+                         model=".partner"
+                        >
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
-                    </Control.Picker>
+                    </Control>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("YearTrying")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate(this.NextPage)}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }
