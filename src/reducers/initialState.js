@@ -1,14 +1,9 @@
 export default {
-    age: '',
+    Age: '',
     yearChildlessSex: '',
-    amountYearsChildlessSex: '',
     hadPregnancy: '',
     miscarriages: '',
     liveBirth: '',
-    amountChildren: '',
-    gynecologicalCauses: '',
-    partner: '',
-    whichGynecologicalCauses: '',
     hadEctopicPregnancy: '',
     currentIVF: '',
 };
