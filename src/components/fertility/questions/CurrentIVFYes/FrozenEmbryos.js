@@ -30,7 +30,7 @@ export default class FrozenEmbryos extends Component {
                         <Picker.Item label='Frozen' value='frozen' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("LiveBirth")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("GestationalCarrier")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

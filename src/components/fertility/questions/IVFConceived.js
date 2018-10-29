@@ -13,10 +13,22 @@ import {
 } from 'native-base';
 
 export default class IVFConceived extends Component {
-    handleSubmit(values) {
-        this.props.dispatch(actions.submit('fertilityQuestions', values));
-    };
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            NextPage: "Report",
+        };
+    }
+    handleSubmit(answer) {
+        console.log(answer);
+        if (answer === "yes") {
+            this.NextPage = "SingletonMultiBirth"
+        } else {
+            this.NextPage = "Report"
+        }
+        return answer;
+    }
     render() {
         return (
 
@@ -27,16 +39,26 @@ export default class IVFConceived extends Component {
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Have you ever had an IVF-conceived live birth</Text>
-                    <Control.Picker model=".ivfconceived" >
+                    <Control
+                        component={Picker}
+                        mapProps={{
+                            onResponderGrant: ({ onFocus }) => onFocus,
+                            onResponderRelease: ({ onBlur }) => onBlur,
+                            selectedValue: ({ modelValue }) => this.handleSubmit(modelValue),
+                            onValueChange: ({ onChange }) => onChange,
+                            onChange: undefined,
+                        }}
+                        model=".ivfconceived"
+                    >
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
-                    </Control.Picker>
+                    </Control>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("YearTrying")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate(this.NextPage)}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

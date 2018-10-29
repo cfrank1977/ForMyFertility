@@ -35,7 +35,7 @@ export default class IVFCYCLES extends Component {
                         {ivfcycles}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Pregnant")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Hormone")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

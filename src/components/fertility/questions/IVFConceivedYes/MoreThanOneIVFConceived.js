@@ -33,7 +33,12 @@ export default class MoreThanOneIVFConceived extends Component {
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
-                </Form >
+                    <View>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Report")}>
+                            <Text>Next</Text>
+                        </Button>
+                    </View>
+                </Form>
             </Content>
         );
     }

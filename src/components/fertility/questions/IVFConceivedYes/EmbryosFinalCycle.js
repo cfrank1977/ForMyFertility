@@ -37,11 +37,11 @@ export default class EmbryosFinalCycle extends Component {
                     {embryosfinalcycle}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("GynecologicalCauses")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("MoreThaOneIVFConceived")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

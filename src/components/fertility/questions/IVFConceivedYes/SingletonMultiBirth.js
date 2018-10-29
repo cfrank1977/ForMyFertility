@@ -12,7 +12,7 @@ import {
     View
 } from 'native-base';
 
-export default class SingletonMulitBirth extends Component {
+export default class SingletonMultiBirth extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     };
@@ -31,11 +31,11 @@ export default class SingletonMulitBirth extends Component {
                         <Picker.Item label='Multiple' value='multiple' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("YearTrying")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("AmountPerfectHealth")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

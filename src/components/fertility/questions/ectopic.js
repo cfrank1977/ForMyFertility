@@ -34,7 +34,7 @@ export default class Questions extends Component {
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Miscarriage")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("LiveBirth")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

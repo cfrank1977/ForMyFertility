@@ -14,8 +14,21 @@ import {
 
 
 export default class Pregnant extends Component {
-    handleSubmit(values) {
-        this.props.dispatch(actions.submit('fertilityQuestions', values));
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            NextPage: "GynecologicalCauses",
+        };
+    }
+    handleSubmit(answer) {
+        console.log(answer);
+        if (answer === "yes") {
+            this.NextPage = "Miscarriage"
+        } else {
+            this.NextPage = "GynecologicalCauses"
+        }
+        return answer;
     }
     render() {
         return (
@@ -26,16 +39,26 @@ export default class Pregnant extends Component {
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Have you been pregnant before?</Text>
-                    <Control.Picker model=".hadPregnancy">
+                    <Control
+                        component={Picker}
+                        mapProps={{
+                            onResponderGrant: ({ onFocus }) => onFocus,
+                            onResponderRelease: ({ onBlur }) => onBlur,
+                            selectedValue: ({ modelValue }) => this.handleSubmit(modelValue),
+                            onValueChange: ({ onChange }) => onChange,
+                            onChange: undefined,
+                        }}
+                        model=".hadPregnancy"
+                    >
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
-                    </Control.Picker>
+                    </Control>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Ectopic")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate(this.NextPage)}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

@@ -37,11 +37,11 @@ export default class AmountPerfectHealth extends Component {
                     {amountperfecthealth}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("GynecologicalCauses")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("EmbryosFinalCycle")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

@@ -30,7 +30,7 @@ export default class DonorEmbryos extends Component {
                         <Picker.Item label='Donor' value='donor' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("LiveBirth")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("FrozenEmbryos")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

@@ -32,7 +32,7 @@ export default class Miscarriage extends Component {
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("LiveBirth")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Ectopic")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

@@ -33,7 +33,12 @@ export default class ICSI extends Component {
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
-                </Form >
+                    <View>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("IVFCYCLES")}>
+                            <Text>Next</Text>
+                        </Button>
+                    </View>
+                </Form>
             </Content>
         );
     }

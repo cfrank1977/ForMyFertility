@@ -35,7 +35,7 @@ export default class Eggs extends Component {
                         {eggs}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Pregnant")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Embryos")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

@@ -35,11 +35,11 @@ export default class EmbryosTransfer extends Component {
                         {embryostransfered}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Pregnant")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("ICSI")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

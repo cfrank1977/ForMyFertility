@@ -32,11 +32,11 @@ export default class Hormone extends Component {
                         <Picker.Item label='Yes' value='yes' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("LiveBirth")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("DonorSperm")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }
