@@ -1,40 +1,41 @@
 import React, { Component } from 'react';
+import { ProgressViewIOS, Picker } from 'react-native';
+
 import {
     Control,
     Form,
     actions,
 } from 'react-redux-form/native';
 import {
-    ProgressViewIOS,
-    Picker,
-} from 'react-native'
-import {
-    Button,
     Content,
+    Button,
     Text,
     View
 } from 'native-base';
 
+let ivfcycles = [];
+for (let i = 1; i < 50; i++) {
+    ivfcycles.push(<Picker.Item key={i} label={`${i}`} value={i} />)
+}
 
-export default class Questions extends Component {
+export default class IVFCYCLES extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
     render() {
         return (
-            <Content >
+            <Content>
                 <View style={{ alignSelf: "center", margin: 10 }}>
-                    <Text>Question 4 of 7</Text>
-                    <ProgressViewIOS progress={0.5} progressTintColor={'#86B2CA'} />
+                    <Text>Question 2 of 7</Text>
+                    <ProgressViewIOS progress={0.25} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                <Text>Have you ever had an ectopic pregnancy?</Text>
-                    <Control.Picker model=".hadEctopicPregnancy">
-                        <Picker.Item label='No' value='no' />
-                        <Picker.Item label='Yes' value='yes' />
+                    <Text>How many treatment cycles have you completed to date?</Text>
+                    <Control.Picker model=".ivfcycles">
+                        {ivfcycles}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("LiveBirth")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Hormone")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { ProgressViewIOS, Picker } from 'react-native';
-import stacknav from '../fertilityForm';
-
 import {
     Control,
     Form,
@@ -42,7 +40,7 @@ export default class Age extends Component {
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

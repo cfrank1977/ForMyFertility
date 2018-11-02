@@ -13,7 +13,7 @@ import {
 } from 'native-base';
 
 
-export default class Miscarriage extends Component {
+export default class PartnarIssues extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
@@ -26,13 +26,17 @@ export default class Miscarriage extends Component {
                 </View>
 
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Have you ever had a miscarriage?</Text>
-                    <Control.Picker model=".miscarriages">
-                        <Picker.Item label='No' value='no' />
-                        <Picker.Item label='Yes' value='yes' />
+                    <Text>Which of the following describes his condition most-appropriately?</Text>
+                    <Control.Picker model=".whichPartnerIssue">
+                        <Picker.Item label='Azoospermia' value='azoospermia' />
+                        <Picker.Item label='Tubal Factor' value='tubalfactor' />
+                        <Picker.Item label='Idiopathy' value='idiopathy' />
+                        <Picker.Item label='Low Sperm Count' value='oligospermia' />
+                        <Picker.Item label='Poor Sperm Quality' value='poorspermquality' />
+                        <Picker.Item label='Poor Sperm Motility' value='poorspermmotility' />
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Ectopic")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("CurrentIVF")}>
                             <Text>Next</Text>
                         </Button>
                     </View>

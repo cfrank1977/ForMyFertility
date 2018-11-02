@@ -14,8 +14,21 @@ import {
 } from 'native-base';
 
 export default class YearTrying extends Component {
-    handleSubmit(values) {
-        this.props.dispatch(actions.submit('fertilityQuestions', values));
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            NextPage: "Pregnant",
+        };
+      }
+    handleSubmit(answer) {
+        console.log(answer);
+        if (answer === "yes") {
+            this.NextPage = "AmountYearsTrying"
+        } else {
+            this.NextPage = "Pregnant"
+        }
+        return answer;
     }
     render() {
         return (
@@ -24,18 +37,28 @@ export default class YearTrying extends Component {
                     <Text>Question 2 of 7</Text>
                     <ProgressViewIOS progress={0.25} progressTintColor={'#86B2CA'} />
                 </View>
-                <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
+                <Form model="fertilityQuestions" onSubmit={values => console.log(values)}>
                     <Text>Have you been trying to get pregnate for at least 1 year (unprotected and regular intercourse)?</Text>
-                    <Control.Picker model=".yearChildlessSex">
+                    <Control
+                        component={Picker}
+                        mapProps={{
+                            onResponderGrant: ({ onFocus }) => onFocus,
+                            onResponderRelease: ({ onBlur }) => onBlur,
+                            selectedValue: ({ modelValue }) => this.handleSubmit(modelValue),
+                            onValueChange: ({ onChange }) => onChange,
+                            onChange: undefined,
+                        }}
+                        model=".yearChildlessSex"
+                    >
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
-                    </Control.Picker>
+                    </Control>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Pregnant")}>
+                        <Button type="submit" full rounded primary onPress={() => this.props.navigation.navigate(this.NextPage)}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

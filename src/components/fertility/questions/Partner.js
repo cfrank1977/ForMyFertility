@@ -6,50 +6,50 @@ import {
     actions,
 } from 'react-redux-form/native';
 import {
-    Button,
     Content,
+    Button,
     Text,
     View
 } from 'native-base';
 
-
-export default class Pregnant extends Component {
+export default class Partner extends Component {
     constructor(props) {
         super(props);
-
+    
         this.state = {
-            NextPage: "GynecologicalCauses",
+            NextPage: "CurrentIVF",
         };
-    }
+      }
     handleSubmit(answer) {
         console.log(answer);
         if (answer === "yes") {
-            this.NextPage = "Miscarriage"
+            this.NextPage = "PartnerIssues"
         } else {
-            this.NextPage = "GynecologicalCauses"
+            this.NextPage = "CurrentIVF"
         }
         return answer;
     }
     render() {
         return (
+
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
-                    <Text>Question 3 of 7</Text>
-                    <ProgressViewIOS progress={0.375} progressTintColor={'#86B2CA'} />
+                    <Text>Question 1 of 7</Text>
+                    <ProgressViewIOS progress={0.125} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Have you been pregnant before?</Text>
+                    <Text>Is the husband/partner suffering from any male cause(s) of subfertility?</Text>
                     <Control
-                        component={Picker}
+                    component={Picker}
                         mapProps={{
                             onResponderGrant: ({ onFocus }) => onFocus,
                             onResponderRelease: ({ onBlur }) => onBlur,
                             selectedValue: ({ modelValue }) => this.handleSubmit(modelValue),
                             onValueChange: ({ onChange }) => onChange,
                             onChange: undefined,
-                        }}
-                        model=".hadPregnancy"
-                    >
+                        }} 
+                         model=".partner"
+                        >
                         <Picker.Item label='No' value='no' />
                         <Picker.Item label='Yes' value='yes' />
                     </Control>

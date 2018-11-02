@@ -5,7 +5,7 @@ import config from './aws-exports'
 import AppSyncConfig from './appsync-config'
 Amplify.configure({ ...config, ...AppSyncConfig })
 
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import configureStore from './src/store/configureStore';
 import initialState from './src/reducers/initialState';
 
@@ -29,9 +29,11 @@ export default class App extends Component {
       userHasAuthenticated: this.userHasAuthenticated
     };
 
+    const ConnectedUserForm = connect(null)(HomeScreen);
+
     return (
       <Provider store={store}>
-        <HomeScreen screenProps={{
+        <ConnectedUserForm screenProps={{
               authenticate: this.authenticate.bind(this)
               }}/>
       </Provider>

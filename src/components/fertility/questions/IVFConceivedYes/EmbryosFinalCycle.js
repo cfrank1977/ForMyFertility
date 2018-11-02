@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
-import { ProgressViewIOS, Picker } from 'react-native';
+import {
+    ProgressViewIOS,
+    Picker,
+} from 'react-native';
 import {
     Control,
     Form,
     actions,
 } from 'react-redux-form/native';
 import {
-    Button, 
+    Button,
     Content,
     Text,
     View
 } from 'native-base';
 
+let embryosfinalcycle = [];
+for (let i = 1; i < 20; i++) {
+    embryosfinalcycle.push(<Picker.Item key={i} label={`${i}`} value={i} />)
+}
 
-export default class Miscarriage extends Component {
+export default class EmbryosFinalCycle extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
@@ -21,22 +28,20 @@ export default class Miscarriage extends Component {
         return (
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
-                    <Text>Question 5 of 7</Text>
+                    <Text>Question 6 of 7</Text>
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
-
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Have you ever had a miscarriage?</Text>
-                    <Control.Picker model=".miscarriages">
-                        <Picker.Item label='No' value='no' />
-                        <Picker.Item label='Yes' value='yes' />
+                    <Text>How many embryos were replaced on the final cycle leading to this successful birth?</Text>
+                    <Control.Picker model=".embryosfinalcycle">
+                    {embryosfinalcycle}
                     </Control.Picker>
                     <View>
-                        <Button full rounded primary onPress={() => this.props.navigation.navigate("Ectopic")}>
+                        <Button full rounded primary onPress={() => this.props.navigation.navigate("MoreThanOneIVFConceived")}>
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }
