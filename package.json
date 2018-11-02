@@ -29,7 +29,8 @@
       "/.idea/"
     ],    
     "transformIgnorePatterns": [
-      "/node_modules/(?!native-base)/"
+      "/node_modules/(?!native-base)/",
+      "/node_modules/(?!aws-amplify)/"
     ]
   },
   "dependencies": {
