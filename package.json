@@ -7,7 +7,7 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
-    "test": "node ./node_modules/jest/bin/jest.js --watchAll",
+    "test": "jest",
     "test:watch": "jest --watch"
   },
   "jest": {
@@ -21,13 +21,13 @@
       "providesModuleNodeModules": [
         "react-native"
       ]
-    },    
+    },
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/android/",
       "/ios/",
       "/.idea/"
-    ],    
+    ],
     "transformIgnorePatterns": [
       "/node_modules/(?!native-base)/",
       "/node_modules/(?!aws-amplify)/"
