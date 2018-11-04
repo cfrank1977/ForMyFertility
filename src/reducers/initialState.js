@@ -1,5 +1,5 @@
 export default {
-    Age: '',
+    age: '',
     yearChildlessSex: '',
     hadPregnancy: '',
     miscarriages: '',
