@@ -12,7 +12,7 @@ import Miscarriage from './questions/Miscarriage';
 import Partner from './questions/Partner';
 import PartnerIssues from './questions/PartnerIssues';
 import Pregnant from './questions/Pregnant';
-import WhichGynecologicalCauses from './questions/WhichCauses';
+import WhichGynecologicalCauses from './questions/WhichGynecologicalCauses';
 import YearTrying from './questions/YearTrying';
 import DonorEggs from './questions/CurrentIVFYes/DonorEggs';
 import DonorEmbryos from './questions/CurrentIVFYes/DonorEmbryos';

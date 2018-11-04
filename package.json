@@ -6,7 +6,31 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "preset": "jest-expo",
+    "haste": {
+      "defaultPlatform": "ios",
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "providesModuleNodeModules": [
+        "react-native"
+      ]
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/android/",
+      "/ios/",
+      "/.idea/"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|react-navigation|expo|native-base|aws-amplify)/"
+    ]
   },
   "dependencies": {
     "aws-amplify": "^1.1.7",
@@ -23,6 +47,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "jest-expo": "^31.0.0",
     "merge": ">=1.2.1"
   }
 }

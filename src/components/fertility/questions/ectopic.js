@@ -16,7 +16,7 @@ import {
 } from 'native-base';
 
 
-export default class Questions extends Component {
+export default class Ectopic extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
