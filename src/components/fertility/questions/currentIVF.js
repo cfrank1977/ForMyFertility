@@ -15,17 +15,14 @@ import {
     View
 } from 'native-base';
 
-
 export default class CurrentIVF extends Component {
     constructor(props) {
         super(props);
-    
         this.state = {
             NextPage: "IVFConceived",
         };
       }
     handleSubmit(answer) {
-        console.log(answer);
         if (answer === "yes") {
             this.NextPage = "Eggs"
         } else {

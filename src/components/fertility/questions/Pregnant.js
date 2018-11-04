@@ -12,17 +12,14 @@ import {
     View
 } from 'native-base';
 
-
 export default class Pregnant extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             NextPage: "GynecologicalCauses",
         };
     }
     handleSubmit(answer) {
-        console.log(answer);
         if (answer === "yes") {
             this.NextPage = "Miscarriage"
         } else {

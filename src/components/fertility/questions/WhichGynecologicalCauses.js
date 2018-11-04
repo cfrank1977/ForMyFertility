@@ -12,7 +12,6 @@ import {
     View
 } from 'native-base';
 
-
 export default class WhichGynecologicalCauses extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
@@ -24,7 +23,6 @@ export default class WhichGynecologicalCauses extends Component {
                     <Text>Question 5 of 7</Text>
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
-
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Which of the following describe your condition or diagnosis most appropriately? </Text>
                     <Control.Picker model=".whichGynecologicalCauses">

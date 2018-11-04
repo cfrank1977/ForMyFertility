@@ -12,7 +12,6 @@ import {
     View
 } from 'native-base';
 
-
 export default class PartnarIssues extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
@@ -24,7 +23,6 @@ export default class PartnarIssues extends Component {
                     <Text>Question 5 of 7</Text>
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
-
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Which of the following describes his condition most-appropriately?</Text>
                     <Control.Picker model=".whichPartnerIssue">
@@ -40,7 +38,7 @@ export default class PartnarIssues extends Component {
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

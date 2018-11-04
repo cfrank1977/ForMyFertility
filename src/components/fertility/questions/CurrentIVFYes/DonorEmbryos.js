@@ -34,7 +34,7 @@ export default class DonorEmbryos extends Component {
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

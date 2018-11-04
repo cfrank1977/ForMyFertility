@@ -15,13 +15,11 @@ import {
 export default class Partner extends Component {
     constructor(props) {
         super(props);
-    
         this.state = {
             NextPage: "CurrentIVF",
         };
       }
     handleSubmit(answer) {
-        console.log(answer);
         if (answer === "yes") {
             this.NextPage = "PartnerIssues"
         } else {
@@ -31,7 +29,6 @@ export default class Partner extends Component {
     }
     render() {
         return (
-
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
                     <Text>Question 1 of 7</Text>

@@ -39,7 +39,7 @@ export default class AmountYearsTrying extends Component {
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

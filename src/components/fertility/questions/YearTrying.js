@@ -16,13 +16,11 @@ import {
 export default class YearTrying extends Component {
     constructor(props) {
         super(props);
-    
         this.state = {
             NextPage: "Pregnant",
         };
       }
     handleSubmit(answer) {
-        console.log(answer);
         if (answer === "yes") {
             this.NextPage = "AmountYearsTrying"
         } else {

@@ -39,7 +39,7 @@ export default class IVFCYCLES extends Component {
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }
