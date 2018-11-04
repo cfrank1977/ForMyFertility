@@ -12,7 +12,7 @@ import {
     View
 } from 'native-base';
 
-export default class DonorEggs extends Component {
+export default class DonorSperm extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
@@ -24,8 +24,8 @@ export default class DonorEggs extends Component {
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Are you using donor or partner eggs?</Text>
-                    <Control.Picker model=".donoreggs">
+                    <Text>Are you using donor or partner sperm?</Text>
+                    <Control.Picker model=".donorsperm">
                         <Picker.Item label='Partner' value='partner' />
                         <Picker.Item label='Donor' value='donor' />
                     </Control.Picker>

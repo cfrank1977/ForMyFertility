@@ -12,7 +12,7 @@ import {
     View
 } from 'native-base';
 
-export default class DonorSperm extends Component {
+export default class DonorEggs extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
     }
@@ -25,7 +25,7 @@ export default class DonorSperm extends Component {
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Are you using donor or partner sperm?</Text>
-                    <Control.Picker model=".donorsperm">
+                    <Control.Picker model=".donoreggs">
                         <Picker.Item label='Partner' value='partner' />
                         <Picker.Item label='Donor' value='donor' />
                     </Control.Picker>
