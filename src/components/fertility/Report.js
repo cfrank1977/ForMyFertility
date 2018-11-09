@@ -23,14 +23,33 @@ class Report extends Component {
                     gender: "female",
                     age: ${this.props.fertilityQuestions.age},
                     yearChildlessSex: "${this.props.fertilityQuestions.yearChildlessSex}",
-                    yearsSubfertile: ${this.props.fertilityQuestions.amountYearsChildlessSex},
+                    amountYearsChildlessSex: ${this.props.fertilityQuestions.amountYearsChildlessSex},
 	                currentIVF: "${this.props.fertilityQuestions.currentIVF}",
 	                hadPregnancy: "${this.props.fertilityQuestions.hadPregnancy}",
 	                hadEctopicPregnancy: "${this.props.fertilityQuestions.hadEctopicPregnancy}",
 	                liveBirth: "${this.props.fertilityQuestions.liveBirth}",
 	                miscarriages: "${this.props.fertilityQuestions.miscarriages}",
-	                maleSubfertility: "${this.props.fertilityQuestions.partner}",
-	                maleSubfertilitCondition: "${this.props.fertilityQuestions.whichPartnerIssue}"
+	                partner: "${this.props.fertilityQuestions.partner}",
+                    whichPartnerIssue: "${this.props.fertilityQuestions.whichPartnerIssue}"
+                    amountChildren: ${this.props.fertilityQuestions.amountChildren},
+    	            amountperfecthealth: ${this.props.fertilityQuestions.amountperfecthealth},
+    	            donorsperm: "${this.props.fertilityQuestions.donorsperm}",
+   		            donoreggs: "${this.props.fertilityQuestions.donoreggs}",
+    	            donorembryos: "${this.props.fertilityQuestions.donorembryos}",
+    	            eggs: "${this.props.fertilityQuestions.eggs}",
+    	            embryos: "${this.props.fertilityQuestions.embryos}",
+    	            embryostransfered: "${this.props.fertilityQuestions.embryostransfered}",
+    	            embryosfinalcycle: "${this.props.fertilityQuestions.embryosfinalcycle}",
+    	            frozenembryos: "${this.props.fertilityQuestions.frozenembryos}",
+    	            gynecologicalCauses: "${this.props.fertilityQuestions.gynecologicalCauses}",
+    	            gestationalcarrier: "${this.props.fertilityQuestions.gestationalcarrier}",
+    	            hormone: "${this.props.fertilityQuestions.hormone}",
+    	            icsi: "${this.props.fertilityQuestions.icsi}",
+    	            ivfcycles: "${this.props.fertilityQuestions.ivfcycles}",
+    	            ivfconceived: "${this.props.fertilityQuestions.ivfconceived}",
+    	            morethanoneivfconceived: "${this.props.fertilityQuestions.morethanoneivfconceived}",
+    	            singletonmulitbirth: "${this.props.fertilityQuestions.singletonmulitbirth}",
+    	            whichGynecologicalCauses: "${this.props.fertilityQuestions.whichGynecologicalCauses}"
                 }) { id }
             }
         `
