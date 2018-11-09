@@ -1,34 +1,35 @@
 import React, { Component } from 'react';
+import { API, graphqlOperation } from 'aws-amplify'
 import {
     Content,
+    Button,
     Text,
     View
 } from 'native-base';
 import { connect } from 'react-redux';
-import { Form, Control } from 'react-redux-form/native';
-import { API, graphqlOperation } from 'aws-amplify'
+import { Form, Control, actions } from 'react-redux-form/native';
+
 
 class Report extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {};
+    constructor(props, context) {
+        super(props, context);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
-    onSubmit() {
-        let apiData = { age: this.state.age, yearChildlessSex: this.state.yearChildlessSex, hadPregnancy: the.state.hadPregnancy };
-        let json = JSON.stringify(apiData);
+    handleSubmit() {
+        console.log(`Age within JSON = '${this.props.age}'`)
         let query = `
             mutation add {
                 createQuestions(input: {
-                    age: ${apiData.age},
-                    yearChildlessSex: "${apiData.yearChildlessSex}",
-                    hadPregnancy: "${apiData.hadPregnancy}"
+                    age: ${this.props.age},
+                    yearChildlessSex: "${this.props.yearChildlessSex}"
                 }) { id }
             }
         `
-        console.log(`Age within JSON = '${apiData.age}'`)
+        console.log(query)
         API.graphql(graphqlOperation(query))
-        console.log(`Submit button pressed! API JSON ${json}`)
+        
     }
+    
     render() {
         return (
             <Content >
@@ -36,18 +37,14 @@ class Report extends Component {
                     <Text>The Report</Text>
                 </View>
                 <Form model="fertilityQuestions">
-                    <Text>You were born in.</Text>
-                    <Control.TextInput
-                        model=".age"
-                    />
-                    <Text>You've been trying for at least a year.</Text>
-                    <Control.TextInput
-                        model=".yearChildlessSex"
-                    />
-                    <Text>You've been pregnant before.</Text>
-                    <Control.TextInput
-                        model=".hadPregnancy"
-                    />
+                    <Control.TextInput model=".age" />
+                    <Control.TextInput model=".yearChildlessSex" />
+
+                    <View>
+                        <Button type="submit" onPress={this.handleSubmit}>
+                            <Text> Get Report , {this.props.age} {this.props.yearChildlessSex}!</Text>
+                        </Button>
+                    </View>
                 </Form>
             </Content>
         );
