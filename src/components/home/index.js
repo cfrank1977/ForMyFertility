@@ -2,7 +2,7 @@
 
 import { createDrawerNavigator, createSwitchNavigator } from "react-navigation";
 
-import Questions from "../fertility/FertilityForm";
+import Questions from "../fertility/fertilityForm";
 import HomeScreen from "./HomeScreen";
 import SignIn from "../login/BottomTabs"
 import SignUp from "../login/SignUp"

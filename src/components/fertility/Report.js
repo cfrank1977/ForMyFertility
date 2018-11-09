@@ -20,16 +20,25 @@ class Report extends Component {
         let query = `
             mutation add {
                 createQuestions(input: {
-                    age: ${this.props.age},
-                    yearChildlessSex: "${this.props.yearChildlessSex}"
+                    gender: "female",
+                    age: ${this.props.fertilityQuestions.age},
+                    yearChildlessSex: "${this.props.fertilityQuestions.yearChildlessSex}",
+                    yearsSubfertile: ${this.props.fertilityQuestions.amountYearsChildlessSex},
+	                currentIVF: "${this.props.fertilityQuestions.currentIVF}",
+	                hadPregnancy: "${this.props.fertilityQuestions.hadPregnancy}",
+	                hadEctopicPregnancy: "${this.props.fertilityQuestions.hadEctopicPregnancy}",
+	                liveBirth: "${this.props.fertilityQuestions.liveBirth}",
+	                miscarriages: "${this.props.fertilityQuestions.miscarriages}",
+	                maleSubfertility: "${this.props.fertilityQuestions.partner}",
+	                maleSubfertilitCondition: "${this.props.fertilityQuestions.whichPartnerIssue}"
                 }) { id }
             }
         `
         console.log(query)
         API.graphql(graphqlOperation(query))
-        
+
     }
-    
+
     render() {
         return (
             <Content >
@@ -42,7 +51,7 @@ class Report extends Component {
 
                     <View>
                         <Button type="submit" onPress={this.handleSubmit}>
-                            <Text> Get Report , {this.props.age} {this.props.yearChildlessSex}!</Text>
+                            <Text> Get Report , {this.props.fertilityQuestions.age} {this.props.fertilityQuestions.yearChildlessSex}!</Text>
                         </Button>
                     </View>
                 </Form>
@@ -51,8 +60,4 @@ class Report extends Component {
     }
 }
 
-export default connect(({ fertilityQuestions }) => ({
-    age: fertilityQuestions.age,
-    yearChildlessSex: fertilityQuestions.yearChildlessSex,
-    hadPregnancy: fertilityQuestions.hadPregnancy
-}))(Report);
+export default connect(({ fertilityQuestions }) => ({ fertilityQuestions }))(Report);
