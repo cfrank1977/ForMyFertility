@@ -7,14 +7,33 @@ export const fetchQuestions = `query FetchQuestions($id: ID!) {
     gender
     age
     yearChildlessSex
-    yearsSubfertile
+    amountYearsChildlessSex
     currentIVF
     hadPregnancy
     hadEctopicPregnancy
     liveBirth
     miscarriages
-    maleSubfertility
-    maleSubfertilitCondition
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
   }
 }
 `;
@@ -24,14 +43,33 @@ export const getQuestions = `query GetQuestions($id: ID!) {
     gender
     age
     yearChildlessSex
-    yearsSubfertile
+    amountYearsChildlessSex
     currentIVF
     hadPregnancy
     hadEctopicPregnancy
     liveBirth
     miscarriages
-    maleSubfertility
-    maleSubfertilitCondition
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
   }
 }
 `;
@@ -46,14 +84,33 @@ export const listQuestions = `query ListQuestions(
       gender
       age
       yearChildlessSex
-      yearsSubfertile
+      amountYearsChildlessSex
       currentIVF
       hadPregnancy
       hadEctopicPregnancy
       liveBirth
       miscarriages
-      maleSubfertility
-      maleSubfertilitCondition
+      partner
+      whichPartnerIssue
+      amountChildren
+      amountperfecthealth
+      donorsperm
+      donoreggs
+      donorembryos
+      eggs
+      embryos
+      embryostransfered
+      embryosfinalcycle
+      frozenembryos
+      gynecologicalCauses
+      gestationalcarrier
+      hormone
+      icsi
+      ivfcycles
+      ivfconceived
+      morethanoneivfconceived
+      singletonmulitbirth
+      whichGynecologicalCauses
     }
     nextToken
   }

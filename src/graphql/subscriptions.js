@@ -6,27 +6,46 @@ export const onCreateQuestions = `subscription OnCreateQuestions(
   $gender: String
   $age: Int
   $yearChildlessSex: String
-  $yearsSubfertile: Int
+  $amountYearsChildlessSex: Int
 ) {
   onCreateQuestions(
     id: $id
     gender: $gender
     age: $age
     yearChildlessSex: $yearChildlessSex
-    yearsSubfertile: $yearsSubfertile
+    amountYearsChildlessSex: $amountYearsChildlessSex
   ) {
     id
     gender
     age
     yearChildlessSex
-    yearsSubfertile
+    amountYearsChildlessSex
     currentIVF
     hadPregnancy
     hadEctopicPregnancy
     liveBirth
     miscarriages
-    maleSubfertility
-    maleSubfertilitCondition
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
   }
 }
 `;
@@ -35,27 +54,46 @@ export const onUpdateQuestions = `subscription OnUpdateQuestions(
   $gender: String
   $age: Int
   $yearChildlessSex: String
-  $yearsSubfertile: Int
+  $amountYearsChildlessSex: Int
 ) {
   onUpdateQuestions(
     id: $id
     gender: $gender
     age: $age
     yearChildlessSex: $yearChildlessSex
-    yearsSubfertile: $yearsSubfertile
+    amountYearsChildlessSex: $amountYearsChildlessSex
   ) {
     id
     gender
     age
     yearChildlessSex
-    yearsSubfertile
+    amountYearsChildlessSex
     currentIVF
     hadPregnancy
     hadEctopicPregnancy
     liveBirth
     miscarriages
-    maleSubfertility
-    maleSubfertilitCondition
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
   }
 }
 `;
@@ -64,27 +102,46 @@ export const onDeleteQuestions = `subscription OnDeleteQuestions(
   $gender: String
   $age: Int
   $yearChildlessSex: String
-  $yearsSubfertile: Int
+  $amountYearsChildlessSex: Int
 ) {
   onDeleteQuestions(
     id: $id
     gender: $gender
     age: $age
     yearChildlessSex: $yearChildlessSex
-    yearsSubfertile: $yearsSubfertile
+    amountYearsChildlessSex: $amountYearsChildlessSex
   ) {
     id
     gender
     age
     yearChildlessSex
-    yearsSubfertile
+    amountYearsChildlessSex
     currentIVF
     hadPregnancy
     hadEctopicPregnancy
     liveBirth
     miscarriages
-    maleSubfertility
-    maleSubfertilitCondition
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
   }
 }
 `;
