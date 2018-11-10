@@ -1,14 +1,14 @@
 {
     "providers": {
         "awscloudformation": {
-            "AuthRoleName": "oryertility-20181109131811-authRole",
-            "UnauthRoleArn": "arn:aws:iam::741205893043:role/oryertility-20181109131811-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::741205893043:role/oryertility-20181109131811-authRole",
+            "AuthRoleName": "oryertility-20181110095402-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/oryertility-20181110095402-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/oryertility-20181110095402-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "oryertility-20181109131811-deployment",
-            "UnauthRoleName": "oryertility-20181109131811-unauthRole",
-            "StackName": "oryertility-20181109131811",
-            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/oryertility-20181109131811/d168da30-e44b-11e8-aea3-06e23ed25c28"
+            "DeploymentBucketName": "oryertility-20181110095402-deployment",
+            "UnauthRoleName": "oryertility-20181110095402-unauthRole",
+            "StackName": "oryertility-20181110095402",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/oryertility-20181110095402/767e4850-e4f8-11e8-9f9a-0a2ca3198104"
         }
     }
 }
