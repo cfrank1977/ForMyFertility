@@ -1,0 +1,111 @@
+// eslint-disable
+// this is an auto generated file. This will be overwritten
+
+export const createQuestions = `mutation CreateQuestions($input: CreateQuestionsInput!) {
+  createQuestions(input: $input) {
+    id
+    gender
+    age
+    yearChildlessSex
+    amountYearsChildlessSex
+    currentIVF
+    hadPregnancy
+    hadEctopicPregnancy
+    liveBirth
+    miscarriages
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
+  }
+}
+`;
+export const updateQuestions = `mutation UpdateQuestions($input: UpdateQuestionsInput!) {
+  updateQuestions(input: $input) {
+    id
+    gender
+    age
+    yearChildlessSex
+    amountYearsChildlessSex
+    currentIVF
+    hadPregnancy
+    hadEctopicPregnancy
+    liveBirth
+    miscarriages
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
+  }
+}
+`;
+export const deleteQuestions = `mutation DeleteQuestions($input: DeleteQuestionsInput!) {
+  deleteQuestions(input: $input) {
+    id
+    gender
+    age
+    yearChildlessSex
+    amountYearsChildlessSex
+    currentIVF
+    hadPregnancy
+    hadEctopicPregnancy
+    liveBirth
+    miscarriages
+    partner
+    whichPartnerIssue
+    amountChildren
+    amountperfecthealth
+    donorsperm
+    donoreggs
+    donorembryos
+    eggs
+    embryos
+    embryostransfered
+    embryosfinalcycle
+    frozenembryos
+    gynecologicalCauses
+    gestationalcarrier
+    hormone
+    icsi
+    ivfcycles
+    ivfconceived
+    morethanoneivfconceived
+    singletonmulitbirth
+    whichGynecologicalCauses
+  }
+}
+`;

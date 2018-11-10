@@ -29,7 +29,7 @@
       "/.idea/"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!react-native|react-navigation|expo|native-base|aws-amplify)/"
+      "node_modules/(?!react-native|react-navigation|expo|react-redux|native-base|aws-amplify)/"
     ]
   },
   "dependencies": {

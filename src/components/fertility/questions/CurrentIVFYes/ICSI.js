@@ -15,7 +15,6 @@ import {
     View
 } from 'native-base';
 
-
 export default class ICSI extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));

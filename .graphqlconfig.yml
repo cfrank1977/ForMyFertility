@@ -1,0 +1,17 @@
+projects:
+  ForMyFertility:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        graphQLApiId: m5vewu6p75ed7dqvp5lrhan2x4
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        region: us-east-2
+      endpoints:
+        prod: >-
+          https://key4httbl5hknfwxdqefkpevji.appsync-api.us-east-2.amazonaws.com/graphql

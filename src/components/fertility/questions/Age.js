@@ -24,7 +24,6 @@ export default class Age extends Component {
     
     render() {
         return (
-
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
                     <Text>Question 1 of 7</Text>

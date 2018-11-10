@@ -12,7 +12,6 @@ import {
     View
 } from 'native-base';
 
-
 export default class Miscarriage extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
@@ -24,7 +23,6 @@ export default class Miscarriage extends Component {
                     <Text>Question 5 of 7</Text>
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
-
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Have you ever had a miscarriage?</Text>
                     <Control.Picker model=".miscarriages">
@@ -36,7 +34,7 @@ export default class Miscarriage extends Component {
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

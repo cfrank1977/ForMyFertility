@@ -15,7 +15,6 @@ import {
     View
 } from 'native-base';
 
-
 export default class Ectopic extends Component {
     handleSubmit(values) {
         this.props.dispatch(actions.submit('fertilityQuestions', values));
@@ -38,7 +37,7 @@ export default class Ectopic extends Component {
                             <Text>Next</Text>
                         </Button>
                     </View>
-                </Form >
+                </Form>
             </Content>
         );
     }

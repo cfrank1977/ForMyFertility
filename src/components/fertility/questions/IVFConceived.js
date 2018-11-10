@@ -15,13 +15,11 @@ import {
 export default class IVFConceived extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             NextPage: "Report",
         };
     }
     handleSubmit(answer) {
-        console.log(answer);
         if (answer === "yes") {
             this.NextPage = "SingletonMultiBirth"
         } else {
