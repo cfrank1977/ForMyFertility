@@ -13,7 +13,10 @@ import {
 } from 'native-base';
 
 let ages = [];
-for (let i = 2005; i >= 1955; i--) {
+let curYear = (new Date()).getFullYear();
+let youngFertility = curYear - 13;
+let oldFertility = curYear - 60;
+for (let i = youngFertility; i >= oldFertility; i--) {
     ages.push(<Picker.Item key={i} label={`${i}`} value={i} />)
 }
 
