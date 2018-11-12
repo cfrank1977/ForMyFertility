@@ -15,6 +15,12 @@ class Report extends Component {
         super(props, context);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
+    async componentDidMount() {
+        const data = await API.get('dev-formyfertilityapi', '/formyfertility/186711b9-e4c4-4e4b-b5f3-aa0d33704fac')
+        console.log('Chris id ending fac: ', data)
+      }
+
     handleSubmit() {
         console.log(`Age within JSON = '${this.props.age}'`)
         let query = `

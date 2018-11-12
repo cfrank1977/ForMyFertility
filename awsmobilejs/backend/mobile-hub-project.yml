@@ -1,0 +1,34 @@
+--- !com.amazonaws.mobilehub.v0.Project 
+apps:
+  react-native: !com.amazonaws.mobilehub.v0.AppDO {}
+features:
+  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
+    components:
+      dev-formyfertilityapi: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          api-arn: 'arn:aws:execute-api:us-east-2:741205893043:swl74d38zh'
+          name: dev-formyfertilityapi
+          requires-signin: false
+          sdk-generation-stage-name: dev
+        paths:
+          /formyfertility: !com.amazonaws.mobilehub.v0.Function {}
+          '/formyfertility/{id}': !com.amazonaws.mobilehub.v0.Function {}
+  content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
+    attributes:
+      enabled: true
+      visibility: public-global
+    components:
+      release: !com.amazonaws.mobilehub.v0.Bucket {}
+  mobile-analytics: !com.amazonaws.mobilehub.v0.Pinpoint 
+    components:
+      analytics: !com.amazonaws.mobilehub.v0.PinpointAnalytics {}
+  sign-in: !com.amazonaws.mobilehub.v0.SignIn 
+    attributes:
+      enabled: true
+      optional-sign-in: false
+    components:
+      sign-in-user-pools: !com.amazonaws.mobilehub.v0.UserPoolsIdentityProvider 
+        attributes:
+          user-pool-id: us-east-2_4IAy8d0hN
+name: ForMyFertility-2018-11-12-10-01-27
+region: us-east-2
