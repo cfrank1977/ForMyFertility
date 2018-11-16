@@ -7,8 +7,6 @@ import {
     View
 } from 'native-base';
 import { connect } from 'react-redux';
-import { Form, Control, actions } from 'react-redux-form/native';
-
 
 class Report extends Component {
     constructor(props, context) {
@@ -19,7 +17,6 @@ class Report extends Component {
     }
 
     async componentDidMount() {
-
         const username = await Auth.currentAuthenticatedUser();
         this.setState(username);
         console.log(`chris the username is: ${JSON.stringify(this.state.username)}`)
@@ -83,18 +80,12 @@ class Report extends Component {
                 <View >
                     <Text>The Report: </Text>
                 </View>
-
-
                 <View><Text>Your Results: {this.state.fertilityResults}</Text></View>
-
-
-
                 <View>
                     <Button full rounded primary onPress={this.handleSubmit}>
                         <Text>Get Report!</Text>
                     </Button>
                 </View>
-
             </Content>
         );
     }
