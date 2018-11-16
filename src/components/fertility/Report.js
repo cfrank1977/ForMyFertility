@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation, Auth } from 'aws-amplify'
 import {
     Content,
     Button,
@@ -14,23 +14,33 @@ class Report extends Component {
     constructor(props, context) {
         super(props, context);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+          };
     }
 
     async componentDidMount() {
-        const data = await API.get('dev-formyfertilityapi', '/formyfertility/186711b9-e4c4-4e4b-b5f3-aa0d33704fac')
-        console.log('Chris id ending fac: ', data)
-      }
+        
+        Auth.currentAuthenticatedUser()
+        .then((user) => {
+            this.setState(user);
+            console.log(this.state.username);
+          }).catch((error)=>{
+             console.log("No Authenticated User");
+             console.log(error.message);
+          });
+    }
 
     handleSubmit() {
-        console.log(`Age within JSON = '${this.props.age}'`)
+        
         let query = `
             mutation add {
                 createQuestions(input: {
+                    username: "${this.state.username}",
                     gender: "female",
                     age: ${this.props.fertilityQuestions.age},
                     yearChildlessSex: "${this.props.fertilityQuestions.yearChildlessSex}",
                     amountYearsChildlessSex: ${this.props.fertilityQuestions.amountYearsChildlessSex},
-	                currentIVF: "${this.props.fertilityQuestions.currentIVF}",
+                    currentIVF: "${this.props.fertilityQuestions.currentIVF}",
 	                hadPregnancy: "${this.props.fertilityQuestions.hadPregnancy}",
 	                hadEctopicPregnancy: "${this.props.fertilityQuestions.hadEctopicPregnancy}",
 	                liveBirth: "${this.props.fertilityQuestions.liveBirth}",
