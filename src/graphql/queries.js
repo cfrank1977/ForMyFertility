@@ -4,6 +4,7 @@
 export const fetchQuestions = `query FetchQuestions($id: ID!) {
   fetchQuestions(id: $id) {
     id
+    username
     gender
     age
     yearChildlessSex
@@ -40,6 +41,7 @@ export const fetchQuestions = `query FetchQuestions($id: ID!) {
 export const getQuestions = `query GetQuestions($id: ID!) {
   getQuestions(id: $id) {
     id
+    username
     gender
     age
     yearChildlessSex
@@ -81,6 +83,7 @@ export const listQuestions = `query ListQuestions(
   listQuestions(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      username
       gender
       age
       yearChildlessSex

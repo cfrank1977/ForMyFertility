@@ -20,6 +20,7 @@ class Report extends Component {
         const username = await Auth.currentAuthenticatedUser();
         this.setState(username);
         console.log(`chris the username is: ${JSON.stringify(this.state.username)}`)
+        console.log(`chris the form data is: ${JSON.stringify(this.props.fertilityQuestions)}`)
         let query = `
             mutation add {
                 createQuestions(input: {
