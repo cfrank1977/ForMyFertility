@@ -67,7 +67,7 @@ class Report extends Component {
 
         API.get('dev-formyfertilityapi', `/formyfertility/${this.state.createQuestions.id}`)
             .then((fertilityResults) => {
-                this.setState({ fertilityResults: JSON.stringify(fertilityResults) });
+                this.setState({ fertilityResults: fertilityResults });
                 console.log(this.state);
             }).catch((error) => {
                 console.log("No Authenticated User");
@@ -81,7 +81,32 @@ class Report extends Component {
                 <View >
                     <Text>The Report: </Text>
                 </View>
-                <View><Text>Your Results: {this.state.fertilityResults}</Text></View>
+                {this.state.fertilityResults && 
+                <View>
+                    <Text>Your Results: </Text>
+                    <Text>Age: {this.state.fertilityResults.age}</Text>
+                    <Text>age2: {this.state.fertilityResults.age2}</Text>
+                    <Text>age3: {this.state.fertilityResults.age3}</Text>
+                    <Text>agespl3: {this.state.fertilityResults.agespl3}</Text>
+                    <Text>yrsinfer: {this.state.fertilityResults.yrsinfer}</Text>
+                    <Text>prevcycles: {this.state.fertilityResults.prevcycles}</Text>
+                    <Text>prevspl: {this.state.fertilityResults.prevspl}</Text>
+                    <Text>prevlvbr: {this.state.fertilityResults.prevlvbr}</Text>
+                    <Text>endomet: {this.state.fertilityResults.endomet}</Text>
+                    <Text>mis: {this.state.fertilityResults.mis}</Text>
+                    <Text>ect: {this.state.fertilityResults.ect}</Text>
+                    <Text>logOddsLiveBirth1Emb: {this.state.fertilityResults.logOddsLiveBirth1Emb}</Text>
+                    <Text>propLiveBirth1Emb: {this.state.fertilityResults.propLiveBirth1Emb}</Text>
+                    <Text>logOddsLiveBirth2Emb: {this.state.fertilityResults.logOddsLiveBirth2Emb}</Text>
+                    <Text>propLiveBirth2Emb: {this.state.fertilityResults.propLiveBirth2Emb}</Text>
+                    <Text>logOddsLiveBirth3Emb: {this.state.fertilityResults.logOddsLiveBirth3Emb}</Text>
+                    <Text>logOddsMultiBirth1Emb: {this.state.fertilityResults.logOddsMultiBirth1Emb}</Text>
+                    <Text>propMultiBirth1Emb: {this.state.fertilityResults.propMultiBirth1Emb}</Text>
+                    <Text>logOddsMultiBirth2Emb: {this.state.fertilityResults.logOddsMultiBirth2Emb}</Text>
+                    <Text>propMultiBirth2Emb: {this.state.fertilityResults.propMultiBirth2Emb}</Text>
+                    <Text>logOddsMultiBirth3Emb: {this.state.fertilityResults.logOddsMultiBirth3Emb}</Text>
+                    <Text>propMultiBirth3Emb: {this.state.fertilityResults.propMultiBirth3Emb}</Text>
+                </View>}
                 <View>
                     <Button full rounded primary onPress={this.handleSubmit}>
                         <Text>Get Report!</Text>
