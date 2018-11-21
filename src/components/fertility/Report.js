@@ -1,36 +1,36 @@
 import React, { Component } from 'react';
-import { API, graphqlOperation } from 'aws-amplify'
+import { API, graphqlOperation, Auth } from 'aws-amplify'
 import {
     Content,
     Button,
+    List,
+    ListItem,
     Text,
     View
 } from 'native-base';
 import { connect } from 'react-redux';
-import { Form, Control, actions } from 'react-redux-form/native';
-
 
 class Report extends Component {
     constructor(props, context) {
         super(props, context);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+        };
     }
 
     async componentDidMount() {
-        const data = await API.get('dev-formyfertilityapi', '/formyfertility/186711b9-e4c4-4e4b-b5f3-aa0d33704fac')
-        console.log('Chris id ending fac: ', data)
-      }
-
-    handleSubmit() {
-        console.log(`Age within JSON = '${this.props.age}'`)
+        const username = await Auth.currentAuthenticatedUser();
+        this.setState(username);
+        console.log(`chris the username is: ${JSON.stringify(this.state.username)}`)
         let query = `
             mutation add {
                 createQuestions(input: {
+                    username: "${this.state.username}",
                     gender: "female",
                     age: ${this.props.fertilityQuestions.age},
                     yearChildlessSex: "${this.props.fertilityQuestions.yearChildlessSex}",
                     amountYearsChildlessSex: ${this.props.fertilityQuestions.amountYearsChildlessSex},
-	                currentIVF: "${this.props.fertilityQuestions.currentIVF}",
+                    currentIVF: "${this.props.fertilityQuestions.currentIVF}",
 	                hadPregnancy: "${this.props.fertilityQuestions.hadPregnancy}",
 	                hadEctopicPregnancy: "${this.props.fertilityQuestions.hadEctopicPregnancy}",
 	                liveBirth: "${this.props.fertilityQuestions.liveBirth}",
@@ -59,27 +59,53 @@ class Report extends Component {
                 }) { id }
             }
         `
-        console.log(query)
-        API.graphql(graphqlOperation(query))
+        const results = await API.graphql(graphqlOperation(query));
+        this.setState(results.data);
+        console.log(`chris the DynamoDB id is: ${JSON.stringify(this.state.createQuestions.id)}`)
+    }
 
+    handleSubmit() {
+
+        API.get('dev-formyfertilityapi', `/formyfertility/${this.state.createQuestions.id}`)
+            .then((fertilityResults) => {
+                this.setState({ fertilityResults: fertilityResults });
+            }).catch((error) => {
+                console.log("No Authenticated User");
+                console.log(error.message);
+            });
+    }
+
+    getValues() {
+        let items = [];
+        let obj = this.state.fertilityResults;
+        items = Object.keys(obj).map(function (key) {
+            return [(key), obj[key]];
+        });
+        return items
     }
 
     render() {
         return (
             <Content >
                 <View >
-                    <Text>The Report</Text>
+                    <Text>The Report: </Text>
                 </View>
-                <Form model="fertilityQuestions">
-                    <Control.TextInput model=".age" />
-                    <Control.TextInput model=".yearChildlessSex" />
-
+                {this.state.fertilityResults &&
                     <View>
-                        <Button type="submit" onPress={this.handleSubmit}>
-                            <Text> Get Report , {this.props.fertilityQuestions.age} {this.props.fertilityQuestions.yearChildlessSex}!</Text>
+                        <List dataArray={this.getValues()}
+                            renderRow={(item) =>
+                                <ListItem>
+                                    <Text>{item[0]}:  {item[1]}</Text>
+                                </ListItem>
+                            }>
+                        </List>
+                    </View>}
+                {!this.state.fertilityResults &&
+                    <View>
+                        <Button full rounded primary onPress={this.handleSubmit}>
+                            <Text>Get Report!</Text>
                         </Button>
-                    </View>
-                </Form>
+                    </View>}
             </Content>
         );
     }

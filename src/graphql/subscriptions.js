@@ -3,19 +3,13 @@
 
 export const onCreateQuestions = `subscription OnCreateQuestions(
   $id: ID
+  $username: String
   $gender: String
   $age: Int
-  $yearChildlessSex: String
-  $amountYearsChildlessSex: Int
 ) {
-  onCreateQuestions(
-    id: $id
-    gender: $gender
-    age: $age
-    yearChildlessSex: $yearChildlessSex
-    amountYearsChildlessSex: $amountYearsChildlessSex
-  ) {
+  onCreateQuestions(id: $id, username: $username, gender: $gender, age: $age) {
     id
+    username
     gender
     age
     yearChildlessSex
@@ -51,19 +45,13 @@ export const onCreateQuestions = `subscription OnCreateQuestions(
 `;
 export const onUpdateQuestions = `subscription OnUpdateQuestions(
   $id: ID
+  $username: String
   $gender: String
   $age: Int
-  $yearChildlessSex: String
-  $amountYearsChildlessSex: Int
 ) {
-  onUpdateQuestions(
-    id: $id
-    gender: $gender
-    age: $age
-    yearChildlessSex: $yearChildlessSex
-    amountYearsChildlessSex: $amountYearsChildlessSex
-  ) {
+  onUpdateQuestions(id: $id, username: $username, gender: $gender, age: $age) {
     id
+    username
     gender
     age
     yearChildlessSex
@@ -99,19 +87,13 @@ export const onUpdateQuestions = `subscription OnUpdateQuestions(
 `;
 export const onDeleteQuestions = `subscription OnDeleteQuestions(
   $id: ID
+  $username: String
   $gender: String
   $age: Int
-  $yearChildlessSex: String
-  $amountYearsChildlessSex: Int
 ) {
-  onDeleteQuestions(
-    id: $id
-    gender: $gender
-    age: $age
-    yearChildlessSex: $yearChildlessSex
-    amountYearsChildlessSex: $amountYearsChildlessSex
-  ) {
+  onDeleteQuestions(id: $id, username: $username, gender: $gender, age: $age) {
     id
+    username
     gender
     age
     yearChildlessSex

@@ -4,6 +4,7 @@
 export const createQuestions = `mutation CreateQuestions($input: CreateQuestionsInput!) {
   createQuestions(input: $input) {
     id
+    username
     gender
     age
     yearChildlessSex
@@ -40,6 +41,7 @@ export const createQuestions = `mutation CreateQuestions($input: CreateQuestions
 export const updateQuestions = `mutation UpdateQuestions($input: UpdateQuestionsInput!) {
   updateQuestions(input: $input) {
     id
+    username
     gender
     age
     yearChildlessSex
@@ -76,6 +78,7 @@ export const updateQuestions = `mutation UpdateQuestions($input: UpdateQuestions
 export const deleteQuestions = `mutation DeleteQuestions($input: DeleteQuestionsInput!) {
   deleteQuestions(input: $input) {
     id
+    username
     gender
     age
     yearChildlessSex
