@@ -3,6 +3,8 @@ import { API, graphqlOperation, Auth } from 'aws-amplify'
 import {
     Content,
     Button,
+    List,
+    ListItem,
     Text,
     View
 } from 'native-base';
@@ -20,7 +22,6 @@ class Report extends Component {
         const username = await Auth.currentAuthenticatedUser();
         this.setState(username);
         console.log(`chris the username is: ${JSON.stringify(this.state.username)}`)
-        console.log(`chris the form data is: ${JSON.stringify(this.props.fertilityQuestions)}`)
         let query = `
             mutation add {
                 createQuestions(input: {
@@ -68,11 +69,19 @@ class Report extends Component {
         API.get('dev-formyfertilityapi', `/formyfertility/${this.state.createQuestions.id}`)
             .then((fertilityResults) => {
                 this.setState({ fertilityResults: fertilityResults });
-                console.log(this.state);
             }).catch((error) => {
                 console.log("No Authenticated User");
                 console.log(error.message);
             });
+    }
+
+    getValues() {
+        let items = [];
+        let obj = this.state.fertilityResults;
+        items = Object.keys(obj).map(function (key) {
+            return [(key), obj[key]];
+        });
+        return items
     }
 
     render() {
@@ -81,37 +90,22 @@ class Report extends Component {
                 <View >
                     <Text>The Report: </Text>
                 </View>
-                {this.state.fertilityResults && 
-                <View>
-                    <Text>Your Results: </Text>
-                    <Text>Age: {this.state.fertilityResults.age}</Text>
-                    <Text>age2: {this.state.fertilityResults.age2}</Text>
-                    <Text>age3: {this.state.fertilityResults.age3}</Text>
-                    <Text>agespl3: {this.state.fertilityResults.agespl3}</Text>
-                    <Text>yrsinfer: {this.state.fertilityResults.yrsinfer}</Text>
-                    <Text>prevcycles: {this.state.fertilityResults.prevcycles}</Text>
-                    <Text>prevspl: {this.state.fertilityResults.prevspl}</Text>
-                    <Text>prevlvbr: {this.state.fertilityResults.prevlvbr}</Text>
-                    <Text>endomet: {this.state.fertilityResults.endomet}</Text>
-                    <Text>mis: {this.state.fertilityResults.mis}</Text>
-                    <Text>ect: {this.state.fertilityResults.ect}</Text>
-                    <Text>logOddsLiveBirth1Emb: {this.state.fertilityResults.logOddsLiveBirth1Emb}</Text>
-                    <Text>propLiveBirth1Emb: {this.state.fertilityResults.propLiveBirth1Emb}</Text>
-                    <Text>logOddsLiveBirth2Emb: {this.state.fertilityResults.logOddsLiveBirth2Emb}</Text>
-                    <Text>propLiveBirth2Emb: {this.state.fertilityResults.propLiveBirth2Emb}</Text>
-                    <Text>logOddsLiveBirth3Emb: {this.state.fertilityResults.logOddsLiveBirth3Emb}</Text>
-                    <Text>logOddsMultiBirth1Emb: {this.state.fertilityResults.logOddsMultiBirth1Emb}</Text>
-                    <Text>propMultiBirth1Emb: {this.state.fertilityResults.propMultiBirth1Emb}</Text>
-                    <Text>logOddsMultiBirth2Emb: {this.state.fertilityResults.logOddsMultiBirth2Emb}</Text>
-                    <Text>propMultiBirth2Emb: {this.state.fertilityResults.propMultiBirth2Emb}</Text>
-                    <Text>logOddsMultiBirth3Emb: {this.state.fertilityResults.logOddsMultiBirth3Emb}</Text>
-                    <Text>propMultiBirth3Emb: {this.state.fertilityResults.propMultiBirth3Emb}</Text>
-                </View>}
-                <View>
-                    <Button full rounded primary onPress={this.handleSubmit}>
-                        <Text>Get Report!</Text>
-                    </Button>
-                </View>
+                {this.state.fertilityResults &&
+                    <View>
+                        <List dataArray={this.getValues()}
+                            renderRow={(item) =>
+                                <ListItem>
+                                    <Text>{item[0]}:  {item[1]}</Text>
+                                </ListItem>
+                            }>
+                        </List>
+                    </View>}
+                {!this.state.fertilityResults &&
+                    <View>
+                        <Button full rounded primary onPress={this.handleSubmit}>
+                            <Text>Get Report!</Text>
+                        </Button>
+                    </View>}
             </Content>
         );
     }
