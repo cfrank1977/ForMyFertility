@@ -19,14 +19,14 @@ export default class CurrentIVF extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            NextPage: "IVFConceived",
+            NextPage: "Report",
         };
       }
     handleSubmit(answer) {
         if (answer === "yes") {
             this.NextPage = "Eggs"
         } else {
-            this.NextPage = "IVFConceived"
+            this.NextPage = "Report"
         }
         return answer;
     }
@@ -34,12 +34,12 @@ export default class CurrentIVF extends Component {
         return (
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
-                    <Text>Question 7 of 7</Text>
+                    <Text>Question 6 of 7</Text>
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
 
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Have you and/or are you currently undergoing IVF?</Text>
+                    <Text>Have you ever undergone and/or are you currently undergoing IVF?</Text>
                     <Control
                         component={Picker}
                         mapProps={{

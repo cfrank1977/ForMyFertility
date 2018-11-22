@@ -31,8 +31,8 @@ export default class GynecologicalCauses extends Component {
         return (
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
-                    <Text>Question 5 of 7</Text>
-                    <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
+                    <Text>Question 4 of 7</Text>
+                    <ProgressViewIOS progress={0.571} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Do you have any known gynecological or other causes of infertility?</Text>
