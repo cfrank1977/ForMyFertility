@@ -31,8 +31,8 @@ export default class Partner extends Component {
         return (
             <Content >
                 <View style={{ alignSelf: "center", margin: 10 }}>
-                    <Text>Question 1 of 7</Text>
-                    <ProgressViewIOS progress={0.125} progressTintColor={'#86B2CA'} />
+                    <Text>Question 5 of 7</Text>
+                    <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
                     <Text>Is the husband/partner suffering from any male cause(s) of subfertility?</Text>
