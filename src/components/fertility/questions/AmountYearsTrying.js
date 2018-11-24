@@ -30,7 +30,7 @@ export default class AmountYearsTrying extends Component {
                     <ProgressViewIOS progress={0.25} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>How many years have you been trying to get pregnate?</Text>
+                    <Text>How many years have you been trying to get pregnant?</Text>
                     <Control.Picker model=".amountYearsChildlessSex">
                         {years}
                     </Control.Picker>

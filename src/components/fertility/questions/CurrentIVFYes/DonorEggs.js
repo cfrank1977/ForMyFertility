@@ -24,7 +24,7 @@ export default class DonorEggs extends Component {
                     <ProgressViewIOS progress={0.625} progressTintColor={'#86B2CA'} />
                 </View>
                 <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
-                    <Text>Are you using donor or partner sperm?</Text>
+                    <Text>Are you using donor or partner eggs?</Text>
                     <Control.Picker model=".donoreggs">
                         <Picker.Item label='Partner' value='partner' />
                         <Picker.Item label='Donor' value='donor' />
