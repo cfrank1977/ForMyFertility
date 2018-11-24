@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "ForMyFertility",
+    "name": "Fertility",
     "description": "This project is to support couples through the fertilization process.",
     "slug": "ForMyFertility",
     "privacy": "public",
@@ -11,8 +11,8 @@
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#45ccb1"
     },
     "updates": {
       "enabled": true,
@@ -24,7 +24,15 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.formylife360.formyfertility"
+      "buildNumber": "2",
+      "icon": "./assets/icon.png",
+      "bundleIdentifier": "com.formylife360.formyfertility",
+      "splash": {
+        "backgroundColor": "#45ccb1",
+        "resizeMode": "cover",
+        "image": "./assets/splash.png"
+  
+      }
     }
   }
 }
