@@ -1,0 +1,213 @@
+// eslint-disable
+// this is an auto generated file. This will be overwritten
+
+export const onCreateFemalefertility = `subscription OnCreateFemalefertility($id: ID) {
+  onCreateFemalefertility(id: $id) {
+    age
+    amountChildren
+    amountYearsChildlessSex
+    amountperfecthealth
+    currentIVF
+    donoreggs
+    donorembryos
+    donorsperm
+    eggs
+    embryos
+    embryosfinalcycle
+    embryostransfered
+    frozenembryos
+    gender
+    gestationalcarrier
+    gynecologicalCauses
+    hadEctopicPregnancy
+    hadPregnancy
+    hormone
+    icsi
+    id
+    ivfconceived
+    ivfcycles
+    liveBirth
+    miscarriages
+    morethanoneivfconceived
+    partner
+    singletonmulitbirth
+    username
+    whichGynecologicalCauses
+    whichPartnerIssue
+    yearChildlessSex
+  }
+}
+`;
+export const onCreateMalefertility = `subscription OnCreateMalefertility($id: ID) {
+  onCreateMalefertility(id: $id) {
+    abnormalities
+    age
+    alcohol
+    cigarettes
+    drinks
+    enhancers
+    exercise
+    exercisetype
+    frequency
+    gender
+    height
+    id
+    jobactivity
+    jobexposure
+    lube
+    marijuana
+    medconditions
+    pregnant
+    sauna
+    sleep
+    soy
+    stressed
+    superfoods
+    trying
+    tv
+    username
+    veg
+    weight
+  }
+}
+`;
+export const onDeleteFemalefertility = `subscription OnDeleteFemalefertility($id: ID) {
+  onDeleteFemalefertility(id: $id) {
+    age
+    amountChildren
+    amountYearsChildlessSex
+    amountperfecthealth
+    currentIVF
+    donoreggs
+    donorembryos
+    donorsperm
+    eggs
+    embryos
+    embryosfinalcycle
+    embryostransfered
+    frozenembryos
+    gender
+    gestationalcarrier
+    gynecologicalCauses
+    hadEctopicPregnancy
+    hadPregnancy
+    hormone
+    icsi
+    id
+    ivfconceived
+    ivfcycles
+    liveBirth
+    miscarriages
+    morethanoneivfconceived
+    partner
+    singletonmulitbirth
+    username
+    whichGynecologicalCauses
+    whichPartnerIssue
+    yearChildlessSex
+  }
+}
+`;
+export const onDeleteMalefertility = `subscription OnDeleteMalefertility($id: ID) {
+  onDeleteMalefertility(id: $id) {
+    abnormalities
+    age
+    alcohol
+    cigarettes
+    drinks
+    enhancers
+    exercise
+    exercisetype
+    frequency
+    gender
+    height
+    id
+    jobactivity
+    jobexposure
+    lube
+    marijuana
+    medconditions
+    pregnant
+    sauna
+    sleep
+    soy
+    stressed
+    superfoods
+    trying
+    tv
+    username
+    veg
+    weight
+  }
+}
+`;
+export const onUpdateFemalefertility = `subscription OnUpdateFemalefertility($id: ID) {
+  onUpdateFemalefertility(id: $id) {
+    age
+    amountChildren
+    amountYearsChildlessSex
+    amountperfecthealth
+    currentIVF
+    donoreggs
+    donorembryos
+    donorsperm
+    eggs
+    embryos
+    embryosfinalcycle
+    embryostransfered
+    frozenembryos
+    gender
+    gestationalcarrier
+    gynecologicalCauses
+    hadEctopicPregnancy
+    hadPregnancy
+    hormone
+    icsi
+    id
+    ivfconceived
+    ivfcycles
+    liveBirth
+    miscarriages
+    morethanoneivfconceived
+    partner
+    singletonmulitbirth
+    username
+    whichGynecologicalCauses
+    whichPartnerIssue
+    yearChildlessSex
+  }
+}
+`;
+export const onUpdateMalefertility = `subscription OnUpdateMalefertility($id: ID) {
+  onUpdateMalefertility(id: $id) {
+    abnormalities
+    age
+    alcohol
+    cigarettes
+    drinks
+    enhancers
+    exercise
+    exercisetype
+    frequency
+    gender
+    height
+    id
+    jobactivity
+    jobexposure
+    lube
+    marijuana
+    medconditions
+    pregnant
+    sauna
+    sleep
+    soy
+    stressed
+    superfoods
+    trying
+    tv
+    username
+    veg
+    weight
+  }
+}
+`;

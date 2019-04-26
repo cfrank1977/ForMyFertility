@@ -1,0 +1,16 @@
+projects:
+  formyfertilitymobile:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.js
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: javascript
+        generatedFileName: ''
+        docsFilePath: src/graphql
+        graphQLApiId: oyd4rwkdrrggron3rpvqc5azpm
+      endpoints:
+        prod: >-
+          https://zhxzdamwkzakvjnsxl57uthbii.appsync-api.us-east-2.amazonaws.com/graphql

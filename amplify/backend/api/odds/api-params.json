@@ -1,0 +1,41 @@
+{
+    "paths": [
+        {
+            "name": "/femaleodds",
+            "lambdaFunction": "femaleodds",
+            "privacy": {
+                "private": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            }
+        }
+    ],
+    "resourceName": "odds",
+    "apiName": "odds",
+    "functionArns": [
+        {
+            "lambdaFunction": "femaleodds"
+        }
+    ],
+    "privacy": {
+        "auth": 1,
+        "unauth": 0,
+        "authRoleName": "formyfertilitymobile-20190419150534-authRole",
+        "unAuthRoleName": "formyfertilitymobile-20190419150534-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "femaleodds",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
