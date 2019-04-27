@@ -84,10 +84,10 @@ Parameters:
               
   userpoolClientGenerateSecret:
     Type: String
-              
+          
   userpoolClientRefreshTokenValidity:
-    Type: Number
-              
+    Type: String
+                  
   userpoolClientWriteAttributes:
     Type: CommaDelimitedList
             
@@ -222,9 +222,6 @@ Resources:
     Properties:
       ClientName: devformyfertilitymobile_app_clientWeb
       
-      ReadAttributes: !Ref userpoolClientReadAttributes
-      WriteAttributes: !Ref userpoolClientWriteAttributes
-      
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
       UserPoolId: !Ref UserPool
     DependsOn: UserPool
@@ -234,9 +231,6 @@ Resources:
     Type: "AWS::Cognito::UserPoolClient"
     Properties:
       ClientName: !Ref userpoolClientName
-      
-      ReadAttributes: !Ref userpoolClientReadAttributes
-      WriteAttributes: !Ref userpoolClientWriteAttributes
       
       GenerateSecret: !Ref userpoolClientGenerateSecret
       RefreshTokenValidity: !Ref userpoolClientRefreshTokenValidity
