@@ -1,6 +1,6 @@
 {
     "identityPoolName": "formyfertilityidentitypool",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "lambdaLogPolicy": "formyfertilitycognito_lambda_log_policy",
     "openIdLambdaRoleName": "formyfertilitycognito_openid_lambda_role",
     "openIdRolePolicy": "formyfertilitycognito_openid_pass_role_policy",

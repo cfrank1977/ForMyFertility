@@ -54,5 +54,11 @@
 				}
 			]
 		}
+	},
+	"analytics": {
+		"formyfertilitymobile": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
+		}
 	}
 }
