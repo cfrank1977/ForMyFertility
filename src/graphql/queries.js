@@ -93,7 +93,7 @@ export const allMalefertilityByUsername = `query AllMalefertilityByUsername(
   }
 }
 `;
-export const getFemalefertility = `query GetFemalefertility($id: ID!) {
+export const getFemalefertility = `query GetFemalefertility($id: String!) {
   getFemalefertility(id: $id) {
     age
     amountChildren
@@ -130,7 +130,7 @@ export const getFemalefertility = `query GetFemalefertility($id: ID!) {
   }
 }
 `;
-export const getMalefertility = `query GetMalefertility($id: ID!) {
+export const getMalefertility = `query GetMalefertility($id: String!) {
   getMalefertility(id: $id) {
     abnormalities
     age

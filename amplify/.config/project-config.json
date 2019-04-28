@@ -5,10 +5,10 @@
     "javascript": {
         "framework": "react-native",
         "config": {
-            "SourceDir": "src",
+            "SourceDir": "/src",
             "DistributionDir": "/",
             "BuildCommand": "expo build:ios",
-            "StartCommand": "expo start start"
+            "StartCommand": "expo start"
         }
     },
     "providers": [

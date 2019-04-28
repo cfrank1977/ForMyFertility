@@ -1,10 +1,10 @@
 {
     "appName": "formyfertilitymobile",
-    "roleName": "pinpointLambdaRole5dec082c",
-    "cloudWatchPolicyName": "cloudWatchPolicy5dec082c",
-    "pinpointPolicyName": "pinpointPolicy5dec082c",
-    "authPolicyName": "pinpoint_amplify_5dec082c",
-    "unauthPolicyName": "pinpoint_amplify_5dec082c",
+    "roleName": "pinpointLambdaRole8468337d",
+    "cloudWatchPolicyName": "cloudWatchPolicy8468337d",
+    "pinpointPolicyName": "pinpointPolicy8468337d",
+    "authPolicyName": "pinpoint_amplify_8468337d",
+    "unauthPolicyName": "pinpoint_amplify_8468337d",
     "authRoleName": {
         "Ref": "AuthRoleName"
     },

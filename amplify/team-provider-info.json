@@ -1,53 +1,52 @@
 {
-    "dev": {
+    "prod": {
         "awscloudformation": {
-            "AuthRoleName": "formyfertilitymobile-20190419150534-authRole",
-            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190419150534-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190419150534-authRole",
+            "AuthRoleName": "formyfertilitymobile-20190428120514-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190428120514-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190428120514-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "formyfertilitymobile-20190419150534-deployment",
-            "UnauthRoleName": "formyfertilitymobile-20190419150534-unauthRole",
-            "StackName": "formyfertilitymobile-20190419150534",
-            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilitymobile-20190419150534/1c2263d0-62d6-11e9-92e6-0659c08a3f80"
+            "DeploymentBucketName": "formyfertilitymobile-20190428120514-deployment",
+            "UnauthRoleName": "formyfertilitymobile-20190428120514-unauthRole",
+            "StackName": "formyfertilitymobile-20190428120514",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilitymobile-20190428120514/68fc9040-69cf-11e9-aaa5-0a5f3eca4dfa"
         },
         "categories": {
             "auth": {
-                "devformyfertilitymobile": {}
+                "formyfertilitymobile": {}
             }
         }
     },
     "test": {
         "awscloudformation": {
-            "AuthRoleName": "formyfertilitymobile-20190426151619-authRole",
-            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190426151619-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190426151619-authRole",
+            "AuthRoleName": "formyfertilitymobile-20190428122757-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190428122757-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190428122757-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "formyfertilitymobile-20190426151619-deployment",
-            "UnauthRoleName": "formyfertilitymobile-20190426151619-unauthRole",
-            "StackName": "formyfertilitymobile-20190426151619",
-            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilitymobile-20190426151619/c5a3a370-6857-11e9-b86a-06ba3123ae48"
+            "DeploymentBucketName": "formyfertilitymobile-20190428122757-deployment",
+            "UnauthRoleName": "formyfertilitymobile-20190428122757-unauthRole",
+            "StackName": "formyfertilitymobile-20190428122757",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilitymobile-20190428122757/954ef860-69d2-11e9-b86a-06ba3123ae48"
         },
         "categories": {
             "auth": {
-                "devformyfertilitymobile": {}
+                "formyfertilitymobile": {}
             }
         }
     },
-    "prod": {
+    "dev": {
         "awscloudformation": {
-            "AuthRoleName": "formyfertilitymobile-20190426152249-authRole",
-            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190426152249-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190426152249-authRole",
+            "AuthRoleName": "formyfertilitymobile-20190428123623-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190428123623-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilitymobile-20190428123623-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "formyfertilitymobile-20190426152249-deployment",
-            "UnauthRoleName": "formyfertilitymobile-20190426152249-unauthRole",
-            "StackName": "formyfertilitymobile-20190426152249",
-            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilitymobile-20190426152249/ae2594a0-6858-11e9-81d2-06e3439fefa0"
+            "DeploymentBucketName": "formyfertilitymobile-20190428123623-deployment",
+            "UnauthRoleName": "formyfertilitymobile-20190428123623-unauthRole",
+            "StackName": "formyfertilitymobile-20190428123623",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilitymobile-20190428123623/c2e60060-69d3-11e9-bf0e-022c6f51bf82"
         },
         "categories": {
             "auth": {
-                "devformyfertilitymobile": {},
-                "formyfertilitycognito": {}
+                "formyfertilitymobile": {}
             }
         }
     }

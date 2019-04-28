@@ -67,8 +67,8 @@
 				"Runtime": "nodejs8.10",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "formyfertilitymobile-20190426152249-deployment",
-					"S3Key": "amplify-builds/femaleodds-1556457188-latest-build.zip"
+					"S3Bucket": "formyfertilitymobile-20190428123623-deployment",
+					"S3Key": "amplify-builds/femaleodds-1556469468-latest-build.zip"
 				}
 			}
 		},
@@ -78,12 +78,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"formyfertilitymobileLambdaRole17d27a11",
+						"formyfertilitymobileLambdaRolec721f423",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"formyfertilitymobileLambdaRole17d27a11",
+									"formyfertilitymobileLambdaRolec721f423",
 									"-",
 									{
 										"Ref": "env"
