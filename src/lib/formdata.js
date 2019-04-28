@@ -47,7 +47,6 @@ module.exports = class FormData {
               }
             }`
           let results = await API.graphql(graphqlOperation(query));
-          console.log(results)
           results = (results.data.allFemalefertilityByUsername.items[0]) ? results.data.allFemalefertilityByUsername.items[0] : {};
           return results;
         } catch (e) {
@@ -136,7 +135,6 @@ module.exports = class FormData {
       }
     }
     async addFormData(fertilityQuestions, username) {
-      console.log(`fertilityQuestions: ${JSON.stringify(fertilityQuestions)} and username: ${username}`)
       try {
         let query = `
             mutation add {
@@ -176,7 +174,6 @@ module.exports = class FormData {
             }
         `
         this.results = await API.graphql(graphqlOperation(query));
-        console.log(this.results.data.createFemalefertility)
         return this.results.data.createFemalefertility;
       } catch (e) {
         alert(e.message);
