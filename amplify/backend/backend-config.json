@@ -1,6 +1,6 @@
 {
 	"auth": {
-		"devformyfertilitymobile": {
+		"formyfertilitycognito": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}

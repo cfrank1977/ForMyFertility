@@ -46,7 +46,8 @@
         },
         "categories": {
             "auth": {
-                "devformyfertilitymobile": {}
+                "devformyfertilitymobile": {},
+                "formyfertilitycognito": {}
             }
         }
     }
