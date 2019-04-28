@@ -4,15 +4,43 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "jest",
+    "ci-test": "jest --ci",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
     "expo": "^32.0.0",
     "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz"
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "aws-amplify": "^1.1.19",
+    "aws-amplify-react-native": "^2.1.7",
+    "jest-enzyme": "^7.0.1",
+    "native-base": "^2.11.0",
+    "react-devtools-core": "^3.6.0",
+    "react-dom": "^16.8.1",
+    "react-native-easy-grid": "^0.2.0",
+    "react-native-phone-input": "^0.2.1",
+    "react-native-progress": "^3.5.0",
+    "react-navigation": "^2.18.3",
+    "react-navigation-redux-helpers": "^2.0.9",
+    "react-redux": "^5.1.1",
+    "react-redux-form": "^1.16.12",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^5.10.0",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.0.0"
+    "babel-preset-expo": "^5.0.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "enzyme-to-json": "^3.3.5",
+    "jest-expo": "^31.0.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.8.1",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-mock-store": "^1.5.3"
   },
   "private": true
 }
