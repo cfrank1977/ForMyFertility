@@ -8,7 +8,7 @@ module.exports = class Odds  {
 
     async getOdds(formID, currentIVF) {
         try {
-            let fertilityResults = await API.get('odds', `/femaleodds/${formID}`);
+            let fertilityResults = await API.get('odds', `/odds/${formID}`);
                 if (currentIVF === "no") {
                     this.Odds = ({ fertilityResults: {
                         propLiveBirth:  fertilityResults.propLiveBirth / 100 

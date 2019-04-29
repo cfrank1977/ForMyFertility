@@ -105,7 +105,7 @@ export default {
   checkboxTickColor: "#fff",
 
   // Color
-  brandPrimary: "#45ccb1",
+  brandPrimary: "#3F51B5",
   brandInfo: "#62B1F6",
   brandSuccess: "#5cb85c",
   brandDanger: "#d9534f",
@@ -136,7 +136,7 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: "#45ccb1",
+  footerDefaultBg: "#3F51B5",
   footerPaddingBottom: 0,
 
   // FooterTab
@@ -145,18 +145,18 @@ export default {
   activeTab: "#fff",
   sTabBarActiveTextColor: "#007aff",
   tabBarActiveTextColor: "#fff",
-  tabActiveBgColor: "#45ccb1",
+  tabActiveBgColor: "#3F51B5",
 
   // Header
   toolbarBtnColor: "#fff",
-  toolbarDefaultBg: "#45ccb1",
+  toolbarDefaultBg: "#3F51B5",
   toolbarHeight: 56,
   toolbarSearchIconSize: 23,
   toolbarInputColor: "#fff",
   searchBarHeight: platform === "ios" ? 30 : 40,
   searchBarInputHeight: platform === "ios" ? 40 : 50,
   toolbarBtnTextColor: "#fff",
-  toolbarDefaultBorder: "#45ccb1",
+  toolbarDefaultBorder: "#3F51B5",
   iosStatusbar: "light-content",
   get statusBarColor() {
     return color(this.toolbarDefaultBg)
@@ -225,18 +225,18 @@ export default {
   segmentBorderColorMain: "#3F51B5",
 
   // Spinner
-  defaultSpinnerColor: "#45ccb1",
+  defaultSpinnerColor: "#45D56E",
   inverseSpinnerColor: "#1A191B",
 
   // Tab
-  tabDefaultBg: "#45ccb1",
+  tabDefaultBg: "#3F51B5",
   topTabBarTextColor: "#b3c7f9",
   topTabBarActiveTextColor: "#fff",
   topTabBarBorderColor: "#fff",
   topTabBarActiveBorderColor: "#fff",
 
   // Tabs
-  tabBgColor: "#45ccb1",
+  tabBgColor: "#F8F8F8",
   tabFontSize: 15,
 
   // Text
