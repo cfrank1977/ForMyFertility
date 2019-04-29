@@ -5,6 +5,6 @@ const blacklist = require('metro-config/src/defaults/blacklist');
 
 module.exports = {
   resolver: {
-    blacklistRE: blacklist([/amplify\/.*/])
+    blacklistRE: blacklist([/amplify\/#current-cloud-backend\/.*/,/amplify\/#backend\/.*/])
   }
 };
