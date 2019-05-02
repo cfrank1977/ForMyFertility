@@ -20,17 +20,17 @@ export class Report extends Component {
         console.log(this.props.fertilityQuestions)
         if (this.props.fertilityQuestions.id) {
             formdata = await formdata.updateFormData(this.props.fertilityQuestions);
-            console.log(`Updating data in database ${formdata}`)
+            console.log(`Updating data in database ${JSON.stringify(formdata)}`)
             this.setState(formdata);
         } else {
             formdata = await formdata.addFormData(this.props.fertilityQuestions, user.username);
             console.log(`First time no data in database ${formdata}`)
             this.setState(formdata);
         }
-        console.log(this.state.id);
+        console.log(`the id in state is ${this.state.id}`);
         this.setState({ given_name: user.attributes.given_name })
         odds = await odds.getOdds(this.state.id, this.props.fertilityQuestions.currentIVF)
-        console.log(odds);
+        console.log(`in report the odds are ${JSON.stringify(odds)}`);
         this.setState(odds);
     }
 
@@ -41,7 +41,7 @@ export class Report extends Component {
                     <View>
                         <Text>{this.state.given_name || ''} your probability of a live birth is: </Text>
                         <Progress.Circle
-                            progress={0.11}
+                            progress={this.state.fertilityResults.propLiveBirth}
                             size={300}
                             showsText={true}
                             thickness={10}

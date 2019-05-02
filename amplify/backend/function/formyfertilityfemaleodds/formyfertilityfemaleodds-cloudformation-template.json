@@ -68,7 +68,7 @@
 				"Timeout": "25",
 				"Code": {
 					"S3Bucket": "formyfertilityamp-20190501153324-deployment",
-					"S3Key": "amplify-builds/formyfertilityfemaleodds-1556740642-latest-build.zip"
+					"S3Key": "amplify-builds/formyfertilityfemaleodds-1556836021-latest-build.zip"
 				}
 			}
 		},
