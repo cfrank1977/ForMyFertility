@@ -39,7 +39,14 @@
 		}
 	},
 	"api": {
-		"formyfertilityoddsapi": {
+		"formyfertility": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "AMAZON_COGNITO_USER_POOLS"
+			}
+		},
+		"oddsapi": {
 			"service": "API Gateway",
 			"providerPlugin": "awscloudformation",
 			"dependsOn": [
@@ -52,13 +59,6 @@
 					]
 				}
 			]
-		},
-		"formyfertility": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"securityType": "AMAZON_COGNITO_USER_POOLS"
-			}
 		}
 	}
 }

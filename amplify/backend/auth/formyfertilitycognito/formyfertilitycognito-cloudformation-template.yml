@@ -129,7 +129,10 @@ Parameters:
               
   thirdPartyAuth:
     Type: String
-            
+                
+  usernameAttributes:
+    Type: CommaDelimitedList
+        
   hostedUI:
     Type: String
                                                 
@@ -198,6 +201,8 @@ Resources:
           RequireNumbers: true
           RequireSymbols: true
           RequireUppercase: true
+      
+      UsernameAttributes: !Ref usernameAttributes
           
       MfaConfiguration: !Ref mfaConfiguration
       SmsVerificationMessage: !Ref smsVerificationMessage

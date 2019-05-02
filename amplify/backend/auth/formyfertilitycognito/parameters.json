@@ -19,7 +19,7 @@
     "policyName": "formyfertilitycognito-sns-policy",
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your For My Fertility verification code",
+    "emailVerificationSubject": "Your For MY Fertility verification code",
     "emailVerificationMessage": "Your For My Fertility verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
@@ -53,6 +53,9 @@
     "authSelections": "identityPoolAndUserPool",
     "resourceName": "formyfertilitycognito",
     "thirdPartyAuth": false,
+    "usernameAttributes": [
+        "email"
+    ],
     "hostedUI": false,
     "authRoleName": {
         "Ref": "AuthRoleName"

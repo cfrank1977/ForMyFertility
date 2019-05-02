@@ -20,15 +20,17 @@ export class Report extends Component {
         console.log(this.props.fertilityQuestions)
         if (this.props.fertilityQuestions.id) {
             formdata = await formdata.updateFormData(this.props.fertilityQuestions);
+            console.log(`Updating data in database ${formdata}`)
             this.setState(formdata);
         } else {
             formdata = await formdata.addFormData(this.props.fertilityQuestions, user.username);
-            console.log(formdata)
+            console.log(`First time no data in database ${formdata}`)
             this.setState(formdata);
         }
         console.log(this.state.id);
         this.setState({ given_name: user.attributes.given_name })
         odds = await odds.getOdds(this.state.id, this.props.fertilityQuestions.currentIVF)
+        console.log(odds);
         this.setState(odds);
     }
 
