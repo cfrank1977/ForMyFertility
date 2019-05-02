@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/odds",
+            "lambdaFunction": "formyfertilityfemaleodds",
+            "privacy": {
+                "private": true,
+                "auth": []
+            }
+        }
+    ],
+    "resourceName": "formyfertilityoddsapi",
+    "apiName": "formyfertilityoddsapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "formyfertilityfemaleodds"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "formyfertilityamp-20190501153324-authRole",
+        "unAuthRoleName": "formyfertilityamp-20190501153324-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "formyfertilityfemaleodds",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

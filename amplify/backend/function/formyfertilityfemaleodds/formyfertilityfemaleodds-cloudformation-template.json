@@ -36,12 +36,12 @@
 				"FunctionName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"femaleodds",
+						"formyfertilityfemaleodds",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"femaleodds",
+									"formyfertilityfemaleodds",
 									"-",
 									{
 										"Ref": "env"
@@ -67,8 +67,8 @@
 				"Runtime": "nodejs8.10",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "formyfertilitymobile-20190428123623-deployment",
-					"S3Key": "amplify-builds/femaleodds-1556469468-latest-build.zip"
+					"S3Bucket": "formyfertilityamp-20190501153324-deployment",
+					"S3Key": "amplify-builds/formyfertilityfemaleodds-1556740642-latest-build.zip"
 				}
 			}
 		},
@@ -78,12 +78,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"formyfertilitymobileLambdaRolec721f423",
+						"formyfertilityampLambdaRole00c578aa",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"formyfertilitymobileLambdaRolec721f423",
+									"formyfertilityampLambdaRole00c578aa",
 									"-",
 									{
 										"Ref": "env"

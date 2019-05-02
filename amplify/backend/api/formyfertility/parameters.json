@@ -1,9 +1,9 @@
 {
-    "AppSyncApiName": "formyfertilitymobile",
+    "AppSyncApiName": "formyfertility",
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "AuthCognitoUserPoolId": {
         "Fn::GetAtt": [
-            "authformyfertilitymobile",
+            "authformyfertilitycognito",
             "Outputs.UserPoolId"
         ]
     }

@@ -15,7 +15,7 @@ AWS.config.update({ region: process.env.TABLE_REGION });
 const dynamodb = new AWS.DynamoDB.DocumentClient();
 
 let tableName = "femalefertility";
-if(process.env.ENV && process.env.ENV !== "NONE") {
+if (process.env.ENV && process.env.ENV !== "NONE") {
   tableName = tableName + '-' + process.env.ENV;
 }
 
@@ -35,7 +35,7 @@ app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
   next()
@@ -43,7 +43,7 @@ app.use(function(req, res, next) {
 
 // convert url string param to expected Type
 const convertUrlType = (param, type) => {
-  switch(type) {
+  switch (type) {
     case "N":
       return Number.parseInt(param);
     default:
@@ -55,32 +55,32 @@ const convertUrlType = (param, type) => {
  * HTTP Get method for list objects *
  ********************************/
 
-app.get(path + hashKeyPath, function(req, res) {
+app.get(path + hashKeyPath, function (req, res) {
   var condition = {}
   condition[partitionKeyName] = {
     ComparisonOperator: 'EQ'
   }
-  
+
   if (userIdPresent && req.apiGateway) {
-    condition[partitionKeyName]['AttributeValueList'] = [req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH ];
+    condition[partitionKeyName]['AttributeValueList'] = [req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH];
   } else {
     try {
-      condition[partitionKeyName]['AttributeValueList'] = [ convertUrlType(req.params[partitionKeyName], partitionKeyType) ];
-    } catch(err) {
+      condition[partitionKeyName]['AttributeValueList'] = [convertUrlType(req.params[partitionKeyName], partitionKeyType)];
+    } catch (err) {
       res.statusCode = 500;
-      res.json({error: 'Wrong column type ' + err});
+      res.json({ error: 'Wrong column type ' + err });
     }
   }
 
   let queryParams = {
     TableName: tableName,
     KeyConditions: condition
-  } 
+  }
 
   dynamodb.query(queryParams, (err, data) => {
     if (err) {
       res.statusCode = 500;
-      res.json({error: 'Could not load odds: ' + err});
+      res.json({ error: 'Could not load items: ' + err });
     } else {
       res.json(data.Items);
     }
@@ -91,7 +91,7 @@ app.get(path + hashKeyPath, function(req, res) {
  * HTTP Get method for get single object *
  *****************************************/
 
-app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
+app.get(path + '/object' + hashKeyPath + sortKeyPath, function (req, res) {
   var params = {};
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
@@ -99,17 +99,17 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
     params[partitionKeyName] = req.params[partitionKeyName];
     try {
       params[partitionKeyName] = convertUrlType(req.params[partitionKeyName], partitionKeyType);
-    } catch(err) {
+    } catch (err) {
       res.statusCode = 500;
-      res.json({error: 'Wrong column type ' + err});
+      res.json({ error: 'Wrong column type ' + err });
     }
   }
   if (hasSortKey) {
     try {
       params[sortKeyName] = convertUrlType(req.params[sortKeyName], sortKeyType);
-    } catch(err) {
+    } catch (err) {
       res.statusCode = 500;
-      res.json({error: 'Wrong column type ' + err});
+      res.json({ error: 'Wrong column type ' + err });
     }
   }
 
@@ -118,22 +118,22 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
     Key: params
   }
 
-  dynamodb.get(getItemParams,(err, result) => {
-    if(err) {
+  dynamodb.get(getItemParams, (err, data) => {
+    if (err) {
       res.statusCode = 500;
-      res.json({error: 'Could not load items: ' + err.message});
+      res.json({ error: 'Could not load items: ' + err.message });
     } else {
       if (result.Item) {
         let age = (new Date()).getFullYear() - result.Item.age;
-        let age2 = Math.pow(age,2);
-        let age3 = Math.pow(age,3);
-        let agespl = (age > 35) ? (age-35) : 0;
-        let agespl3 = (age > 29) ? (Math.pow((age-29),3)) : 0;
+        let age2 = Math.pow(age, 2);
+        let age3 = Math.pow(age, 3);
+        let agespl = (age > 35) ? (age - 35) : 0;
+        let agespl3 = (age > 29) ? (Math.pow((age - 29), 3)) : 0;
         let yrsinfer = result.Item.amountYearsChildlessSex;
         let currentIVF = result.Item.currentIVF;
-        let yrsspl = (yrsinfer > 5) ? (yrsinfer-35) : 0;
+        let yrsspl = (yrsinfer > 5) ? (yrsinfer - 35) : 0;
         let prevcycles = result.Item.ivfcycles
-        let prevspl = (prevcycles > 1) ? (prevcycles-1) :0;
+        let prevspl = (prevcycles > 1) ? (prevcycles - 1) : 0;
         let prevlvbr = result.Item.amountChildren;
         let endomet = (result.Item.whichGynecologicalCauses == 'endometriosis') ? 1 : 0;
         let mis = (result.Item.miscarriages == 'yes') ? 1 : 0;
@@ -145,26 +145,26 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
         let logOddsMultiBirth2Emb, propMultiBirth2Emb = 0;
         let logOddsMultiBirth3Emb, propMultiBirth3Emb = 0;
         let odds = {};
-        
-        if(currentIVF === 'yes') {
-          logOddsLiveBirth1Emb = (-0.2448841) - (0.3747376*age) + (0.0193421*age2) - (0.0002913*age3) + (0.0002637*agespl3) - (0.025903*yrsinfer) - (0.4144238*prevcycles) + (0.3954898*prevspl) + (0.1239286*prevlvbr) - (0.2573125*endomet) - (0.4106893*mis) - (1.795355*ect);
-          propLiveBirth1Emb = (Math.exp(logOddsLiveBirth1Emb) / 1+Math.exp(logOddsLiveBirth1Emb))
-          logOddsLiveBirth2Emb = (-0.2448841) - (0.3747376*age) + (0.0193421*age2) - (0.0002913*age3) + (0.0002637*agespl3) - (0.025903*yrsinfer) - (0.4144238*prevcycles) + (0.3954898*prevspl) + (0.1239286*prevlvbr) - (0.2573125*endomet) - (0.4106893*mis) - (1.795355*ect) + 1.098584;
-          propLiveBirth2Emb = (Math.exp(logOddsLiveBirth2Emb) / 1+Math.exp(logOddsLiveBirth2Emb))
-          logOddsLiveBirth3Emb = (-0.2448841) - (0.3747376*age) + (0.0193421*age2) - (0.0002913*age3) + (0.0002637*agespl3) - (0.025903*yrsinfer) - (0.4144238*prevcycles) + (0.3954898*prevspl) + (0.1239286*prevlvbr) - (0.2573125*endomet) - (0.4106893*mis) - (1.795355*ect) + 1.276571;
-          propLiveBirth3Emb = (Math.exp(logOddsLiveBirth3Emb) / 1+Math.exp(logOddsLiveBirth3Emb))
-          logOddsMultiBirth1Emb = -2.724034 - 0.0245054*age - 0.079958*agespl + 0.0074175*yrsinfer - 0.0343089*yrsspl - 0.0785381*prevcycles - 0.1321438*endomet - 0.9741574*mis - 1.950923*ect;
-          propMultiBirth1Emb = (Math.exp(logOddsMultiBirth1Emb) / 1+Math.exp(logOddsMultiBirth1Emb))
-          logOddsMultiBirth2Emb = -2.724034 - 0.0245054*age - 0.079958*agespl + 0.0074175*yrsinfer - 0.0343089*yrsspl - 0.0785381*prevcycles - 0.1321438*endomet - 0.9741574*mis - 1.950923*ect + 2.484202;
-          propMultiBirth2Emb = (Math.exp(logOddsMultiBirth2Emb) / 1+Math.exp(logOddsMultiBirth2Emb))
-          logOddsMultiBirth3Emb = -2.724034 - 0.0245054*age - 0.079958*agespl + 0.0074175*yrsinfer - 0.0343089*yrsspl - 0.0785381*prevcycles - 0.1321438*endomet - 0.9741574*mis - 1.950923*ect + 2.985791;
-          propMultiBirth3Emb = (Math.exp(logOddsMultiBirth3Emb) / 1+Math.exp(logOddsMultiBirth3Emb))
+
+        if (currentIVF === 'yes') {
+          logOddsLiveBirth1Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect);
+          propLiveBirth1Emb = (Math.exp(logOddsLiveBirth1Emb) / 1 + Math.exp(logOddsLiveBirth1Emb))
+          logOddsLiveBirth2Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect) + 1.098584;
+          propLiveBirth2Emb = (Math.exp(logOddsLiveBirth2Emb) / 1 + Math.exp(logOddsLiveBirth2Emb))
+          logOddsLiveBirth3Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect) + 1.276571;
+          propLiveBirth3Emb = (Math.exp(logOddsLiveBirth3Emb) / 1 + Math.exp(logOddsLiveBirth3Emb))
+          logOddsMultiBirth1Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect;
+          propMultiBirth1Emb = (Math.exp(logOddsMultiBirth1Emb) / 1 + Math.exp(logOddsMultiBirth1Emb))
+          logOddsMultiBirth2Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect + 2.484202;
+          propMultiBirth2Emb = (Math.exp(logOddsMultiBirth2Emb) / 1 + Math.exp(logOddsMultiBirth2Emb))
+          logOddsMultiBirth3Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect + 2.985791;
+          propMultiBirth3Emb = (Math.exp(logOddsMultiBirth3Emb) / 1 + Math.exp(logOddsMultiBirth3Emb))
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             prevcycles: prevcycles,
             prevspl: prevspl,
             prevlvbr: prevlvbr,
@@ -184,53 +184,53 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
             logOddsMultiBirth3Emb: logOddsMultiBirth3Emb,
             propMultiBirth3Emb: propMultiBirth3Emb
           }
-        } else if (age < 35 ) {
+        } else if (age < 35) {
           let propLiveBirth = 27; // 25 to 30 percent if you’re under 35
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
             propLiveBirth: propLiveBirth
           }
-        } else if (age >= 35 && age < 40 ) {
+        } else if (age >= 35 && age < 40) {
           let propLiveBirth = 11; // eight to 15 percent if you’re 35 to 39
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
             propLiveBirth: propLiveBirth
           }
-        } else if (age >= 40 && age < 43 ) {
+        } else if (age >= 40 && age < 43) {
           let propLiveBirth = 5; // five percent if you’re 40 to 42
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
             propLiveBirth: propLiveBirth
           }
-        } else if (age >= 43 ) {
+        } else if (age >= 43) {
           let propLiveBirth = 1; // one to two percent at age 43
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
@@ -240,15 +240,15 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
         res.JSON.stringify(odds);
       } else {
         let age = (new Date()).getFullYear() - result.age;
-        let age2 = Math.pow(age,2);
-        let age3 = Math.pow(age,3);
-        let agespl = (age > 35) ? (age-35) : 0;
-        let agespl3 = (age > 29) ? (Math.pow((age-29),3)) : 0;
+        let age2 = Math.pow(age, 2);
+        let age3 = Math.pow(age, 3);
+        let agespl = (age > 35) ? (age - 35) : 0;
+        let agespl3 = (age > 29) ? (Math.pow((age - 29), 3)) : 0;
         let yrsinfer = result.amountYearsChildlessSex;
         let currentIVF = result.currentIVF;
-        let yrsspl = (yrsinfer > 5) ? (yrsinfer-35) : 0;
+        let yrsspl = (yrsinfer > 5) ? (yrsinfer - 35) : 0;
         let prevcycles = result.ivfcycles
-        let prevspl = (prevcycles > 1) ? (prevcycles-1) :0;
+        let prevspl = (prevcycles > 1) ? (prevcycles - 1) : 0;
         let prevlvbr = result.amountChildren;
         let endomet = (result.whichGynecologicalCauses == 'endometriosis') ? 1 : 0;
         let mis = (result.miscarriages == 'yes') ? 1 : 0;
@@ -260,26 +260,26 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
         let logOddsMultiBirth2Emb, propMultiBirth2Emb = 0;
         let logOddsMultiBirth3Emb, propMultiBirth3Emb = 0;
         let odds = {};
-        
-        if(currentIVF === 'yes') {
-          logOddsLiveBirth1Emb = (-0.2448841) - (0.3747376*age) + (0.0193421*age2) - (0.0002913*age3) + (0.0002637*agespl3) - (0.025903*yrsinfer) - (0.4144238*prevcycles) + (0.3954898*prevspl) + (0.1239286*prevlvbr) - (0.2573125*endomet) - (0.4106893*mis) - (1.795355*ect);
-          propLiveBirth1Emb = (Math.exp(logOddsLiveBirth1Emb) / 1+Math.exp(logOddsLiveBirth1Emb))
-          logOddsLiveBirth2Emb = (-0.2448841) - (0.3747376*age) + (0.0193421*age2) - (0.0002913*age3) + (0.0002637*agespl3) - (0.025903*yrsinfer) - (0.4144238*prevcycles) + (0.3954898*prevspl) + (0.1239286*prevlvbr) - (0.2573125*endomet) - (0.4106893*mis) - (1.795355*ect) + 1.098584;
-          propLiveBirth2Emb = (Math.exp(logOddsLiveBirth2Emb) / 1+Math.exp(logOddsLiveBirth2Emb))
-          logOddsLiveBirth3Emb = (-0.2448841) - (0.3747376*age) + (0.0193421*age2) - (0.0002913*age3) + (0.0002637*agespl3) - (0.025903*yrsinfer) - (0.4144238*prevcycles) + (0.3954898*prevspl) + (0.1239286*prevlvbr) - (0.2573125*endomet) - (0.4106893*mis) - (1.795355*ect) + 1.276571;
-          propLiveBirth3Emb = (Math.exp(logOddsLiveBirth3Emb) / 1+Math.exp(logOddsLiveBirth3Emb))
-          logOddsMultiBirth1Emb = -2.724034 - 0.0245054*age - 0.079958*agespl + 0.0074175*yrsinfer - 0.0343089*yrsspl - 0.0785381*prevcycles - 0.1321438*endomet - 0.9741574*mis - 1.950923*ect;
-          propMultiBirth1Emb = (Math.exp(logOddsMultiBirth1Emb) / 1+Math.exp(logOddsMultiBirth1Emb))
-          logOddsMultiBirth2Emb = -2.724034 - 0.0245054*age - 0.079958*agespl + 0.0074175*yrsinfer - 0.0343089*yrsspl - 0.0785381*prevcycles - 0.1321438*endomet - 0.9741574*mis - 1.950923*ect + 2.484202;
-          propMultiBirth2Emb = (Math.exp(logOddsMultiBirth2Emb) / 1+Math.exp(logOddsMultiBirth2Emb))
-          logOddsMultiBirth3Emb = -2.724034 - 0.0245054*age - 0.079958*agespl + 0.0074175*yrsinfer - 0.0343089*yrsspl - 0.0785381*prevcycles - 0.1321438*endomet - 0.9741574*mis - 1.950923*ect + 2.985791;
-          propMultiBirth3Emb = (Math.exp(logOddsMultiBirth3Emb) / 1+Math.exp(logOddsMultiBirth3Emb))
+
+        if (currentIVF === 'yes') {
+          logOddsLiveBirth1Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect);
+          propLiveBirth1Emb = (Math.exp(logOddsLiveBirth1Emb) / 1 + Math.exp(logOddsLiveBirth1Emb))
+          logOddsLiveBirth2Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect) + 1.098584;
+          propLiveBirth2Emb = (Math.exp(logOddsLiveBirth2Emb) / 1 + Math.exp(logOddsLiveBirth2Emb))
+          logOddsLiveBirth3Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect) + 1.276571;
+          propLiveBirth3Emb = (Math.exp(logOddsLiveBirth3Emb) / 1 + Math.exp(logOddsLiveBirth3Emb))
+          logOddsMultiBirth1Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect;
+          propMultiBirth1Emb = (Math.exp(logOddsMultiBirth1Emb) / 1 + Math.exp(logOddsMultiBirth1Emb))
+          logOddsMultiBirth2Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect + 2.484202;
+          propMultiBirth2Emb = (Math.exp(logOddsMultiBirth2Emb) / 1 + Math.exp(logOddsMultiBirth2Emb))
+          logOddsMultiBirth3Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect + 2.985791;
+          propMultiBirth3Emb = (Math.exp(logOddsMultiBirth3Emb) / 1 + Math.exp(logOddsMultiBirth3Emb))
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             prevcycles: prevcycles,
             prevspl: prevspl,
             prevlvbr: prevlvbr,
@@ -299,60 +299,60 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
             logOddsMultiBirth3Emb: logOddsMultiBirth3Emb,
             propMultiBirth3Emb: propMultiBirth3Emb
           }
-        } else if (age < 35 ) {
+        } else if (age < 35) {
           let propLiveBirth = 27; // 25 to 30 percent if you’re under 35
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
             propLiveBirth: propLiveBirth
           }
-        } else if (age >= 35 && age < 40 ) {
+        } else if (age >= 35 && age < 40) {
           let propLiveBirth = 11; // eight to 15 percent if you’re 35 to 39
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
             propLiveBirth: propLiveBirth
           }
-        } else if (age >= 40 && age < 43 ) {
+        } else if (age >= 40 && age < 43) {
           let propLiveBirth = 5; // five percent if you’re 40 to 42
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
             propLiveBirth: propLiveBirth
           }
-        } else if (age >= 43 ) {
+        } else if (age >= 43) {
           let propLiveBirth = 1; // one to two percent at age 43
           odds = {
             age: age,
-            age2: age2, 
+            age2: age2,
             age3: age3,
             agespl3: agespl3,
-            yrsinfer: yrsinfer, 
+            yrsinfer: yrsinfer,
             endomet: endomet,
             mis: mis,
             ect: ect,
             propLiveBirth: propLiveBirth
           }
         }
-        res.JSON.stringify(odds) ;
+        res.JSON.stringify(data);
       }
     }
   });
@@ -363,8 +363,8 @@ app.get(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
 * HTTP put method for insert object *
 *************************************/
 
-app.put(path, function(req, res) {
-  
+app.put(path, function (req, res) {
+
   if (userIdPresent) {
     req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
@@ -374,11 +374,11 @@ app.put(path, function(req, res) {
     Item: req.body
   }
   dynamodb.put(putItemParams, (err, data) => {
-    if(err) {
+    if (err) {
       res.statusCode = 500;
-      res.json({error: err, url: req.url, body: req.body});
-    } else{
-      res.json({success: 'put call succeed!', url: req.url, data: data})
+      res.json({ error: err, url: req.url, body: req.body });
+    } else {
+      res.json({ success: 'put call succeed!', url: req.url, data: data })
     }
   });
 });
@@ -387,8 +387,8 @@ app.put(path, function(req, res) {
 * HTTP post method for insert object *
 *************************************/
 
-app.post(path, function(req, res) {
-  
+app.post(path, function (req, res) {
+
   if (userIdPresent) {
     req.body['userId'] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   }
@@ -398,11 +398,11 @@ app.post(path, function(req, res) {
     Item: req.body
   }
   dynamodb.put(putItemParams, (err, data) => {
-    if(err) {
+    if (err) {
       res.statusCode = 500;
-      res.json({error: err, url: req.url, body: req.body});
-    } else{
-      res.json({success: 'post call succeed!', url: req.url, data: data})
+      res.json({ error: err, url: req.url, body: req.body });
+    } else {
+      res.json({ success: 'post call succeed!', url: req.url, data: data })
     }
   });
 });
@@ -411,25 +411,25 @@ app.post(path, function(req, res) {
 * HTTP remove method to delete object *
 ***************************************/
 
-app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
+app.delete(path + '/object' + hashKeyPath + sortKeyPath, function (req, res) {
   var params = {};
   if (userIdPresent && req.apiGateway) {
     params[partitionKeyName] = req.apiGateway.event.requestContext.identity.cognitoIdentityId || UNAUTH;
   } else {
     params[partitionKeyName] = req.params[partitionKeyName];
-     try {
+    try {
       params[partitionKeyName] = convertUrlType(req.params[partitionKeyName], partitionKeyType);
-    } catch(err) {
+    } catch (err) {
       res.statusCode = 500;
-      res.json({error: 'Wrong column type ' + err});
+      res.json({ error: 'Wrong column type ' + err });
     }
   }
   if (hasSortKey) {
     try {
       params[sortKeyName] = convertUrlType(req.params[sortKeyName], sortKeyType);
-    } catch(err) {
+    } catch (err) {
       res.statusCode = 500;
-      res.json({error: 'Wrong column type ' + err});
+      res.json({ error: 'Wrong column type ' + err });
     }
   }
 
@@ -437,17 +437,17 @@ app.delete(path + '/object' + hashKeyPath + sortKeyPath, function(req, res) {
     TableName: tableName,
     Key: params
   }
-  dynamodb.delete(removeItemParams, (err, data)=> {
-    if(err) {
+  dynamodb.delete(removeItemParams, (err, data) => {
+    if (err) {
       res.statusCode = 500;
-      res.json({error: err, url: req.url});
+      res.json({ error: err, url: req.url });
     } else {
-      res.json({url: req.url, data: data});
+      res.json({ url: req.url, data: data });
     }
   });
 });
-app.listen(3000, function() {
-    console.log("App started")
+app.listen(3000, function () {
+  console.log("App started")
 });
 
 // Export the app object. When executing the application local this does nothing. However,
