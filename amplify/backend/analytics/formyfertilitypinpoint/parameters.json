@@ -1,0 +1,20 @@
+{
+    "appName": "formyfertilitypinpoint",
+    "roleName": "pinpointLambdaRole4836245e",
+    "cloudWatchPolicyName": "cloudWatchPolicy4836245e",
+    "pinpointPolicyName": "pinpointPolicy4836245e",
+    "authPolicyName": "pinpoint_amplify_4836245e",
+    "unauthPolicyName": "pinpoint_amplify_4836245e",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "authRoleArn": {
+        "Fn::GetAtt": [
+            "AuthRole",
+            "Arn"
+        ]
+    }
+}

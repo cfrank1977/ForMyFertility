@@ -1,31 +1,14 @@
 {
 	"auth": {
-		"formyfertilitymobile": {
+		"formyfertilitycognito": {
 			"service": "Cognito",
 			"providerPlugin": "awscloudformation"
 		}
 	},
-	"api": {
-		"formyfertilitymobile": {
-			"service": "AppSync",
-			"providerPlugin": "awscloudformation",
-			"output": {
-				"securityType": "AMAZON_COGNITO_USER_POOLS"
-			}
-		},
-		"odds": {
-			"service": "API Gateway",
-			"providerPlugin": "awscloudformation",
-			"dependsOn": [
-				{
-					"category": "function",
-					"resourceName": "femaleodds",
-					"attributes": [
-						"Name",
-						"Arn"
-					]
-				}
-			]
+	"analytics": {
+		"formyfertilitypinpoint": {
+			"service": "Pinpoint",
+			"providerPlugin": "awscloudformation"
 		}
 	},
 	"storage": {
@@ -39,7 +22,7 @@
 		}
 	},
 	"function": {
-		"femaleodds": {
+		"formyfertilityfemaleodds": {
 			"service": "Lambda",
 			"providerPlugin": "awscloudformation",
 			"build": true,
@@ -55,10 +38,27 @@
 			]
 		}
 	},
-	"analytics": {
-		"formyfertilitymobile": {
-			"service": "Pinpoint",
-			"providerPlugin": "awscloudformation"
+	"api": {
+		"formyfertility": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"securityType": "AMAZON_COGNITO_USER_POOLS"
+			}
+		},
+		"oddsapi": {
+			"service": "API Gateway",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "formyfertilityfemaleodds",
+					"attributes": [
+						"Name",
+						"Arn"
+					]
+				}
+			]
 		}
 	}
 }
