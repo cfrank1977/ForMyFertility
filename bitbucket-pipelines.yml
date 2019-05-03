@@ -45,8 +45,8 @@ pipelines:
             - npm ci
             - npm install --save-dev expo-cli
             - npm install --save-dev @aws-amplify/cli
-            - amplify env checkout prod
-            - amplify env pull
+            - npx amplify env checkout prod
+            - npx amplify env pull
             - npx expo login --username $EXPO_USERNAME --password $EXPO_PASSWORD
             - npx expo publish --non-interactive
             - npx expo build:ios --non-interactive
