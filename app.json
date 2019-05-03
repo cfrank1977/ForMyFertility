@@ -1,29 +1,40 @@
 {
   "expo": {
-    "name": "For My Fertility",
-    "slug": "formyfertilitymobile",
+    "name": "Fertility",
+    "description": "This project is to support couples through the fertilization process.",
+    "slug": "ForMyFertility",
     "privacy": "public",
-    "sdkVersion": "32.0.0",
-    "platforms": [
-      "ios",
-      "android"
-    ],
-    "version": "1.0.0",
+    "sdkVersion": "31.0.0",
+    "platforms": ["ios", "android"],
+    "version": "0.7.0",
     "orientation": "portrait",
+    "packagerOpts": {
+      "nonPersistent": "--nonPersistent"
+    },
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "resizeMode": "cover",
+      "backgroundColor": "#45ccb1"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 30000
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "9",
+      "icon": "./assets/icon.png",
+      "bundleIdentifier": "com.formylife360.formyfertility",
+      "splash": {
+        "backgroundColor": "#45ccb1",
+        "resizeMode": "cover",
+        "image": "./assets/splash.png"
+      }
     }
   }
 }
