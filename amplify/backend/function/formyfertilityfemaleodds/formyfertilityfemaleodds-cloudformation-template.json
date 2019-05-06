@@ -67,8 +67,8 @@
 				"Runtime": "nodejs8.10",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "formyfertilityamp-20190501153324-deployment",
-					"S3Key": "amplify-builds/formyfertilityfemaleodds-1556836021-latest-build.zip"
+					"S3Bucket": "formyfertilityamp-20190503202011-deployment",
+					"S3Key": "amplify-builds/formyfertilityfemaleodds-1556929393-latest-build.zip"
 				}
 			}
 		},

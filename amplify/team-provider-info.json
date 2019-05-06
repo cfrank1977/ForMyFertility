@@ -15,5 +15,22 @@
                 "formyfertilitycognito": {}
             }
         }
+    },
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "formyfertilityamp-20190503202011-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamp-20190503202011-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamp-20190503202011-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "formyfertilityamp-20190503202011-deployment",
+            "UnauthRoleName": "formyfertilityamp-20190503202011-unauthRole",
+            "StackName": "formyfertilityamp-20190503202011",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityamp-20190503202011/620670d0-6e02-11e9-8165-06413d85a3ea"
+        },
+        "categories": {
+            "auth": {
+                "formyfertilitycognito": {}
+            }
+        }
     }
 }

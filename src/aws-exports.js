@@ -2,31 +2,31 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-2",
-    "aws_cognito_identity_pool_id": "us-east-2:c019de33-1370-4846-9027-a73c382d017f",
+    "aws_cognito_identity_pool_id": "us-east-2:3359766a-47d4-44b8-b8a2-7f1bf8321d25",
     "aws_cognito_region": "us-east-2",
-    "aws_user_pools_id": "us-east-2_NyIY3P6Qa",
-    "aws_user_pools_web_client_id": "2649mjpck1isbqb879cu8hlphc",
+    "aws_user_pools_id": "us-east-2_b6fw8ER3G",
+    "aws_user_pools_web_client_id": "3h8lsu6or4anelqgh806ht3ps2",
     "oauth": {},
-    "aws_mobile_analytics_app_id": "78917669142e4dd2a4cb90174358f97c",
+    "aws_mobile_analytics_app_id": "6391c76e44d34533910127e06557a9fd",
     "aws_mobile_analytics_app_region": "us-east-1",
     "aws_dynamodb_all_tables_region": "us-east-2",
     "aws_dynamodb_table_schemas": [
         {
-            "tableName": "femalefertility-prod",
+            "tableName": "femalefertility-dev",
             "region": "us-east-2"
         },
         {
-            "tableName": "malefertility-prod",
+            "tableName": "malefertility-dev",
             "region": "us-east-2"
         }
     ],
-    "aws_appsync_graphqlEndpoint": "https://udkfymc43jadrbluggeblalibi.appsync-api.us-east-2.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://sinfbbv7hfbybbspvkbvxg367u.appsync-api.us-east-2.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-2",
     "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
     "aws_cloud_logic_custom": [
         {
             "name": "oddsapi",
-            "endpoint": "https://srjzh5cw58.execute-api.us-east-2.amazonaws.com/prod",
+            "endpoint": "https://zgvdamjuoa.execute-api.us-east-2.amazonaws.com/dev",
             "region": "us-east-2"
         }
     ]
