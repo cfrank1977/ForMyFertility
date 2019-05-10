@@ -27,9 +27,9 @@ export class Report extends Component {
             console.log(`First time no data in database ${formdata}`)
             this.setState(formdata);
         }
-        console.log(`the id in state is ${this.state.id}`);
+        console.log(`the id in state is ${this.props.fertilityQuestions.id}`);
         this.setState({ given_name: user.attributes.given_name })
-        odds = await odds.getOdds(this.state.id, this.props.fertilityQuestions.currentIVF)
+        odds = await odds.getOdds(this.props.fertilityQuestions.id, this.props.fertilityQuestions.currentIVF)
         console.log(`in report the odds are ${JSON.stringify(odds)}`);
         this.setState(odds);
     }

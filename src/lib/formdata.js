@@ -87,7 +87,7 @@ module.exports = class FormData {
     	            gestationalcarrier: "${fertilityQuestions.gestationalcarrier}",
     	            hormone: "${fertilityQuestions.hormone}",
     	            icsi: "${fertilityQuestions.icsi}",
-    	            ivfcycles: "${fertilityQuestions.ivfcycles}",
+    	            ivfcycles: ${fertilityQuestions.ivfcycles},
     	            ivfconceived: "${fertilityQuestions.ivfconceived}",
     	            morethanoneivfconceived: "${fertilityQuestions.morethanoneivfconceived}",
     	            singletonmulitbirth: "${fertilityQuestions.singletonmulitbirth}",
