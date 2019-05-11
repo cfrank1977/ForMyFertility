@@ -27,11 +27,9 @@ describe('>>>SignIn --- Shallow Render REACT COMPONENTS', () => {
       state: jest.fn(),
       authState: 'signIn'
     }
-
     wrapper = shallow(<SignIn {...props} />)
 
   })
-
   it('renders correctly', () => {
     const tree = renderer.create(
       <SignIn />
