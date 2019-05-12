@@ -2,13 +2,6 @@
 
 const awsmobile = {
     "aws_project_region": "us-east-2",
-    "aws_cognito_identity_pool_id": "us-east-2:3359766a-47d4-44b8-b8a2-7f1bf8321d25",
-    "aws_cognito_region": "us-east-2",
-    "aws_user_pools_id": "us-east-2_b6fw8ER3G",
-    "aws_user_pools_web_client_id": "3h8lsu6or4anelqgh806ht3ps2",
-    "oauth": {},
-    "aws_mobile_analytics_app_id": "6391c76e44d34533910127e06557a9fd",
-    "aws_mobile_analytics_app_region": "us-east-1",
     "aws_dynamodb_all_tables_region": "us-east-2",
     "aws_dynamodb_table_schemas": [
         {
@@ -20,16 +13,23 @@ const awsmobile = {
             "region": "us-east-2"
         }
     ],
-    "aws_appsync_graphqlEndpoint": "https://sinfbbv7hfbybbspvkbvxg367u.appsync-api.us-east-2.amazonaws.com/graphql",
-    "aws_appsync_region": "us-east-2",
-    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "aws_cognito_identity_pool_id": "us-east-2:e8c50823-93c0-4d96-bae5-8565036fdd40",
+    "aws_cognito_region": "us-east-2",
+    "aws_user_pools_id": "us-east-2_raiO2Ngz7",
+    "aws_user_pools_web_client_id": "ab8oh0v1mue8su2cs7quujb8f",
+    "oauth": {},
     "aws_cloud_logic_custom": [
         {
             "name": "oddsapi",
-            "endpoint": "https://zgvdamjuoa.execute-api.us-east-2.amazonaws.com/dev",
+            "endpoint": "https://6ziwimmaa2.execute-api.us-east-2.amazonaws.com/dev",
             "region": "us-east-2"
         }
-    ]
+    ],
+    "aws_appsync_graphqlEndpoint": "https://z7rrptdw2rhgharw63uibz4mnm.appsync-api.us-east-2.amazonaws.com/graphql",
+    "aws_appsync_region": "us-east-2",
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "aws_mobile_analytics_app_id": "0d8a8dc5df6e4065820a7f247431aec9",
+    "aws_mobile_analytics_app_region": "us-east-1"
 };
 
 

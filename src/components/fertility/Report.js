@@ -17,20 +17,15 @@ export class Report extends Component {
         let user = await Auth.currentAuthenticatedUser();
         let formdata = new FormData();
         let odds = new Odds();
-        console.log(`report compontent did mount ${JSON.stringify(this.props.fertilityQuestions)}`)
         if (this.props.fertilityQuestions.id) {
             formdata = await formdata.updateFormData(this.props.fertilityQuestions);
-            console.log(`Updating data in database ${JSON.stringify(formdata)}`)
             this.setState(formdata);
         } else {
             formdata = await formdata.addFormData(this.props.fertilityQuestions, user.username);
-            console.log(`First time no data in database ${formdata}`)
             this.setState(formdata);
         }
-        console.log(`the id in state is ${this.props.fertilityQuestions.id}`);
         this.setState({ given_name: user.attributes.given_name })
         odds = await odds.getOdds(this.props.fertilityQuestions.id, this.props.fertilityQuestions.currentIVF)
-        console.log(`in report the odds are ${JSON.stringify(odds)}`);
         this.setState(odds);
     }
 
