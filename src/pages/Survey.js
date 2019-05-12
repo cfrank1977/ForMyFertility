@@ -12,10 +12,10 @@ export class Survey extends Component {
     super(props);
     this.state = {
       formdata: {
-        gender: '',
+        gender: 'female',
       },
       maleformdata: {
-        gender: '',
+        gender: 'male',
       },
     };
   }

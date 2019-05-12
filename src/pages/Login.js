@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container } from 'native-base';
 import { connect } from 'react-redux';
 import { Authenticator } from 'aws-amplify-react-native';
-import { Auth } from 'aws-amplify';
+import { Auth, Hub, Logger } from 'aws-amplify';
 import Survey from './Survey';
 import { SignIn, ConfirmSignIn, SignUp, ConfirmSignUp, ForgotPassword, ForgotPasswordReset } from '../components/auth';
 
@@ -17,16 +17,31 @@ const CustomAuthenticator = props => (
   </Authenticator>
 )
 
+const logger = new Logger('Navigator');
+
 export class Login extends Component {
 
   constructor(props) {
     super(props);
     this.loadUser = this.loadUser.bind(this);
+    Hub.listen('auth', (data) => {
+      const { payload } = data;
+      this.loadUser(); 
+      logger.info('on Auth event',  payload.event);          
+      console.log('A new auth event has happened: ', payload.data.username + ' has ' + payload.event);
+  })
     this.state = { user: null }
   }
 
   componentDidMount() {
     this.loadUser(); // The first check
+  }
+
+  componentWillUnmount() {
+    Hub.remove('auth', (data) => {
+      const { payload } = data;        
+      console.log('A new auth event has happened: ', payload.data.username + ' has ' + payload.event);
+  })
   }
 
   loadUser() {
