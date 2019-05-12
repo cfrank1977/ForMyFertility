@@ -22,10 +22,12 @@ export class Report extends Component {
             this.setState(formdata);
         } else {
             formdata = await formdata.addFormData(this.props.fertilityQuestions, user.username);
+            console.log(`user: ${JSON.stringify(formdata)}`)
             this.setState(formdata);
         }
+        
         this.setState({ given_name: user.attributes.given_name })
-        odds = await odds.getOdds(this.props.fertilityQuestions.id, this.props.fertilityQuestions.currentIVF)
+        odds = await odds.getOdds(formdata.id, this.props.fertilityQuestions.currentIVF)
         this.setState(odds);
     }
 

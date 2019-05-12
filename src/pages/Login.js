@@ -24,24 +24,24 @@ export class Login extends Component {
   constructor(props) {
     super(props);
     this.loadUser = this.loadUser.bind(this);
-    Hub.listen('auth', (data) => {
-      const { payload } = data;
-      this.loadUser(); 
-      logger.info('on Auth event',  payload.event);          
-      console.log('A new auth event has happened: ', payload.data.username + ' has ' + payload.event);
-  })
     this.state = { user: null }
   }
 
   componentDidMount() {
     this.loadUser(); // The first check
+    Hub.listen('auth', (data) => {
+      const { payload } = data;
+      this.loadUser();
+      logger.info('on Auth event', payload.event);
+      console.log('A new auth event has happened: ', payload.data.username + ' has ' + payload.event);
+    })
   }
 
   componentWillUnmount() {
     Hub.remove('auth', (data) => {
-      const { payload } = data;        
-      console.log('A new auth event has happened: ', payload.data.username + ' has ' + payload.event);
-  })
+      const { payload } = data;
+      console.log('A new auth event has happened: ' + payload.event);
+    })
   }
 
   loadUser() {

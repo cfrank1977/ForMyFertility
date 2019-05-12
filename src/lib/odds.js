@@ -7,6 +7,7 @@ module.exports = class Odds  {
     }
 
     async getOdds(formID, currentIVF) {
+        console.log(`formID is: ${formID} and currentIVF ${currentIVF}`)
         try {
             let fertilityResults = await API.get('oddsapi', `/odds/${formID}`);
                 if (currentIVF === "no") {
