@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  Body,
-  Button,
-  Form,
-  Text,
-  Header,
-  Content,
-  Item,
-  Input,
-  Label
-} from 'native-base';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { Button, Form, Text, Content, Item, Input, Label } from 'native-base';
+import {  Row, Grid } from 'react-native-easy-grid';
 import { Auth, Logger, JS } from 'aws-amplify';
 
 const logger = new Logger('ConfirmSignIn');

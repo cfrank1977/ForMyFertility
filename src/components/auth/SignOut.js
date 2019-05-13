@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import {
-  Container,
-  Button,
-  Text,
-  Header,
-  Content,
-} from 'native-base';
-
-import { Auth } from 'aws-amplify';
+import { Container, Button, Text, Content } from 'native-base';
+import { Auth, Logger } from 'aws-amplify';
+const logger = new Logger('SignOut');
 
 export default class SignOut extends Component {
   constructor(props) {
@@ -16,7 +10,9 @@ export default class SignOut extends Component {
   }
 
   signOut() {
-    Auth.signOut();
+    Auth.signOut()
+      .then(() => logger.info('sign out success'))
+      .catch(err => logger.info('sign out error', err));
     const navigation = this.props.navigation;
     navigation.navigate('Home')
   }

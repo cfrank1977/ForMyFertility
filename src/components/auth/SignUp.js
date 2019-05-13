@@ -43,7 +43,6 @@ export default class SignUp extends Component {
 
   signUp() {
     const { username, password, email, phone_number } = this.state;
-    console.log(`${JSON.stringify(this.state)}`)
     logger.info('sign up with ' + username);
     Auth.signUp({
       username: username,

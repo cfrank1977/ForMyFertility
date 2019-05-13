@@ -14,11 +14,6 @@ import {
     View
 } from 'native-base';
 
-let ivfcycles = [];
-for (let i = 0; i < 50; i++) {
-    ivfcycles.push(<Picker.Item key={i} label={`${i}`} value={i} />)
-}
-
 function handleSubmit({ navigation, fertilityQuestions, dispatch, }) {
     dispatch(actions.change('fertilityQuestions.questionNum', ++fertilityQuestions.questionNum));
     navigation.navigate("Hormone")
@@ -33,16 +28,16 @@ const IVFCYCLES = ({ navigation, fertilityQuestions, dispatch }) => (
         <Form model="fertilityQuestions" onSubmit={values => this.handleSubmit(values)}>
             <Text>Which IVF cycle would this be for you?</Text>
             <Control.Picker model=".ivfcycles">
-                <Picker.Item label='1st' value='1st' />
-                <Picker.Item label='2nd' value='2nd' />
-                <Picker.Item label='3rd' value='3rd' />
-                <Picker.Item label='4th' value='4th' />
-                <Picker.Item label='5th' value='5th' />
-                <Picker.Item label='6th' value='6th' />
-                <Picker.Item label='7th' value='7th' />
-                <Picker.Item label='8th' value='8th' />
-                <Picker.Item label='9th' value='9th' />
-                <Picker.Item label='10th' value='10th' />
+                <Picker.Item label='1st' value={1} />
+                <Picker.Item label='2nd' value={2} />
+                <Picker.Item label='3rd' value={3} />
+                <Picker.Item label='4th' value={4} />
+                <Picker.Item label='5th' value={5} />
+                <Picker.Item label='6th' value={6} />
+                <Picker.Item label='7th' value={7} />
+                <Picker.Item label='8th' value={8} />
+                <Picker.Item label='9th' value={9} />
+                <Picker.Item label='10th' value={10} />
             </Control.Picker>
             <View>
                 <Button full rounded primary onPress={() => handleSubmit({ navigation, fertilityQuestions, dispatch })}>
