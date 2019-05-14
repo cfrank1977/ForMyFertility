@@ -49,14 +49,13 @@ export default class Profile extends Component {
     await Auth.updateUserAttributes(user, profile)
       .then(data => this.saveSuccess(data))
       .catch(err => this.handleError(err));
-    user = await Auth.currentAuthenticatedUser();
+    user = await Auth.currentAuthenticatedUser({
+      bypassCache: true  // Optional, By default is false. If set to true, this call will send a request to Cognito to get the latest user data
+    })
+    this.props.navigation.navigate('Home')
   }
 
-  loadSuccess(data) {
-    logger.info('loaded user attributes', data);
-    const profile = this.translateAttributes(data);
-    this.setState({ profile: profile });
-  }
+ 
 
   saveSuccess(data) {
     logger.info('saved user profile', data);
@@ -66,16 +65,6 @@ export default class Profile extends Component {
   handleError(error) {
     logger.info('load / save user attributes error', error);
     this.setState({ error: error.message || error });
-  }
-
-  // Auth.userAttributes returns an array of attributes.
-  // We map it to an object for easy use.
-  translateAttributes(data) {
-    const profile = {};
-    data
-      .filter(attr => ['given_name', 'family_name'].includes(attr.Name))
-      .forEach(attr => profile[attr.Name] = attr.Value);
-    return profile;
   }
 
   storeListener() {
@@ -90,7 +79,6 @@ export default class Profile extends Component {
     return (
       <Container>
         <Content padder >
-
           <Item stackedLabel style={{ marginTop: 30 }}>
             <Label>First Name</Label>
             <Input

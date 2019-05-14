@@ -68,8 +68,7 @@ export default class ConfirmSignUp extends Component {
 
     return (
       <Content>
-        
-          <Form  >
+          <Form>
             <Item stackedLabel style={{ marginTop: 30 }}>
               <Label>Email (Username)</Label>
               <Input

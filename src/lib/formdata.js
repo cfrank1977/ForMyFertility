@@ -124,6 +124,7 @@ module.exports = class FormData {
                   ivfconceived
                   morethanoneivfconceived
                   singletonmulitbirth
+                  whichGynecologicalCauses
                 }
               }
         `

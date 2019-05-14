@@ -17,20 +17,17 @@ export class Report extends Component {
         let user = await Auth.currentAuthenticatedUser();
         let formdata = new FormData();
         let odds = new Odds();
-        console.log(this.props.fertilityQuestions)
         if (this.props.fertilityQuestions.id) {
             formdata = await formdata.updateFormData(this.props.fertilityQuestions);
-            console.log(`Updating data in database ${JSON.stringify(formdata)}`)
             this.setState(formdata);
         } else {
             formdata = await formdata.addFormData(this.props.fertilityQuestions, user.username);
-            console.log(`First time no data in database ${formdata}`)
+            console.log(`user: ${JSON.stringify(formdata)}`)
             this.setState(formdata);
         }
-        console.log(`the id in state is ${this.state.id}`);
+        
         this.setState({ given_name: user.attributes.given_name })
-        odds = await odds.getOdds(this.state.id, this.props.fertilityQuestions.currentIVF)
-        console.log(`in report the odds are ${JSON.stringify(odds)}`);
+        odds = await odds.getOdds(formdata.id, this.props.fertilityQuestions.currentIVF)
         this.setState(odds);
     }
 
@@ -43,6 +40,7 @@ export class Report extends Component {
                         <Progress.Circle
                             progress={this.state.fertilityResults.propLiveBirth}
                             size={300}
+                            animated={false}
                             showsText={true}
                             thickness={10}
                             borderWidth={5}
@@ -56,6 +54,7 @@ export class Report extends Component {
                         <Progress.Circle
                             showsText={true}
                             size={300}
+                            animated={false}
                             thickness={10}
                             progress={this.state.fertilityResults.propLiveBirth1Emb}
                             borderWidth={5}
@@ -66,6 +65,7 @@ export class Report extends Component {
                         <Progress.Circle
                             showsText={true}
                             size={300}
+                            animated={false}
                             thickness={10}
                             progress={this.state.fertilityResults.propLiveBirth2Emb}
                             borderWidth={5}
@@ -76,6 +76,7 @@ export class Report extends Component {
                         <Progress.Circle
                             showsText={true}
                             size={300}
+                            animated={false}
                             thickness={10}
                             progress={this.state.fertilityResults.propLiveBirth3Emb}
                             borderWidth={5}
@@ -86,6 +87,7 @@ export class Report extends Component {
                         <Progress.Circle
                             showsText={true}
                             size={300}
+                            animated={false}
                             thickness={10}
                             progress={this.state.fertilityResults.propMultiBirth1Emb}
                             borderWidth={5}
@@ -96,6 +98,7 @@ export class Report extends Component {
                         <Progress.Circle
                             showsText={true}
                             size={300}
+                            animated={false}
                             thickness={10}
                             progress={this.state.fertilityResults.propMultiBirth2Emb}
                             borderWidth={5}
@@ -106,6 +109,7 @@ export class Report extends Component {
                         <Progress.Circle
                             showsText={true}
                             size={300}
+                            animated={false}
                             thickness={10}
                             progress={this.state.fertilityResults.propMultiBirth3Emb}
                             borderWidth={5}

@@ -1,6 +1,6 @@
 {
     "identityPoolName": "formyfertilityidentitypool",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "lambdaLogPolicy": "formyfertilitycognito_lambda_log_policy",
     "openIdLambdaRoleName": "formyfertilitycognito_openid_lambda_role",
     "openIdRolePolicy": "formyfertilitycognito_openid_pass_role_policy",
@@ -19,8 +19,8 @@
     "policyName": "formyfertilitycognito-sns-policy",
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your For MY Fertility verification code",
-    "emailVerificationMessage": "Your For My Fertility verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [

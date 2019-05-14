@@ -67,8 +67,8 @@
 				"Runtime": "nodejs8.10",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "formyfertilityamp-20190501153324-deployment",
-					"S3Key": "amplify-builds/formyfertilityfemaleodds-1556836021-latest-build.zip"
+					"S3Bucket": "formyfertilityamplif-20190513170650-deployment",
+					"S3Key": "amplify-builds/formyfertilityfemaleodds-1557781712-latest-build.zip"
 				}
 			}
 		},
@@ -78,12 +78,12 @@
 				"RoleName": {
 					"Fn::If": [
 						"ShouldNotCreateEnvResources",
-						"formyfertilityampLambdaRole00c578aa",
+						"formyfertilityamplifLambdaRoleb3847e4f",
 						{
 							"Fn::Join": [
 								"",
 								[
-									"formyfertilityampLambdaRole00c578aa",
+									"formyfertilityamplifLambdaRoleb3847e4f",
 									"-",
 									{
 										"Ref": "env"

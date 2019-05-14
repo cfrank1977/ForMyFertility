@@ -1,14 +1,31 @@
 {
-    "prod": {
+    "dev": {
         "awscloudformation": {
-            "AuthRoleName": "formyfertilityamp-20190514162938-authRole",
-            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamp-20190514162938-unauthRole",
-            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamp-20190514162938-authRole",
+            "AuthRoleName": "formyfertilityamplif-20190511191810-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamplif-20190511191810-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamplif-20190511191810-authRole",
             "Region": "us-east-2",
-            "DeploymentBucketName": "formyfertilityamp-20190514162938-deployment",
-            "UnauthRoleName": "formyfertilityamp-20190514162938-unauthRole",
-            "StackName": "formyfertilityamp-20190514162938",
-            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityamp-20190514162938/ff7cb950-7686-11e9-bb5e-060ae44bf6ec"
+            "DeploymentBucketName": "formyfertilityamplif-20190511191810-deployment",
+            "UnauthRoleName": "formyfertilityamplif-20190511191810-unauthRole",
+            "StackName": "formyfertilityamplif-20190511191810",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityamplif-20190511191810/0acd2c40-7443-11e9-8e13-0ae094dd1c0e"
+        },
+        "categories": {
+            "auth": {
+                "formyfertilitycognito": {}
+            }
+        }
+    },
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "formyfertilityamplif-20190513170650-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamplif-20190513170650-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamplif-20190513170650-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "formyfertilityamplif-20190513170650-deployment",
+            "UnauthRoleName": "formyfertilityamplif-20190513170650-unauthRole",
+            "StackName": "formyfertilityamplif-20190513170650",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityamplif-20190513170650/0a45a640-75c3-11e9-a7d4-0a71b7d84638"
         },
         "categories": {
             "auth": {

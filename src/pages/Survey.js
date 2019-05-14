@@ -6,16 +6,15 @@ import { Auth } from 'aws-amplify';
 import FormData from '../lib/formdata';
 import MaleFormData from '../lib/maleformdata';
 
-
 export class Survey extends Component {
   constructor(props) {
     super(props);
     this.state = {
       formdata: {
-        gender: '',
+        gender: 'female',
       },
       maleformdata: {
-        gender: '',
+        gender: 'male',
       },
     };
   }

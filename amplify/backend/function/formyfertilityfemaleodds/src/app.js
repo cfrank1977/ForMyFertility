@@ -87,10 +87,9 @@ app.get(path + hashKeyPath + sortKeyPath, function (req, res) {
       res.statusCode = 500;
       res.json({ error: 'Could not load items: ' + err.message });
     } else {
-      console.log(`data is ${data.Item}`)
+      console.log(`data is ${JSON.stringify(data.Item)}`)
       if (data.Item) {
         let age = (new Date()).getFullYear() - data.Item.age;
-        console.log(`age is ${age}`)
         let age2 = Math.pow(age, 2);
         let age3 = Math.pow(age, 3);
         let agespl = (age > 35) ? (age - 35) : 0;
@@ -114,17 +113,18 @@ app.get(path + hashKeyPath + sortKeyPath, function (req, res) {
 
         if (currentIVF === 'yes') {
           logOddsLiveBirth1Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect);
-          propLiveBirth1Emb = (Math.exp(logOddsLiveBirth1Emb) / 1 + Math.exp(logOddsLiveBirth1Emb))
+          console.log(`logOddsLiveBirth1Emb is ${logOddsLiveBirth1Emb}`)
+          propLiveBirth1Emb = (Math.exp(logOddsLiveBirth1Emb) / 1 + Math.exp(logOddsLiveBirth1Emb));
           logOddsLiveBirth2Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect) + 1.098584;
-          propLiveBirth2Emb = (Math.exp(logOddsLiveBirth2Emb) / 1 + Math.exp(logOddsLiveBirth2Emb))
+          propLiveBirth2Emb = (Math.exp(logOddsLiveBirth2Emb) / 1 + Math.exp(logOddsLiveBirth2Emb));
           logOddsLiveBirth3Emb = (-0.2448841) - (0.3747376 * age) + (0.0193421 * age2) - (0.0002913 * age3) + (0.0002637 * agespl3) - (0.025903 * yrsinfer) - (0.4144238 * prevcycles) + (0.3954898 * prevspl) + (0.1239286 * prevlvbr) - (0.2573125 * endomet) - (0.4106893 * mis) - (1.795355 * ect) + 1.276571;
-          propLiveBirth3Emb = (Math.exp(logOddsLiveBirth3Emb) / 1 + Math.exp(logOddsLiveBirth3Emb))
+          propLiveBirth3Emb = (Math.exp(logOddsLiveBirth3Emb) / 1 + Math.exp(logOddsLiveBirth3Emb));
           logOddsMultiBirth1Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect;
-          propMultiBirth1Emb = (Math.exp(logOddsMultiBirth1Emb) / 1 + Math.exp(logOddsMultiBirth1Emb))
+          propMultiBirth1Emb = (Math.exp(logOddsMultiBirth1Emb) / 1 + Math.exp(logOddsMultiBirth1Emb));
           logOddsMultiBirth2Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect + 2.484202;
-          propMultiBirth2Emb = (Math.exp(logOddsMultiBirth2Emb) / 1 + Math.exp(logOddsMultiBirth2Emb))
+          propMultiBirth2Emb = (Math.exp(logOddsMultiBirth2Emb) / 1 + Math.exp(logOddsMultiBirth2Emb));
           logOddsMultiBirth3Emb = -2.724034 - 0.0245054 * age - 0.079958 * agespl + 0.0074175 * yrsinfer - 0.0343089 * yrsspl - 0.0785381 * prevcycles - 0.1321438 * endomet - 0.9741574 * mis - 1.950923 * ect + 2.985791;
-          propMultiBirth3Emb = (Math.exp(logOddsMultiBirth3Emb) / 1 + Math.exp(logOddsMultiBirth3Emb))
+          propMultiBirth3Emb = (Math.exp(logOddsMultiBirth3Emb) / 1 + Math.exp(logOddsMultiBirth3Emb));
           odds = {
             age: age,
             age2: age2,
