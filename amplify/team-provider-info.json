@@ -9,6 +9,11 @@
             "UnauthRoleName": "formyfertilityamplif-prod-20190515175437-unauthRole",
             "StackName": "formyfertilityamplif-prod-20190515175437",
             "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityamplif-prod-20190515175437/08e47fc0-775c-11e9-ac72-024d9c0f9898"
+        },
+        "categories": {
+            "auth": {
+                "formyfertilitycognito": {}
+            }
         }
     }
 }
