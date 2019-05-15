@@ -1,5 +1,5 @@
 ---
-image: tarampampam/node:8.11-jessie
+image: node:8.11-jessie
 definitions:
   caches:
     npm: ~/.npm
