@@ -1,5 +1,0 @@
-{
-    "tableName": "malefertility",
-    "partitionKeyName": "id",
-    "partitionKeyType": "S"
-}
