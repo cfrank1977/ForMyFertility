@@ -1,49 +1,36 @@
----
-image: node:8.11-jessie
-definitions:
-  caches:
-    npm: ~/.npm
-    jest: .jest
+image: node:8
+
 pipelines:
   default:
     - step:
-        name: Test with Jest
         caches:
-          - npm
-          - jest
+          - yarncache
         script:
-          - npm ci
-          - npx jest --ci
+          - yarn
+          - yarn test
   branches:
-    feature:
-      - step:
-          name: Test feature branch
-          caches:
-            - npm
-            - jest
-          script:
-            - npm ci
-            - npx jest --ci
+    develop:
+     - step:
+         name: Publish to expo dev
+         deployment: test
+         caches:
+           - yarncache
+         script:
+           - yarn
+           - yarn global add exp
+           - exp login -u $EXPO_NAME -p $EXPO_PWD
+           - yarn run publish:dev
     master:
-      - step:
-          name: Test with Jest
-          caches:
-            - npm
-            - jest
-          script:
-            - npm ci
-            - npx jest --ci
-      - step:
-          name: Deploy to Expo
-          trigger: manual
-          deployment: production
-          caches:
-            - npm
-            - jest
-          script:
-            - apk add --no-cache bash
-            - npm ci
-            - npm install --save-dev expo-cli
-            - npx expo login --username $EXPO_USERNAME --password $EXPO_PASSWORD
-            - npx expo publish --non-interactive
-            - npx expo build:ios --non-interactive
+     - step:
+         name: Publish to expo staging
+         deployment: staging
+         caches:
+           - yarncache
+         script:
+           - yarn
+           - yarn global add exp
+           - exp login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+           - yarn run publish:staging
+definitions:
+  caches:
+    yarncache: /usr/local/share/.cache/yarn/v1
