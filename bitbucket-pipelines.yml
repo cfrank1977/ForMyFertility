@@ -22,7 +22,15 @@ pipelines:
            - expo publish --non-interactive
     master:
      - step:
-         name: Publish to expo prod
+         name: Test with Jest
+         caches:
+           - yarncache
+         script:
+           - yarn
+           - yarn test
+     - step:
+         name: Deploy to Expo
+         trigger: manual
          deployment: production
          caches:
            - yarncache
