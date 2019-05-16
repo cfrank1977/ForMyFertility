@@ -18,7 +18,7 @@ pipelines:
          script:
            - yarn
            - yarn global add expo-cli
-           - expo login -u $EXPO_NAME -p $EXPO_PWD
+           - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
            - expo publish --non-interactive
     master:
      - step:
