@@ -23,7 +23,7 @@ pipelines:
     master:
      - step:
          name: Publish to expo prod
-         deployment: prod
+         deployment: production
          caches:
            - yarncache
          script:
