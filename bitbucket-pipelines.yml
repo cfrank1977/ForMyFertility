@@ -17,9 +17,9 @@ pipelines:
            - yarncache
          script:
            - yarn
-           - yarn global add exp
-           - exp login -u $EXPO_NAME -p $EXPO_PWD
-           - yarn run publish:dev
+           - yarn global add expo-cli
+           - expo login -u $EXPO_NAME -p $EXPO_PWD
+           - expo publish --non-interactive
     master:
      - step:
          name: Publish to expo prod
@@ -28,9 +28,10 @@ pipelines:
            - yarncache
          script:
            - yarn
-           - yarn global add exp
-           - exp login -u $EXPO_USERNAME -p $EXPO_PASSWORD
-           - yarn run publish:prod
+           - yarn global add expo-cli
+           - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
+           - expo publish --non-interactive
+           - expo build:ios --non-interactive
 definitions:
   caches:
     yarncache: /usr/local/share/.cache/yarn/v1
