@@ -22,7 +22,7 @@ pipelines:
            - yarn run publish:dev
     master:
      - step:
-         name: Publish to expo staging
+         name: Publish to expo prod
          deployment: staging
          caches:
            - yarncache
@@ -30,7 +30,7 @@ pipelines:
            - yarn
            - yarn global add exp
            - exp login -u $EXPO_USERNAME -p $EXPO_PASSWORD
-           - yarn run publish:staging
+           - yarn run publish:prod
 definitions:
   caches:
     yarncache: /usr/local/share/.cache/yarn/v1
