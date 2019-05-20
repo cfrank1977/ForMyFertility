@@ -27,7 +27,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "9",
+      "buildNumber": "10",
       "icon": "./assets/icon.png",
       "bundleIdentifier": "com.formylife360.formyfertility",
       "splash": {
