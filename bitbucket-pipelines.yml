@@ -40,6 +40,7 @@ pipelines:
            - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
            - expo publish --non-interactive
            - expo build:ios --non-interactive
+           - expo upload:ios --non-interactive
 definitions:
   caches:
     yarncache: /usr/local/share/.cache/yarn/v1
