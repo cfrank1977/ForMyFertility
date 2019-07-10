@@ -2,20 +2,19 @@
 # yarn lockfile v1
 
 
-"@aws-amplify/analytics@^1.2.17":
-  version "1.2.17"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/analytics/-/analytics-1.2.17.tgz#def1036f16665032eea9096cc56dac9663be3798"
+"@aws-amplify/analytics@^1.2.18":
+  version "1.2.18"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/analytics/-/analytics-1.2.18.tgz#0f62b5c76e72fff5214589ccf7741401e38bee37"
   dependencies:
     "@aws-amplify/cache" "^1.0.28"
     "@aws-amplify/core" "^1.0.28"
     uuid "^3.2.1"
-    youtube-iframe "^1.0.3"
 
-"@aws-amplify/api@^1.0.36":
-  version "1.0.36"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/api/-/api-1.0.36.tgz#4f783b95a5e6d0171cfd99dd227677f7bdd38c82"
+"@aws-amplify/api@^1.0.37":
+  version "1.0.37"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/api/-/api-1.0.37.tgz#c95f927c17debdabb52e4bd364bce24ad5b06b76"
   dependencies:
-    "@aws-amplify/auth" "^1.2.25"
+    "@aws-amplify/auth" "^1.2.26"
     "@aws-amplify/cache" "^1.0.28"
     "@aws-amplify/core" "^1.0.28"
     axios "^0.19.0"
@@ -23,9 +22,9 @@
     uuid "^3.2.1"
     zen-observable "^0.8.6"
 
-"@aws-amplify/auth@^1.2.25":
-  version "1.2.25"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/auth/-/auth-1.2.25.tgz#19fb41f4ce5371816be047f944ce32de3a732385"
+"@aws-amplify/auth@^1.2.26":
+  version "1.2.26"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/auth/-/auth-1.2.26.tgz#3aa0f110d4ee25444fed8d55be586fef213caba3"
   dependencies:
     "@aws-amplify/cache" "^1.0.28"
     "@aws-amplify/core" "^1.0.28"
@@ -1619,13 +1618,13 @@ aws-amplify-react-native@^2.0.8:
     react-native-elements "^0.19.1"
     react-native-vector-icons "^5.0.0"
 
-aws-amplify@^1.1.29:
-  version "1.1.29"
-  resolved "https://registry.yarnpkg.com/aws-amplify/-/aws-amplify-1.1.29.tgz#33306c147e83651147eec8c0ed018521fee0af28"
+aws-amplify@^1.1.30:
+  version "1.1.30"
+  resolved "https://registry.yarnpkg.com/aws-amplify/-/aws-amplify-1.1.30.tgz#abcb82c9b1e4db10b4d1965b3acd7ec52260241b"
   dependencies:
-    "@aws-amplify/analytics" "^1.2.17"
-    "@aws-amplify/api" "^1.0.36"
-    "@aws-amplify/auth" "^1.2.25"
+    "@aws-amplify/analytics" "^1.2.18"
+    "@aws-amplify/api" "^1.0.37"
+    "@aws-amplify/auth" "^1.2.26"
     "@aws-amplify/cache" "^1.0.28"
     "@aws-amplify/core" "^1.0.28"
     "@aws-amplify/interactions" "^1.0.31"
@@ -8015,10 +8014,6 @@ yargs@^9.0.0:
     which-module "^2.0.0"
     y18n "^3.2.1"
     yargs-parser "^7.0.0"
-
-youtube-iframe@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/youtube-iframe/-/youtube-iframe-1.0.3.tgz#0fcdf4847e60f8dca7ee91d9ecd913655067b35b"
 
 zen-observable@^0.8.6:
   version "0.8.11"
