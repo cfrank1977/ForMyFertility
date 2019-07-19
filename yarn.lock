@@ -2,59 +2,59 @@
 # yarn lockfile v1
 
 
-"@aws-amplify/analytics@^1.2.18":
-  version "1.2.18"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/analytics/-/analytics-1.2.18.tgz#0f62b5c76e72fff5214589ccf7741401e38bee37"
+"@aws-amplify/analytics@^1.2.20":
+  version "1.2.20"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/analytics/-/analytics-1.2.20.tgz#1e95a11a83ee294802ac9041bf215c34eaab8353"
   dependencies:
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
     uuid "^3.2.1"
 
-"@aws-amplify/api@^1.0.37":
-  version "1.0.37"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/api/-/api-1.0.37.tgz#c95f927c17debdabb52e4bd364bce24ad5b06b76"
+"@aws-amplify/api@^1.0.39":
+  version "1.0.39"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/api/-/api-1.0.39.tgz#38f6d955451129dc50656ffd8eec8128b951d23c"
   dependencies:
-    "@aws-amplify/auth" "^1.2.26"
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/auth" "^1.2.28"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
     axios "^0.19.0"
     graphql "0.13.0"
     uuid "^3.2.1"
     zen-observable "^0.8.6"
 
-"@aws-amplify/auth@^1.2.26":
-  version "1.2.26"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/auth/-/auth-1.2.26.tgz#3aa0f110d4ee25444fed8d55be586fef213caba3"
+"@aws-amplify/auth@^1.2.28":
+  version "1.2.28"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/auth/-/auth-1.2.28.tgz#93158a43a61a3e7b7b98bbbc7d86ad2f17ae9ce5"
   dependencies:
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
-    amazon-cognito-identity-js "^3.0.13"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
+    amazon-cognito-identity-js "^3.0.14"
     crypto-js "^3.1.9-1"
 
-"@aws-amplify/cache@^1.0.28":
-  version "1.0.28"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/cache/-/cache-1.0.28.tgz#92005ab2360ddee7d44082c8b97d5723983c2ffa"
+"@aws-amplify/cache@^1.0.29":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/cache/-/cache-1.0.29.tgz#3a2a09287d49db5c45679b858433afb69721ff79"
   dependencies:
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/core" "^1.0.29"
 
-"@aws-amplify/core@^1.0.28":
-  version "1.0.28"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/core/-/core-1.0.28.tgz#7908936d5265d7c9ef2f425f65b23aef989da63f"
+"@aws-amplify/core@^1.0.28", "@aws-amplify/core@^1.0.29":
+  version "1.0.29"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/core/-/core-1.0.29.tgz#2fd5f2a272a94e1bcb9df47fde4e01a3d4e1e34f"
   dependencies:
     aws-sdk "2.474.0"
     url "^0.11.0"
 
-"@aws-amplify/interactions@^1.0.31":
-  version "1.0.31"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/interactions/-/interactions-1.0.31.tgz#662adfca553e689935638405042f0471625d2204"
+"@aws-amplify/interactions@^1.0.32":
+  version "1.0.32"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/interactions/-/interactions-1.0.32.tgz#126d2850eef3293fc3cd1d638788498e0f761476"
   dependencies:
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/core" "^1.0.29"
 
-"@aws-amplify/pubsub@^1.0.29":
-  version "1.0.29"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/pubsub/-/pubsub-1.0.29.tgz#c599054cbd25343a779c337e7576ef1bb9d53e27"
+"@aws-amplify/pubsub@^1.0.30":
+  version "1.0.30"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/pubsub/-/pubsub-1.0.30.tgz#d81e4b5bbb47bb0900dda90a3b3c4f5300f09981"
   dependencies:
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/core" "^1.0.29"
     uuid "^3.2.1"
     zen-observable "^0.8.6"
 
@@ -64,15 +64,15 @@
   dependencies:
     "@aws-amplify/core" "^1.0.28"
 
-"@aws-amplify/ui@^1.0.20":
-  version "1.0.20"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/ui/-/ui-1.0.20.tgz#c10b9a2ef82026db7c03e928136682f5936858d7"
+"@aws-amplify/ui@^1.0.22":
+  version "1.0.22"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/ui/-/ui-1.0.22.tgz#507ad11865211c313f15a7d6cbbbcaf4aaa32092"
 
-"@aws-amplify/xr@^0.1.18":
-  version "0.1.18"
-  resolved "https://registry.yarnpkg.com/@aws-amplify/xr/-/xr-0.1.18.tgz#508158a5afc8fbf6595cea240902929382556cff"
+"@aws-amplify/xr@^0.1.19":
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/@aws-amplify/xr/-/xr-0.1.19.tgz#5dd5afcc49890e6259935f11325b38e53f0fd429"
   dependencies:
-    "@aws-amplify/core" "^1.0.28"
+    "@aws-amplify/core" "^1.0.29"
 
 "@babel/code-frame@^7.0.0":
   version "7.0.0"
@@ -1408,9 +1408,9 @@ ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-amazon-cognito-identity-js@^3.0.13:
-  version "3.0.13"
-  resolved "https://registry.yarnpkg.com/amazon-cognito-identity-js/-/amazon-cognito-identity-js-3.0.13.tgz#26d600d8dc08b840b4cf7ffce168ad38ae3999ec"
+amazon-cognito-identity-js@^3.0.14:
+  version "3.0.14"
+  resolved "https://registry.yarnpkg.com/amazon-cognito-identity-js/-/amazon-cognito-identity-js-3.0.14.tgz#5bf83ae09c908d801306723b549776eccbb64bc9"
   dependencies:
     buffer "4.9.1"
     crypto-js "^3.1.9-1"
@@ -1618,20 +1618,20 @@ aws-amplify-react-native@^2.0.8:
     react-native-elements "^0.19.1"
     react-native-vector-icons "^5.0.0"
 
-aws-amplify@^1.1.30:
-  version "1.1.30"
-  resolved "https://registry.yarnpkg.com/aws-amplify/-/aws-amplify-1.1.30.tgz#abcb82c9b1e4db10b4d1965b3acd7ec52260241b"
+aws-amplify@^1.1.32:
+  version "1.1.32"
+  resolved "https://registry.yarnpkg.com/aws-amplify/-/aws-amplify-1.1.32.tgz#8e02211d156b4169c4260aa48e775e3192e43fb3"
   dependencies:
-    "@aws-amplify/analytics" "^1.2.18"
-    "@aws-amplify/api" "^1.0.37"
-    "@aws-amplify/auth" "^1.2.26"
-    "@aws-amplify/cache" "^1.0.28"
-    "@aws-amplify/core" "^1.0.28"
-    "@aws-amplify/interactions" "^1.0.31"
-    "@aws-amplify/pubsub" "^1.0.29"
+    "@aws-amplify/analytics" "^1.2.20"
+    "@aws-amplify/api" "^1.0.39"
+    "@aws-amplify/auth" "^1.2.28"
+    "@aws-amplify/cache" "^1.0.29"
+    "@aws-amplify/core" "^1.0.29"
+    "@aws-amplify/interactions" "^1.0.32"
+    "@aws-amplify/pubsub" "^1.0.30"
     "@aws-amplify/storage" "^1.0.31"
-    "@aws-amplify/ui" "^1.0.20"
-    "@aws-amplify/xr" "^0.1.18"
+    "@aws-amplify/ui" "^1.0.22"
+    "@aws-amplify/xr" "^0.1.19"
 
 aws-sdk@2.474.0:
   version "2.474.0"
