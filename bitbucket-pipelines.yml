@@ -25,7 +25,7 @@ pipelines:
          caches:
            - npmcache
          script:
-           - npm
+           - npm i
            - npm test
      - step:
          name: Deploy to Expo
