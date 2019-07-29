@@ -9,7 +9,6 @@ module.exports = {
   "setupFiles": [
     "<rootDir>/tests.setup.js"
   ],
-  "setupFilesAfterEnv": ["./node_modules/jest-enzyme/lib/index.js"],
   "snapshotSerializers": [
     "enzyme-to-json/serializer"
   ]
