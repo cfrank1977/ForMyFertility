@@ -151,7 +151,7 @@ app.get(path + hashKeyPath + sortKeyPath, function (req, res) {
             propMultiBirth3Emb: propMultiBirth3Emb
           }
         } else if (age < 35) {
-          let propLiveBirth = 27; // 25 to 30 percent if youâ€™re under 35
+          let propLiveBirth = 27; // 25 to 30 percent if you’re under 35
           odds = {
             age: age,
             age2: age2,
@@ -164,7 +164,7 @@ app.get(path + hashKeyPath + sortKeyPath, function (req, res) {
             propLiveBirth: propLiveBirth
           }
         } else if (age >= 35 && age < 40) {
-          let propLiveBirth = 11; // eight to 15 percent if youâ€™re 35 to 39
+          let propLiveBirth = 11; // eight to 15 percent if you’re 35 to 39
           odds = {
             age: age,
             age2: age2,
@@ -177,7 +177,7 @@ app.get(path + hashKeyPath + sortKeyPath, function (req, res) {
             propLiveBirth: propLiveBirth
           }
         } else if (age >= 40 && age < 43) {
-          let propLiveBirth = 5; // five percent if youâ€™re 40 to 42
+          let propLiveBirth = 5; // five percent if you’re 40 to 42
           odds = {
             age: age,
             age2: age2,

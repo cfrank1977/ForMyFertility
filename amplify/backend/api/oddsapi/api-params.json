@@ -25,8 +25,8 @@
     "privacy": {
         "auth": 1,
         "unauth": 0,
-        "authRoleName": "formyfertilityamplif-prod-20190515175437-authRole",
-        "unAuthRoleName": "formyfertilityamplif-prod-20190515175437-unauthRole"
+        "authRoleName": "formyfertilityamplif-20190511191810-authRole",
+        "unAuthRoleName": "formyfertilityamplif-20190511191810-unauthRole"
     },
     "dependsOn": [
         {
