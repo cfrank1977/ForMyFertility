@@ -5,6 +5,8 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
+package-lock.json
+yarn.lock
 
 #amplify
 amplify/\#current-cloud-backend
