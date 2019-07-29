@@ -4,40 +4,40 @@ pipelines:
   default:
     - step:
         caches:
-          - yarncache
+          - npmcache
         script:
-          - yarn
-          - yarn test
+          - npm i
+          - npm test
   branches:
     develop:
      - step:
          name: Publish to expo dev
          deployment: test
          caches:
-           - yarncache
+           - npmcache
          script:
-           - yarn
+           - npm i
            - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
            - expo publish --non-interactive
     master:
      - step:
          name: Test with Jest
          caches:
-           - yarncache
+           - npmcache
          script:
-           - yarn
-           - yarn test
+           - npm
+           - npm test
      - step:
          name: Deploy to Expo
          trigger: manual
          deployment: production
          caches:
-           - yarncache
+           - npmcache
          script:
-           - yarn
+           - npm i
            - expo login -u $EXPO_USERNAME -p $EXPO_PASSWORD
            - expo publish --non-interactive
            - expo build:ios --non-interactive
 definitions:
   caches:
-    yarncache: /usr/local/share/.cache/yarn/v1
+    nmpcache: /usr/local/share/.cache/npm/v1
