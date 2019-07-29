@@ -40,4 +40,4 @@ pipelines:
            - expo build:ios --non-interactive
 definitions:
   caches:
-    nmpcache: /usr/local/share/.cache/npm/v1
+    npmcache: /usr/local/share/.cache/npm/v1
