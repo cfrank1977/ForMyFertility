@@ -37,7 +37,7 @@
     "aws-amplify-react-native": "^2.0.8",
     "expo": "^33.0.7",
     "native-base": "^2.13.4",
-    "react": "16.8.6",
+    "react": "16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
     "react-navigation": "^3.11.1",
     "react-redux": "^7.1.0",
