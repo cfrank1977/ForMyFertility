@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { StyleSheet } from 'react-native';
+import { AppLoading } from "expo";
+import * as Font from 'expo-font';
+
 import { Root, StyleProvider } from 'native-base';
-import { Font, AppLoading } from "expo";
 import getTheme from './src/native-base-theme/components';
 import material from './src/native-base-theme/variables/material';
+
+import { withAuthenticator, AmplifyTheme } from 'aws-amplify-react-native';
 import Amplify from 'aws-amplify'
 import AppSyncConfig from './src/aws-exports'
 Amplify.configure({ ...AppSyncConfig })
@@ -13,7 +18,7 @@ import AppWithNavigationState from './src/navigators';
 
 console.disableYellowBox = true;
 
-export default class App extends Component {
+export class App extends Component {
   state = {
     isAuthenticated: false,
     loading: true
@@ -50,3 +55,21 @@ export default class App extends Component {
       );
     }
   }
+
+  const theme = StyleSheet.create({
+    ...AmplifyTheme,
+    button: {
+      ...AmplifyTheme.button,
+      backgroundColor: '#45ccb1'
+    },
+    sectionFooterLink: {
+      ...AmplifyTheme.sectionFooterLink,
+      color: '#45ccb1'
+    },
+    buttonDisabled: {
+      ...AmplifyTheme.buttonDisabled,
+      backgroundColor: '#d0f2eb'
+    }
+  });
+
+  export default withAuthenticator(App, false, [], null, theme);

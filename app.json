@@ -4,7 +4,7 @@
     "description": "This project is to support couples through the fertilization process.",
     "slug": "ForMyFertility",
     "privacy": "public",
-    "sdkVersion": "31.0.0",
+    "sdkVersion": "35.0.0",
     "platforms": ["ios", "android"],
     "version": "0.7.0",
     "orientation": "portrait",
@@ -27,7 +27,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "10",
+      "buildNumber": "11",
       "icon": "./assets/icon.png",
       "bundleIdentifier": "com.formylife360.formyfertility",
       "splash": {
