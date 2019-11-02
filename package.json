@@ -1,18 +1,11 @@
 {
-<<<<<<< HEAD
   "main": "node_modules/expo/AppEntry.js",
-=======
-  "name": "empty-project-template",
-  "main": "node_modules/expo/AppEntry.js",
-  "private": true,
->>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "eject": "expo eject",
     "test": "jest",
-<<<<<<< HEAD
     "ci-test": "jest --ci",
     "test:watch": "jest --watch"
   },
@@ -43,8 +36,8 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^7.0.0",
-    "enzyme": "^3.8.0",
+    "babel-preset-expo": "^7.1.0",
+    "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.9.1",
     "enzyme-to-json": "^3.3.5",
     "jest-expo": "^35.0.0",
@@ -54,49 +47,4 @@
     "redux-mock-store": "^1.5.3"
   },
   "private": true
-=======
-    "test:watch": "jest --watch"
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "haste": {
-      "defaultPlatform": "ios",
-      "platforms": [
-        "ios",
-        "android"
-      ],
-      "providesModuleNodeModules": [
-        "react-native"
-      ]
-    },
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/android/",
-      "/ios/",
-      "/.idea/"
-    ],
-    "transformIgnorePatterns": [
-      "node_modules/(?!react-native|react-navigation|expo|react-redux|native-base|aws-amplify)/"
-    ]
-  },
-  "dependencies": {
-    "aws-amplify": "^1.1.32",
-    "aws-amplify-react-native": "^2.0.8",
-    "expo": "^33.0.7",
-    "native-base": "^2.13.4",
-    "react": "16.8.6",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-30.0.0.tar.gz",
-    "react-navigation": "^3.11.1",
-    "react-redux": "^7.1.0",
-    "react-redux-form": "^1.16.14",
-    "redux": "^4.0.4",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
-  },
-  "devDependencies": {
-    "babel-jest": "^23.6.0",
-    "jest-expo": "^33.0.2",
-    "merge": ">=1.2.1"
-  }
->>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
 }
