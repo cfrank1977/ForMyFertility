@@ -4,7 +4,7 @@ import { Container, Content, Text, Header, Button, Footer } from "native-base";
 
 export default class Home extends React.Component {
   handleSubmit({ navigation }, gender) {
-        navigation.navigate('Login', {
+        navigation.navigate('Survey', {
           gender: gender
         })
     }

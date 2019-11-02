@@ -1,10 +1,10 @@
 import Home from './Home';
-import Login from './Login';
+import Survey from './Survey';
 import TabHeader from './TabHeader';
 import SideBar from './SideBar';
 import Profile from './Profile'
 
 
 export {
-    Home, Login, TabHeader, SideBar, Profile
+    Home, Survey, TabHeader, SideBar, Profile
 };

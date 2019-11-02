@@ -3,7 +3,8 @@ import {
     createStackNavigator, createDrawerNavigator, createSwitchNavigator
 } from 'react-navigation';
 
-import { Home, Login, TabHeader, SideBar, Profile } from '../pages';
+
+import { Home, Survey, TabHeader, SideBar, Profile } from '../pages';
 import SignOut from '../components/auth/SignOut';
 import Report from '../components/fertility/Report';
 import MaleReport from '../components/fertility/MaleReport';
@@ -247,8 +248,8 @@ const QuerstionsNavigator = createStackNavigator({
         screen: Weight,
         ...getNavigationConfig('Weight')
     },
-    Login: {
-        screen: Login,
+    Survey: {
+        screen: Survey,
     },
     Profile: {
         screen: Profile,
@@ -267,8 +268,8 @@ const AuthDrawer = createDrawerNavigator(
         Home: {
             screen: Home
         },
-        Login: {
-            screen: Login
+        Survey: {
+            screen: Survey
         }
     },
     getNavigationConfig()

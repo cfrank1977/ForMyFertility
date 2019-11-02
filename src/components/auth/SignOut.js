@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Container, Button, Text, Content } from 'native-base';
 import { Auth, Logger } from 'aws-amplify';
 const logger = new Logger('SignOut');
 
-export default class SignOut extends Component {
+export  class SignOut extends Component {
   constructor(props) {
     super(props);
     this.signOut = this.signOut.bind(this);
   }
 
-  signOut() {
-    Auth.signOut()
-      .then(() => logger.info('sign out success'))
+  async signOut() {
+    const { onStateChange } = this.props;
+    await Auth.signOut({global: true})
+      .then(() => onStateChange('signedOut'))
       .catch(err => logger.info('sign out error', err));
-    const navigation = this.props.navigation;
-    navigation.navigate('Home')
+      this.props.rerender()
+    // const navigation = this.props.navigation;
+    // navigation.navigate('Home')
   }
 
   render() {
@@ -31,3 +34,5 @@ export default class SignOut extends Component {
     )
   }
 }
+
+export default connect(mapStateToProps)(SignOut);

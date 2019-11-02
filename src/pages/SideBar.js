@@ -1,9 +1,10 @@
 import React from "react";
 import { Image } from "react-native";
+import { connect } from 'react-redux';
 import { Container, Content, Header, Text, List, ListItem } from "native-base";
 const routes = ["Home", "SignOut", "Profile" ];
 
-export default class SideBar extends React.Component {
+export class SideBar extends React.Component {
   render() {
     return (
       <Container>
@@ -37,3 +38,5 @@ export default class SideBar extends React.Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(SideBar);
