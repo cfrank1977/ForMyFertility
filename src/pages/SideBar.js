@@ -2,13 +2,12 @@ import React from "react";
 import { Image } from "react-native";
 import { connect } from 'react-redux';
 import { Container, Content, Header, Text, List, ListItem } from "native-base";
-const routes = ["Home", "SignOut", "Profile" ];
+const routes = ["Home", "Profile" ];
 
 export class SideBar extends React.Component {
   render() {
     return (
-      <Container>
-      <Header />
+      
         <Content>
         <Image
             source={{
@@ -34,7 +33,7 @@ export class SideBar extends React.Component {
             }}
           />
         </Content>
-      </Container>
+   
     );
   }
 }

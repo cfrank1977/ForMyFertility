@@ -72,4 +72,4 @@ export class App extends Component {
     }
   });
 
-  export default withAuthenticator(App, false, [], null, theme);
+  export default withAuthenticator(App, true, [], null, theme);

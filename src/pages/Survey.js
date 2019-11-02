@@ -50,12 +50,12 @@ export class Survey extends Component {
 
   render() {
     return (
-      <Container>
-        <Header />
-        <Content padder>
+      
+        
+        <Content >
           {(this.state.formdata.gender === 'female' || this.state.formdata.gender === 'male') ? (<Text>Loaded</Text>) : (<Body><Spinner /><Text>Loading Data</Text></Body>)}
         </Content>
-      </Container>
+     
     )
   }
 }

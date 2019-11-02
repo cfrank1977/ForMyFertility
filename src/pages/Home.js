@@ -12,7 +12,6 @@ export default class Home extends React.Component {
     const navigation = this.props.navigation;
     return (
       <Container tyle={styles.container}>
-        <Header />
         <Content >
           <Header >
             <Text style={styles.textContent}>
