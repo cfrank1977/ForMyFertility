@@ -15,6 +15,7 @@
         "name" : "Query",
         "description" : null,
         "fields" : [ {
+<<<<<<< HEAD
           "name" : "allFemalefertilityByUsername",
           "description" : null,
           "args" : [ {
@@ -100,6 +101,9 @@
           "deprecationReason" : null
         }, {
           "name" : "getFemalefertility",
+=======
+          "name" : "fetchQuestions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -109,7 +113,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "SCALAR",
+<<<<<<< HEAD
                 "name" : "String",
+=======
+                "name" : "ID",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
                 "ofType" : null
               }
             },
@@ -117,13 +125,21 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Femalefertility",
+=======
+            "name" : "Questions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "getMalefertility",
+=======
+          "name" : "getQuestions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -133,7 +149,11 @@
               "name" : null,
               "ofType" : {
                 "kind" : "SCALAR",
+<<<<<<< HEAD
                 "name" : "String",
+=======
+                "name" : "ID",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
                 "ofType" : null
               }
             },
@@ -141,6 +161,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Malefertility",
             "ofType" : null
           },
@@ -180,19 +201,30 @@
           "type" : {
             "kind" : "OBJECT",
             "name" : "FemalefertilityConnection",
+=======
+            "name" : "Questions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "listMalefertilities",
+=======
+          "name" : "listQuestions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
               "name" : "TableMalefertilityFilterInput",
+=======
+              "name" : "TableQuestionsFilterInput",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             },
             "defaultValue" : null
@@ -217,6 +249,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "MalefertilityConnection",
             "ofType" : null
           },
@@ -253,6 +286,9 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "String",
+=======
+            "name" : "QuestionsConnection",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -264,310 +300,17 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
+<<<<<<< HEAD
         "name" : "Femalefertility",
         "description" : null,
         "fields" : [ {
           "name" : "age",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "amountChildren",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "amountYearsChildlessSex",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "amountperfecthealth",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "currentIVF",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "donoreggs",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "donorembryos",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "donorsperm",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "eggs",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "embryos",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "embryosfinalcycle",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "embryostransfered",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "frozenembryos",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "gender",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "gestationalcarrier",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "gynecologicalCauses",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "hadEctopicPregnancy",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "hadPregnancy",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "hormone",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "icsi",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
+=======
+        "name" : "Questions",
+        "description" : null,
+        "fields" : [ {
           "name" : "id",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -575,14 +318,22 @@
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
               "name" : "ID",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "ivfconceived",
+<<<<<<< HEAD
+          "name" : "amountChildren",
+=======
+          "name" : "username",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -590,14 +341,45 @@
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
               "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "ivfcycles",
+<<<<<<< HEAD
+          "name" : "amountYearsChildlessSex",
+=======
+          "name" : "gender",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "amountperfecthealth",
+=======
+          "name" : "age",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -612,127 +394,576 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "liveBirth",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "miscarriages",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "morethanoneivfconceived",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "partner",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "singletonmulitbirth",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "username",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "whichGynecologicalCauses",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "whichPartnerIssue",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
+<<<<<<< HEAD
+          "name" : "currentIVF",
+=======
           "name" : "yearChildlessSex",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "donoreggs",
+=======
+          "name" : "amountYearsChildlessSex",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "donorembryos",
+=======
+          "name" : "currentIVF",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "donorsperm",
+=======
+          "name" : "hadPregnancy",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "eggs",
+=======
+          "name" : "hadEctopicPregnancy",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "embryos",
+=======
+          "name" : "liveBirth",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "embryosfinalcycle",
+=======
+          "name" : "miscarriages",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "embryostransfered",
+=======
+          "name" : "partner",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "frozenembryos",
+=======
+          "name" : "whichPartnerIssue",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "gender",
+=======
+          "name" : "amountChildren",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "gestationalcarrier",
+=======
+          "name" : "amountperfecthealth",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "gynecologicalCauses",
+=======
+          "name" : "donorsperm",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "hadEctopicPregnancy",
+=======
+          "name" : "donoreggs",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "hadPregnancy",
+=======
+          "name" : "donorembryos",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "hormone",
+=======
+          "name" : "eggs",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "icsi",
+=======
+          "name" : "embryos",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "id",
+=======
+          "name" : "embryostransfered",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "ID",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "ivfconceived",
+=======
+          "name" : "embryosfinalcycle",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "ivfcycles",
+=======
+          "name" : "frozenembryos",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "liveBirth",
+=======
+          "name" : "gynecologicalCauses",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "miscarriages",
+=======
+          "name" : "gestationalcarrier",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "morethanoneivfconceived",
+=======
+          "name" : "hormone",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "partner",
+=======
+          "name" : "icsi",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "singletonmulitbirth",
+=======
+          "name" : "ivfcycles",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "username",
+=======
+          "name" : "ivfconceived",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "whichGynecologicalCauses",
+=======
+          "name" : "morethanoneivfconceived",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "whichPartnerIssue",
+=======
+          "name" : "singletonmulitbirth",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "yearChildlessSex",
+=======
+          "name" : "whichGynecologicalCauses",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ ],
           "type" : {
@@ -753,8 +984,13 @@
         "possibleTypes" : null
       }, {
         "kind" : "SCALAR",
+<<<<<<< HEAD
         "name" : "Int",
         "description" : "Built-in Int",
+=======
+        "name" : "ID",
+        "description" : "Built-in ID",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
         "fields" : null,
         "inputFields" : null,
         "interfaces" : null,
@@ -771,8 +1007,13 @@
         "possibleTypes" : null
       }, {
         "kind" : "SCALAR",
+<<<<<<< HEAD
         "name" : "ID",
         "description" : "Built-in ID",
+=======
+        "name" : "Int",
+        "description" : "Built-in Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
         "fields" : null,
         "inputFields" : null,
         "interfaces" : null,
@@ -780,7 +1021,11 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
+<<<<<<< HEAD
         "name" : "MalefertilityConnection",
+=======
+        "name" : "QuestionsConnection",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -791,7 +1036,11 @@
             "name" : null,
             "ofType" : {
               "kind" : "OBJECT",
+<<<<<<< HEAD
               "name" : "Malefertility",
+=======
+              "name" : "Questions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
@@ -814,6 +1063,7 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
+<<<<<<< HEAD
         "kind" : "OBJECT",
         "name" : "Malefertility",
         "description" : null,
@@ -2308,12 +2558,71 @@
               "name" : "Int",
               "ofType" : null
             }
+=======
+        "kind" : "INPUT_OBJECT",
+        "name" : "TableQuestionsFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIDFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "username",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gender",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "age",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "yearChildlessSex",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "amountYearsChildlessSex",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           },
           "defaultValue" : null
         }, {
           "name" : "currentIVF",
           "description" : null,
           "type" : {
+<<<<<<< HEAD
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
@@ -2659,6 +2968,236 @@
               "name" : "String",
               "ofType" : null
             }
+=======
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "hadPregnancy",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "hadEctopicPregnancy",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "liveBirth",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "miscarriages",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "partner",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "whichPartnerIssue",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "amountChildren",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "amountperfecthealth",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "donorsperm",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "donoreggs",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "donorembryos",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eggs",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "embryos",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "embryostransfered",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "embryosfinalcycle",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "frozenembryos",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gynecologicalCauses",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gestationalcarrier",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "hormone",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "icsi",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ivfcycles",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableIntFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ivfconceived",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "morethanoneivfconceived",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "singletonmulitbirth",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "whichGynecologicalCauses",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "TableStringFilterInput",
+            "ofType" : null
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           },
           "defaultValue" : null
         } ],
@@ -2667,6 +3206,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "CreateMalefertilityInput",
         "description" : null,
         "fields" : null,
@@ -2757,11 +3297,98 @@
             "ofType" : {
               "kind" : "SCALAR",
               "name" : "String",
+=======
+        "name" : "TableIDFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "le",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "lt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ge",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "contains",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "notContains",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "exercisetype",
           "description" : null,
           "type" : {
@@ -2870,6 +3497,102 @@
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
+=======
+          "name" : "beginsWith",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "TableStringFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "le",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "lt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ge",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "contains",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "notContains",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
@@ -2879,6 +3602,7 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "pregnant",
           "description" : null,
           "type" : {
@@ -2991,10 +3715,111 @@
             "ofType" : {
               "kind" : "SCALAR",
               "name" : "String",
+=======
+          "name" : "beginsWith",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "TableIntFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "le",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "lt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ge",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gt",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "contains",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "notContains",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "defaultValue" : null
+<<<<<<< HEAD
         }, {
           "name" : "veg",
           "description" : null,
@@ -3023,26 +3848,124 @@
           "defaultValue" : null
         } ],
         "interfaces" : null,
+=======
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "Mutation",
+        "description" : null,
+        "fields" : [ {
+          "name" : "createQuestions",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "CreateQuestionsInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Questions",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updateQuestions",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "UpdateQuestionsInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Questions",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "deleteQuestions",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "DeleteQuestionsInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Questions",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
         "enumValues" : null,
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "DeleteFemalefertilityInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
           "name" : "id",
+=======
+        "name" : "CreateQuestionsInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "gender",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
               "name" : "ID",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "defaultValue" : null
+<<<<<<< HEAD
         } ],
         "interfaces" : null,
         "enumValues" : null,
@@ -3054,17 +3977,26 @@
         "fields" : null,
         "inputFields" : [ {
           "name" : "id",
+=======
+        }, {
+          "name" : "username",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
               "name" : "ID",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "defaultValue" : null
+<<<<<<< HEAD
         } ],
         "interfaces" : null,
         "enumValues" : null,
@@ -3075,6 +4007,9 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
+=======
+        }, {
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "name" : "age",
           "description" : null,
           "type" : {
@@ -3088,14 +4023,22 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "amountChildren",
+=======
+          "name" : "yearChildlessSex",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
               "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
@@ -3114,189 +4057,32 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "amountperfecthealth",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
+=======
           "name" : "currentIVF",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "donoreggs",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "donorembryos",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "donorsperm",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eggs",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
+<<<<<<< HEAD
               "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "embryos",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "embryosfinalcycle",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "embryostransfered",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "Int",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "frozenembryos",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
+=======
               "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "defaultValue" : null
         }, {
-          "name" : "gender",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "gestationalcarrier",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "gynecologicalCauses",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "hadEctopicPregnancy",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
+<<<<<<< HEAD
+          "name" : "currentIVF",
+=======
           "name" : "hadPregnancy",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3309,7 +4095,11 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "hormone",
+<<<<<<< HEAD
+          "name" : "donoreggs",
+=======
+          "name" : "hadEctopicPregnancy",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3322,7 +4112,11 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "icsi",
+<<<<<<< HEAD
+          "name" : "donorembryos",
+=======
+          "name" : "liveBirth",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3335,20 +4129,11 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "id",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "ID",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "ivfconceived",
+<<<<<<< HEAD
+          "name" : "donorsperm",
+=======
+          "name" : "miscarriages",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3361,7 +4146,53 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "ivfcycles",
+<<<<<<< HEAD
+          "name" : "eggs",
+=======
+          "name" : "partner",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "embryos",
+=======
+          "name" : "whichPartnerIssue",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "embryosfinalcycle",
+=======
+          "name" : "amountChildren",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3374,7 +4205,239 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
+          "name" : "embryostransfered",
+=======
+          "name" : "amountperfecthealth",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "frozenembryos",
+=======
+          "name" : "donorsperm",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "gender",
+=======
+          "name" : "donoreggs",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "gestationalcarrier",
+=======
+          "name" : "donorembryos",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "gynecologicalCauses",
+=======
+          "name" : "eggs",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "hadEctopicPregnancy",
+=======
+          "name" : "embryos",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "hadPregnancy",
+=======
+          "name" : "embryostransfered",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "hormone",
+=======
+          "name" : "embryosfinalcycle",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "icsi",
+=======
+          "name" : "frozenembryos",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "id",
+=======
+          "name" : "gynecologicalCauses",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "ID",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "ivfconceived",
+=======
+          "name" : "gestationalcarrier",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "ivfcycles",
+=======
+          "name" : "hormone",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+<<<<<<< HEAD
+              "name" : "Int",
+=======
+              "name" : "String",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
           "name" : "liveBirth",
+=======
+          "name" : "icsi",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3387,20 +4450,32 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "miscarriages",
+=======
+          "name" : "ivfcycles",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
               "name" : "String",
+=======
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "morethanoneivfconceived",
+=======
+          "name" : "ivfconceived",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3413,7 +4488,11 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "partner",
+=======
+          "name" : "morethanoneivfconceived",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3439,7 +4518,11 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "username",
+=======
+          "name" : "whichGynecologicalCauses",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
@@ -3451,6 +4534,7 @@
             }
           },
           "defaultValue" : null
+<<<<<<< HEAD
         }, {
           "name" : "whichGynecologicalCauses",
           "description" : null,
@@ -3475,12 +4559,58 @@
               "name" : "String",
               "ofType" : null
             }
+=======
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "UpdateQuestionsInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "username",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gender",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "age",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           },
           "defaultValue" : null
         }, {
           "name" : "yearChildlessSex",
           "description" : null,
           "type" : {
+<<<<<<< HEAD
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
@@ -3852,13 +4982,278 @@
           "defaultValue" : null
         }, {
           "name" : "weight",
+=======
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "amountYearsChildlessSex",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "currentIVF",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "hadPregnancy",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "hadEctopicPregnancy",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "liveBirth",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "miscarriages",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "partner",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "whichPartnerIssue",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "amountChildren",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "amountperfecthealth",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "donorsperm",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "donoreggs",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "donorembryos",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eggs",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "embryos",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "embryostransfered",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "embryosfinalcycle",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "frozenembryos",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gynecologicalCauses",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "gestationalcarrier",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "hormone",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "icsi",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ivfcycles",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Int",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "ivfconceived",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "morethanoneivfconceived",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "singletonmulitbirth",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "whichGynecologicalCauses",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "DeleteQuestionsInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "NON_NULL",
             "name" : null,
             "ofType" : {
               "kind" : "SCALAR",
+<<<<<<< HEAD
               "name" : "Int",
+=======
+              "name" : "ID",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             }
           },
@@ -3872,7 +5267,11 @@
         "name" : "Subscription",
         "description" : null,
         "fields" : [ {
+<<<<<<< HEAD
           "name" : "onCreateFemalefertility",
+=======
+          "name" : "onCreateQuestions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -3883,6 +5282,7 @@
               "ofType" : null
             },
             "defaultValue" : null
+<<<<<<< HEAD
           } ],
           "type" : {
             "kind" : "OBJECT",
@@ -3940,19 +5340,53 @@
             "type" : {
               "kind" : "SCALAR",
               "name" : "ID",
+=======
+          }, {
+            "name" : "username",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "gender",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "age",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
+<<<<<<< HEAD
             "name" : "Malefertility",
+=======
+            "name" : "Questions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "onUpdateFemalefertility",
+=======
+          "name" : "onUpdateQuestions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -3963,16 +5397,54 @@
               "ofType" : null
             },
             "defaultValue" : null
+<<<<<<< HEAD
           } ],
           "type" : {
             "kind" : "OBJECT",
             "name" : "Femalefertility",
+=======
+          }, {
+            "name" : "username",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "gender",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "age",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Questions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+<<<<<<< HEAD
           "name" : "onUpdateMalefertility",
+=======
+          "name" : "onDeleteQuestions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -3983,10 +5455,44 @@
               "ofType" : null
             },
             "defaultValue" : null
+<<<<<<< HEAD
           } ],
           "type" : {
             "kind" : "OBJECT",
             "name" : "Malefertility",
+=======
+          }, {
+            "name" : "username",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "gender",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "age",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Questions",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -3998,6 +5504,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
+<<<<<<< HEAD
         "name" : "TableBooleanFilterInput",
         "description" : null,
         "fields" : null,
@@ -4007,10 +5514,22 @@
           "type" : {
             "kind" : "SCALAR",
             "name" : "Boolean",
+=======
+        "name" : "TableFloatFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
             "ofType" : null
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "ne",
           "description" : null,
           "type" : {
@@ -4052,6 +5571,8 @@
           "defaultValue" : null
         }, {
           "name" : "contains",
+=======
+          "name" : "eq",
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4060,7 +5581,21 @@
           },
           "defaultValue" : null
         }, {
+          "name" : "le",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
           "name" : "eq",
+=======
+          "name" : "lt",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4087,7 +5622,11 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "le",
+=======
+          "name" : "contains",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
@@ -4096,30 +5635,31 @@
           },
           "defaultValue" : null
         }, {
+<<<<<<< HEAD
           "name" : "lt",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
+=======
           "name" : "notContains",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "description" : null,
           "type" : {
             "kind" : "SCALAR",
             "name" : "Float",
             "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+=======
+          "name" : "between",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "Float",
+              "ofType" : null
+            }
           },
           "defaultValue" : null
         } ],
@@ -4130,6 +5670,60 @@
         "kind" : "SCALAR",
         "name" : "Float",
         "description" : "Built-in Float",
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "TableBooleanFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+<<<<<<< HEAD
+            "name" : "Float",
+=======
+            "name" : "Boolean",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+<<<<<<< HEAD
+          "name" : "notContains",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+=======
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "SCALAR",
+<<<<<<< HEAD
+        "name" : "Float",
+        "description" : "Built-in Float",
+=======
+        "name" : "Boolean",
+        "description" : "Built-in Boolean",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
         "fields" : null,
         "inputFields" : null,
         "interfaces" : null,
@@ -4919,12 +6513,21 @@
         "onFragment" : false,
         "onField" : true
       }, {
+<<<<<<< HEAD
         "name" : "aws_cognito_user_pools",
         "description" : "Tells the service this field/object has access authorized by a Cognito User Pools token.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
         "args" : [ {
           "name" : "cognito_groups",
           "description" : "List of cognito user pool groups which have access on this field",
+=======
+        "name" : "aws_subscribe",
+        "description" : "Tells the service which mutation triggers this subscription.",
+        "locations" : [ "FIELD_DEFINITION" ],
+        "args" : [ {
+          "name" : "mutations",
+          "description" : "List of mutations which will trigger this subscription when they are called.",
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
           "type" : {
             "kind" : "LIST",
             "name" : null,
@@ -4957,6 +6560,7 @@
         "onFragment" : false,
         "onField" : false
       }, {
+<<<<<<< HEAD
         "name" : "aws_api_key",
         "description" : "Tells the service this field/object has access authorized by an API key.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
@@ -4973,6 +6577,8 @@
         "onFragment" : false,
         "onField" : false
       }, {
+=======
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
         "name" : "aws_auth",
         "description" : "Directs the schema to enforce authorization on a field",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -4994,6 +6600,7 @@
         "onFragment" : false,
         "onField" : false
       }, {
+<<<<<<< HEAD
         "name" : "aws_oidc",
         "description" : "Tells the service this field/object has access authorized by an OIDC token.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
@@ -5023,6 +6630,8 @@
         "onFragment" : false,
         "onField" : false
       }, {
+=======
+>>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
         "name" : "aws_publish",
         "description" : "Tells the service which subscriptions will be published to when this mutation is called. This directive is deprecated use @aws_susbscribe directive instead.",
         "locations" : [ "FIELD_DEFINITION" ],
