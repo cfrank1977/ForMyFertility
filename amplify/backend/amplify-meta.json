@@ -1,26 +1,155 @@
 {
-  "providers": {
-    "awscloudformation": {
-      "AuthRoleName": "oryertility-20181110095402-authRole",
-      "UnauthRoleArn": "arn:aws:iam::741205893043:role/oryertility-20181110095402-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::741205893043:role/oryertility-20181110095402-authRole",
-      "Region": "us-east-2",
-      "DeploymentBucketName": "oryertility-20181110095402-deployment",
-      "UnauthRoleName": "oryertility-20181110095402-unauthRole",
-      "StackName": "oryertility-20181110095402",
-      "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/oryertility-20181110095402/767e4850-e4f8-11e8-9f9a-0a2ca3198104"
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "formyfertilityamplif-20190511191810-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamplif-20190511191810-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityamplif-20190511191810-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "formyfertilityamplif-20190511191810-deployment",
+            "UnauthRoleName": "formyfertilityamplif-20190511191810-unauthRole",
+            "StackName": "formyfertilityamplif-20190511191810",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityamplif-20190511191810/0acd2c40-7443-11e9-8e13-0ae094dd1c0e"
+        },
+        "categories": {
+            "auth": {
+                "formyfertilitycognito": {}
+            }
+        }
+    },
+    "storage": {
+        "femalefertility": {
+            "service": "DynamoDB",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "PartitionKeyName": "id",
+                "Region": "us-east-2",
+                "Arn": "arn:aws:dynamodb:us-east-2:741205893043:table/femalefertility-dev",
+                "PartitionKeyType": "S",
+                "Name": "femalefertility-dev"
+            },
+            "lastPushTimeStamp": "2019-11-02T14:08:40.830Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/storage/femalefertility-cloudformation-template.json",
+                "logicalId": "storagefemalefertility"
+            }
+        },
+        "malefertility": {
+            "service": "DynamoDB",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "PartitionKeyName": "id",
+                "Region": "us-east-2",
+                "Arn": "arn:aws:dynamodb:us-east-2:741205893043:table/malefertility-dev",
+                "PartitionKeyType": "S",
+                "Name": "malefertility-dev"
+            },
+            "lastPushTimeStamp": "2019-11-02T14:08:40.831Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/storage/malefertility-cloudformation-template.json",
+                "logicalId": "storagemalefertility"
+            }
+        }
+    },
+    "function": {
+        "formyfertilityfemaleodds": {
+            "service": "Lambda",
+            "providerPlugin": "awscloudformation",
+            "build": true,
+            "dependsOn": [
+                {
+                    "category": "storage",
+                    "resourceName": "femalefertility",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ],
+            "output": {
+                "Region": "us-east-2",
+                "Arn": "arn:aws:lambda:us-east-2:741205893043:function:formyfertilityfemaleodds-dev",
+                "Name": "formyfertilityfemaleodds-dev"
+            },
+            "lastPushTimeStamp": "2019-11-02T14:08:40.831Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/function/formyfertilityfemaleodds-cloudformation-template.json",
+                "logicalId": "functionformyfertilityfemaleodds"
+            }
+        }
+    },
+    "auth": {
+        "formyfertilitycognito": {
+            "service": "Cognito",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "AppClientSecret": "1c7l80fcn85ff5kr12u7ntnjti7uj509gg45jit04bhkv858rhs3",
+                "UserPoolId": "us-east-2_raiO2Ngz7",
+                "AppClientIDWeb": "ab8oh0v1mue8su2cs7quujb8f",
+                "AppClientID": "52ca65nvsdfk425ubmiklll88u",
+                "IdentityPoolId": "us-east-2:e8c50823-93c0-4d96-bae5-8565036fdd40",
+                "IdentityPoolName": "formyfertilityidentitypool__dev",
+                "UserPoolName": "formyfertilityuserpool"
+            },
+            "lastPushTimeStamp": "2019-11-02T14:08:40.832Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/auth/formyfertilitycognito-cloudformation-template.yml",
+                "logicalId": "authformyfertilitycognito"
+            }
+        }
+    },
+    "api": {
+        "oddsapi": {
+            "service": "API Gateway",
+            "providerPlugin": "awscloudformation",
+            "dependsOn": [
+                {
+                    "category": "function",
+                    "resourceName": "formyfertilityfemaleodds",
+                    "attributes": [
+                        "Name",
+                        "Arn"
+                    ]
+                }
+            ],
+            "output": {
+                "ApiName": "oddsapi",
+                "RootUrl": "https://6ziwimmaa2.execute-api.us-east-2.amazonaws.com/dev"
+            },
+            "lastPushTimeStamp": "2019-11-02T14:08:40.832Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/api/oddsapi-cloudformation-template.json",
+                "logicalId": "apioddsapi"
+            }
+        },
+        "formyfertility": {
+            "service": "AppSync",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "securityType": "AMAZON_COGNITO_USER_POOLS",
+                "GraphQLAPIIdOutput": "6ovqb26ymjgibl3pr6uthq5fja",
+                "GraphQLAPIEndpointOutput": "https://z7rrptdw2rhgharw63uibz4mnm.appsync-api.us-east-2.amazonaws.com/graphql"
+            },
+            "lastPushTimeStamp": "2019-11-02T14:08:40.832Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+                "logicalId": "apiformyfertility"
+            }
+        }
+    },
+    "analytics": {
+        "formyfertilitypinpoint": {
+            "service": "Pinpoint",
+            "providerPlugin": "awscloudformation",
+            "output": {
+                "appName": "formyfertilitypinpoint-dev",
+                "Region": "us-east-1",
+                "Id": "0d8a8dc5df6e4065820a7f247431aec9"
+            },
+            "lastPushTimeStamp": "2019-11-02T14:08:40.833Z",
+            "providerMetadata": {
+                "s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/analytics/pinpoint-cloudformation-template.json",
+                "logicalId": "analyticsformyfertilitypinpoint"
+            }
+        }
     }
-  },
-  "api": {
-    "ForMyFertility": {
-      "service": "AppSync",
-      "output": {
-        "securityType": "API_KEY",
-        "GraphQLAPIIdOutput": "m5vewu6p75ed7dqvp5lrhan2x4",
-        "GraphQLAPIEndpointOutput": "https://key4httbl5hknfwxdqefkpevji.appsync-api.us-east-2.amazonaws.com/graphql",
-        "GraphQLAPIKeyOutput": "da2-klheuvetvvbd5n4j6gycdwxe2e"
-      },
-      "lastPushTimeStamp": "2018-11-10T14:54:50.709Z"
-    }
-  }
 }

@@ -1,5 +1,4 @@
 {
-<<<<<<< HEAD
     "projectName": "formyfertilityamplif",
     "version": "2.0",
     "frontend": "javascript",
@@ -15,24 +14,4 @@
     "providers": [
         "awscloudformation"
     ]
-=======
-    "projectName": "ForMyFertility",
-    "projectPath": "/Users/cfrank/Desktop/ForMyFertility/code/ForMyFertility",
-    "defaultEditor": "code",
-    "frontendHandler": {
-        "javascript": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-frontend-javascript"
-    },
-    "javascript": {
-        "framework": "react-native",
-        "config": {
-            "SourceDir": "/",
-            "DistributionDir": "/",
-            "BuildCommand": "npm run-script build",
-            "StartCommand": "npm run-script start"
-        }
-    },
-    "providers": {
-        "awscloudformation": "/usr/local/lib/node_modules/@aws-amplify/cli/node_modules/amplify-provider-awscloudformation"
-    }
->>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
 }
