@@ -15,7 +15,7 @@
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": true,
+    "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
     "passwordPolicyCharacters": [],
     "requiredAttributes": [
@@ -27,6 +27,10 @@
     "userpoolClientWriteAttributes": [
         "family_name",
         "given_name",
+        "name",
+        "nickname",
+        "phone_number",
+        "preferred_username",
         "email"
     ],
     "userpoolClientReadAttributes": [
@@ -51,7 +55,7 @@
     "mfaLambdaIAMPolicy": "formyfertilitycognito_totp_lambda_iam_policy",
     "userpoolClientLogPolicy": "formyfertilitycognito_userpoolclient_lambda_log_policy",
     "userpoolClientLambdaPolicy": "formyfertilitycognito_userpoolclient_lambda_iam_policy",
-    "useDefault": "default",
+    "useDefault": "manual",
     "authSelections": "identityPoolAndUserPool",
     "resourceName": "formyfertilitycognito",
     "usernameAttributes": [
@@ -81,5 +85,6 @@
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": []
+    "dependsOn": [],
+    "thirdPartyAuth": false
 }

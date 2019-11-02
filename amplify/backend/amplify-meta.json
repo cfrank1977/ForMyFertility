@@ -19,7 +19,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/storage/femalefertility-cloudformation-template.json",
 				"logicalId": "storagefemalefertility"
 			},
-			"lastPushTimeStamp": "2019-11-02T16:19:43.651Z",
+			"lastPushTimeStamp": "2019-11-02T17:15:24.079Z",
 			"output": {
 				"PartitionKeyName": "id",
 				"Region": "us-east-2",
@@ -36,7 +36,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/storage/malefertility-cloudformation-template.json",
 				"logicalId": "storagemalefertility"
 			},
-			"lastPushTimeStamp": "2019-11-02T16:19:43.652Z",
+			"lastPushTimeStamp": "2019-11-02T17:15:24.081Z",
 			"output": {
 				"PartitionKeyName": "id",
 				"Region": "us-east-2",
@@ -69,7 +69,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/function/formyfertilityfemaleodds-cloudformation-template.json",
 				"logicalId": "functionformyfertilityfemaleodds"
 			},
-			"lastPushTimeStamp": "2019-11-02T16:19:43.653Z",
+			"lastPushTimeStamp": "2019-11-02T17:15:24.081Z",
 			"output": {
 				"Region": "us-east-2",
 				"Arn": "arn:aws:lambda:us-east-2:741205893043:function:formyfertilityfemaleodds-dev",
@@ -86,7 +86,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/auth/formyfertilitycognito-cloudformation-template.yml",
 				"logicalId": "authformyfertilitycognito"
 			},
-			"lastPushTimeStamp": "2019-11-02T16:19:43.655Z",
+			"lastPushTimeStamp": "2019-11-02T17:15:24.083Z",
 			"output": {
 				"AppClientSecret": "1c7l80fcn85ff5kr12u7ntnjti7uj509gg45jit04bhkv858rhs3",
 				"UserPoolId": "us-east-2_raiO2Ngz7",
@@ -96,7 +96,7 @@
 				"IdentityPoolName": "formyfertilityidentitypool__dev",
 				"UserPoolName": "formyfertilityuserpool"
 			},
-			"lastPushDirHash": "5UzHBzTqEPKaQAcI5eGesG9dDWE=",
+			"lastPushDirHash": "b06uUbdpKUsZvWyB+jbpOSGcSMk=",
 			"dependsOn": []
 		}
 	},
@@ -118,7 +118,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/api/oddsapi-cloudformation-template.json",
 				"logicalId": "apioddsapi"
 			},
-			"lastPushTimeStamp": "2019-11-02T16:19:43.654Z",
+			"lastPushTimeStamp": "2019-11-02T17:15:24.082Z",
 			"output": {
 				"ApiName": "oddsapi",
 				"RootUrl": "https://6ziwimmaa2.execute-api.us-east-2.amazonaws.com/dev"
@@ -137,7 +137,7 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/formyfertilityamplif-20190511191810-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiformyfertility"
 			},
-			"lastPushTimeStamp": "2019-11-02T16:19:43.654Z",
+			"lastPushTimeStamp": "2019-11-02T17:15:24.082Z",
 			"lastPushDirHash": "/1a1zGYCScYQCalo9mYvr4o5mPI="
 		}
 	},
