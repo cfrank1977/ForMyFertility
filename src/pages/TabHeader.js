@@ -51,8 +51,8 @@ export class TabHeader extends React.PureComponent {
 function mapStateToProps(state) {
   return {
     nav: state.nav,
-    fertilityQuestions: state.fertilityQuestions
+    fertilityQuestions: state.fertilityQuestions,
+    maleQuestions: state.maleQuestions
   };
 }
-
 export default connect(mapStateToProps)(TabHeader);

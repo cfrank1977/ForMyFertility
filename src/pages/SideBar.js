@@ -39,4 +39,11 @@ export class SideBar extends React.Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    nav: state.nav,
+    fertilityQuestions: state.fertilityQuestions,
+    maleQuestions: state.maleQuestions
+  };
+}
 export default connect(mapStateToProps)(SideBar);
