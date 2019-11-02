@@ -20,9 +20,9 @@ console.disableYellowBox = true;
 
 export class App extends Component {
   state = {
-    isAuthenticated: false,
     loading: true
   }
+
 
   async componentWillMount() {
     await Font.loadAsync({
@@ -34,42 +34,42 @@ export class App extends Component {
 
   render() {
     if (this.state.loading) {
-        return (
-          <Root>
-            <Provider store={store}>
-              <StyleProvider style={getTheme(material)}>
-                <AppLoading />
-              </StyleProvider>
-            </Provider>
-          </Root>
-        );
-      }
       return (
         <Root>
           <Provider store={store}>
             <StyleProvider style={getTheme(material)}>
-              <AppWithNavigationState />
+              <AppLoading />
             </StyleProvider>
           </Provider>
         </Root>
-      );
+        );
     }
+    return (
+      <Root>
+        <Provider store={store}>
+          <StyleProvider style={getTheme(material)}>
+            <AppWithNavigationState />
+          </StyleProvider>
+        </Provider>
+      </Root>
+    );
   }
+}
 
-  const theme = StyleSheet.create({
-    ...AmplifyTheme,
-    button: {
-      ...AmplifyTheme.button,
-      backgroundColor: '#45ccb1'
-    },
-    sectionFooterLink: {
-      ...AmplifyTheme.sectionFooterLink,
-      color: '#45ccb1'
-    },
-    buttonDisabled: {
-      ...AmplifyTheme.buttonDisabled,
-      backgroundColor: '#d0f2eb'
-    }
-  });
+const theme = StyleSheet.create({
+  ...AmplifyTheme,
+  button: {
+    ...AmplifyTheme.button,
+    backgroundColor: '#45ccb1'
+  },
+  sectionFooterLink: {
+    ...AmplifyTheme.sectionFooterLink,
+    color: '#45ccb1'
+  },
+  buttonDisabled: {
+    ...AmplifyTheme.buttonDisabled,
+    backgroundColor: '#d0f2eb'
+  }
+});
 
-  export default withAuthenticator(App, true, [], null, theme);
+export default withAuthenticator(App, true, [], null, theme);

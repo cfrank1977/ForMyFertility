@@ -25,11 +25,9 @@ const awsmobile = {
             "region": "us-east-2"
         }
     ],
-    "aws_appsync_graphqlEndpoint": "https://z7rrptdw2rhgharw63uibz4mnm.appsync-api.us-east-2.amazonaws.com/graphql",
+    "aws_appsync_graphqlEndpoint": "https://m4yub36qx5eqfgolfhznczjtzq.appsync-api.us-east-2.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-2",
-    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS",
-    "aws_mobile_analytics_app_id": "0d8a8dc5df6e4065820a7f247431aec9",
-    "aws_mobile_analytics_app_region": "us-east-1"
+    "aws_appsync_authenticationType": "AMAZON_COGNITO_USER_POOLS"
 };
 
 

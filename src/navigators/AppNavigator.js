@@ -5,7 +5,6 @@ import {
 
 
 import { Home, Survey, TabHeader, SideBar, Profile } from '../pages';
-import SignOut from '../components/auth/SignOut';
 import Report from '../components/fertility/Report';
 import MaleReport from '../components/fertility/MaleReport';
 
@@ -255,10 +254,6 @@ const QuerstionsNavigator = createStackNavigator({
         screen: Profile,
         ...getNavigationConfig('Profile')
     },
-    SignOut: {
-        screen: SignOut,
-        ...getNavigationConfig('Sign Out')
-    }
 },
     getNavigationConfig()
 );
@@ -300,12 +295,9 @@ export const AppNavigator = createDrawerNavigator(
     {
         mainTab: { screen: mainTab },
         Home: { screen: Home },
-        Profile: { screen: Profile },
-        SignOut: { screen: SignOut },
-
+        Profile: { screen: Profile }
     },
     {
-        headerMode: 'screen',
         contentComponent: props => <SideBar {...props} />,
         drawerWidth: 298
     }

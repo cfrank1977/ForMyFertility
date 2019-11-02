@@ -47,6 +47,13 @@
         "categories": {
             "auth": {
                 "formyfertilitycognito": {}
+            },
+            "function": {
+                "formyfertilitycognitoCustomMessage": {
+                    "REDIRECTURL": "",
+                    "EMAILSUBJECT": "For My Fertility Account Confirmation",
+                    "EMAILMESSAGE": "Your For My Fertility Account has been confirmed"
+                }
             }
         }
     }

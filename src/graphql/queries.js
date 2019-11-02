@@ -1,7 +1,6 @@
-// eslint-disable
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-<<<<<<< HEAD
 export const allFemalefertilityByUsername = `query AllFemalefertilityByUsername(
   $count: Int
   $nextToken: String
@@ -243,121 +242,6 @@ export const listMalefertilities = `query ListMalefertilities(
       username
       veg
       weight
-=======
-export const fetchQuestions = `query FetchQuestions($id: ID!) {
-  fetchQuestions(id: $id) {
-    id
-    username
-    gender
-    age
-    yearChildlessSex
-    amountYearsChildlessSex
-    currentIVF
-    hadPregnancy
-    hadEctopicPregnancy
-    liveBirth
-    miscarriages
-    partner
-    whichPartnerIssue
-    amountChildren
-    amountperfecthealth
-    donorsperm
-    donoreggs
-    donorembryos
-    eggs
-    embryos
-    embryostransfered
-    embryosfinalcycle
-    frozenembryos
-    gynecologicalCauses
-    gestationalcarrier
-    hormone
-    icsi
-    ivfcycles
-    ivfconceived
-    morethanoneivfconceived
-    singletonmulitbirth
-    whichGynecologicalCauses
-  }
-}
-`;
-export const getQuestions = `query GetQuestions($id: ID!) {
-  getQuestions(id: $id) {
-    id
-    username
-    gender
-    age
-    yearChildlessSex
-    amountYearsChildlessSex
-    currentIVF
-    hadPregnancy
-    hadEctopicPregnancy
-    liveBirth
-    miscarriages
-    partner
-    whichPartnerIssue
-    amountChildren
-    amountperfecthealth
-    donorsperm
-    donoreggs
-    donorembryos
-    eggs
-    embryos
-    embryostransfered
-    embryosfinalcycle
-    frozenembryos
-    gynecologicalCauses
-    gestationalcarrier
-    hormone
-    icsi
-    ivfcycles
-    ivfconceived
-    morethanoneivfconceived
-    singletonmulitbirth
-    whichGynecologicalCauses
-  }
-}
-`;
-export const listQuestions = `query ListQuestions(
-  $filter: TableQuestionsFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listQuestions(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      username
-      gender
-      age
-      yearChildlessSex
-      amountYearsChildlessSex
-      currentIVF
-      hadPregnancy
-      hadEctopicPregnancy
-      liveBirth
-      miscarriages
-      partner
-      whichPartnerIssue
-      amountChildren
-      amountperfecthealth
-      donorsperm
-      donoreggs
-      donorembryos
-      eggs
-      embryos
-      embryostransfered
-      embryosfinalcycle
-      frozenembryos
-      gynecologicalCauses
-      gestationalcarrier
-      hormone
-      icsi
-      ivfcycles
-      ivfconceived
-      morethanoneivfconceived
-      singletonmulitbirth
-      whichGynecologicalCauses
->>>>>>> 45b5b9051805682dbd22fed3446ecb528421660d
     }
     nextToken
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Auth, Logger } from 'aws-amplify';
+import { Auth } from 'aws-amplify';
 import {
   Container,
   Button,
@@ -13,7 +13,7 @@ import {
 } from 'native-base';
 import { getStore, getState } from '../store/storeHelper';
 import { updateProfile } from '../authorizers/actions';
-const logger = new Logger('Profile');
+
 
 export default class Profile extends Component {
   constructor(props) {
