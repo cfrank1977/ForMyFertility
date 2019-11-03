@@ -16,7 +16,6 @@ import { Provider } from 'react-redux';
 import store from './src/store/store';
 import AppWithNavigationState from './src/navigators';
 
-
 console.disableYellowBox = true;
 
 export class App extends Component {
