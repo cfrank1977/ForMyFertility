@@ -1,0 +1,213 @@
+/* eslint-disable */
+// this is an auto generated file. This will be overwritten
+
+export const onCreateFemalefertility = `subscription OnCreateFemalefertility {
+  onCreateFemalefertility {
+    age
+    amountChildren
+    amountYearsChildlessSex
+    amountperfecthealth
+    currentIVF
+    donoreggs
+    donorembryos
+    donorsperm
+    eggs
+    embryos
+    embryosfinalcycle
+    embryostransfered
+    frozenembryos
+    gender
+    gestationalcarrier
+    gynecologicalCauses
+    hadEctopicPregnancy
+    hadPregnancy
+    hormone
+    icsi
+    id
+    ivfconceived
+    ivfcycles
+    liveBirth
+    miscarriages
+    morethanoneivfconceived
+    partner
+    singletonmulitbirth
+    username
+    whichGynecologicalCauses
+    whichPartnerIssue
+    yearChildlessSex
+  }
+}
+`;
+export const onUpdateFemalefertility = `subscription OnUpdateFemalefertility {
+  onUpdateFemalefertility {
+    age
+    amountChildren
+    amountYearsChildlessSex
+    amountperfecthealth
+    currentIVF
+    donoreggs
+    donorembryos
+    donorsperm
+    eggs
+    embryos
+    embryosfinalcycle
+    embryostransfered
+    frozenembryos
+    gender
+    gestationalcarrier
+    gynecologicalCauses
+    hadEctopicPregnancy
+    hadPregnancy
+    hormone
+    icsi
+    id
+    ivfconceived
+    ivfcycles
+    liveBirth
+    miscarriages
+    morethanoneivfconceived
+    partner
+    singletonmulitbirth
+    username
+    whichGynecologicalCauses
+    whichPartnerIssue
+    yearChildlessSex
+  }
+}
+`;
+export const onDeleteFemalefertility = `subscription OnDeleteFemalefertility {
+  onDeleteFemalefertility {
+    age
+    amountChildren
+    amountYearsChildlessSex
+    amountperfecthealth
+    currentIVF
+    donoreggs
+    donorembryos
+    donorsperm
+    eggs
+    embryos
+    embryosfinalcycle
+    embryostransfered
+    frozenembryos
+    gender
+    gestationalcarrier
+    gynecologicalCauses
+    hadEctopicPregnancy
+    hadPregnancy
+    hormone
+    icsi
+    id
+    ivfconceived
+    ivfcycles
+    liveBirth
+    miscarriages
+    morethanoneivfconceived
+    partner
+    singletonmulitbirth
+    username
+    whichGynecologicalCauses
+    whichPartnerIssue
+    yearChildlessSex
+  }
+}
+`;
+export const onCreateMalefertility = `subscription OnCreateMalefertility {
+  onCreateMalefertility {
+    abnormalities
+    age
+    alcohol
+    cigarettes
+    drinks
+    enhancers
+    exercise
+    exercisetype
+    frequency
+    gender
+    height
+    id
+    jobactivity
+    jobexposure
+    lube
+    marijuana
+    medconditions
+    pregnant
+    sauna
+    sleep
+    soy
+    stressed
+    superfoods
+    trying
+    tv
+    username
+    veg
+    weight
+  }
+}
+`;
+export const onUpdateMalefertility = `subscription OnUpdateMalefertility {
+  onUpdateMalefertility {
+    abnormalities
+    age
+    alcohol
+    cigarettes
+    drinks
+    enhancers
+    exercise
+    exercisetype
+    frequency
+    gender
+    height
+    id
+    jobactivity
+    jobexposure
+    lube
+    marijuana
+    medconditions
+    pregnant
+    sauna
+    sleep
+    soy
+    stressed
+    superfoods
+    trying
+    tv
+    username
+    veg
+    weight
+  }
+}
+`;
+export const onDeleteMalefertility = `subscription OnDeleteMalefertility {
+  onDeleteMalefertility {
+    abnormalities
+    age
+    alcohol
+    cigarettes
+    drinks
+    enhancers
+    exercise
+    exercisetype
+    frequency
+    gender
+    height
+    id
+    jobactivity
+    jobexposure
+    lube
+    marijuana
+    medconditions
+    pregnant
+    sauna
+    sleep
+    soy
+    stressed
+    superfoods
+    trying
+    tv
+    username
+    veg
+    weight
+  }
+}
+`;

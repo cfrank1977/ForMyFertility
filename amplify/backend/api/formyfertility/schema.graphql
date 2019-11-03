@@ -1,0 +1,65 @@
+type Femalefertility @model {
+  age: Int!
+  amountChildren: Int!
+  amountYearsChildlessSex: Int!
+  amountperfecthealth: Int!
+  currentIVF: String!
+  donoreggs: String!
+  donorembryos: String!
+  donorsperm: String!
+  eggs: Int!
+  embryos: Int!
+  embryosfinalcycle: Int!
+  embryostransfered: Int!
+  frozenembryos: String!
+  gender: String!
+  gestationalcarrier: String!
+  gynecologicalCauses: String!
+  hadEctopicPregnancy: String!
+  hadPregnancy: String!
+  hormone: String!
+  icsi: String!
+  id: ID!
+  ivfconceived: String!
+  ivfcycles: Int!
+  liveBirth: String!
+  miscarriages: String!
+  morethanoneivfconceived: String!
+  partner: String!
+  singletonmulitbirth: String!
+  username: String!
+  whichGynecologicalCauses: String!
+  whichPartnerIssue: String!
+  yearChildlessSex: String!
+}
+
+type Malefertility @model {
+  abnormalities: String!
+  age: Int!
+  alcohol: String!
+  cigarettes: String!
+  drinks: String!
+  enhancers: String!
+  exercise: String!
+  exercisetype: String!
+  frequency: String!
+  gender: String!
+  height: String!
+  id: ID!
+  jobactivity: String!
+  jobexposure: String!
+  lube: String!
+  marijuana: String!
+  medconditions: String!
+  pregnant: String!
+  sauna: String!
+  sleep: String!
+  soy: String!
+  stressed: String!
+  superfoods: String!
+  trying: String!
+  tv: String!
+  username: String!
+  veg: String!
+  weight: Int!
+}

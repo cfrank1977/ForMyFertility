@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "storage": {
+            "femalefertility": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

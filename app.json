@@ -1,0 +1,39 @@
+{
+  "expo": {
+    "name": "Fertility",
+    "description": "This project is to support couples through the fertilization process.",
+    "slug": "ForMyFertility",
+    "privacy": "public",
+    "sdkVersion": "35.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "version": "0.7.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "cover",
+      "backgroundColor": "#45ccb1"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "11",
+      "icon": "./assets/icon.png",
+      "bundleIdentifier": "com.formylife360.formyfertility",
+      "splash": {
+        "backgroundColor": "#45ccb1",
+        "resizeMode": "cover",
+        "image": "./assets/splash.png"
+      }
+    }
+  }
+}
