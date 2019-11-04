@@ -1159,6 +1159,15 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^13.0.0"
 
+"@react-native-community/art@^1.0.1":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/art/-/art-1.0.2.tgz#38671edcf4eb3d820d62dc5ba3a151d75352f847"
+  integrity sha512-GFqRy5DfHmD0LF+cIn1TPeNienFNTuLsv3SNq1vsg2J04l51ESSAUq7dY35cCE/g6Hfi9t8zx+A9sEMplRKZ0g==
+  dependencies:
+    art "^0.10.3"
+    invariant "^2.2.4"
+    prop-types "^15.7.2"
+
 "@react-native-community/cli@^1.2.1":
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/@react-native-community/cli/-/cli-1.11.2.tgz#b14967f24a389f5a16889a747345cf0e5757a2f1"
@@ -1620,7 +1629,7 @@ array.prototype.flat@^1.2.1:
     es-abstract "^1.15.0"
     function-bind "^1.1.1"
 
-art@^0.10.0:
+art@^0.10.0, art@^0.10.3:
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/art/-/art-0.10.3.tgz#b01d84a968ccce6208df55a733838c96caeeaea2"
   integrity sha512-HXwbdofRTiJT6qZX/FnchtldzJjS3vkLJxQilc3Xj+ma2MXjY4UAyQ0ls1XZYVnDvVIBiFZbC6QsvtW86TD6tQ==
@@ -7030,11 +7039,12 @@ react-native-keyboard-aware-scroll-view@0.9.1:
     prop-types "^15.6.2"
     react-native-iphone-x-helper "^1.0.3"
 
-react-native-progress@^3.5.0:
-  version "3.6.0"
-  resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-3.6.0.tgz#feaf37491f91bb421207fd761e20cb7258a2a3a6"
-  integrity sha512-zzTe595xaaskyfR5OzaGrU4O0R+YkgdEw+EspgGD7wh8Hu0fs6ue3xLW+HEbTjOCn62pCRivwi3NxbpWNBCC7Q==
+react-native-progress@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-4.0.1.tgz#9d61adb997d3d767365e7b68c96a188f2f3ed983"
+  integrity sha512-libLQjUm8MJyAbW0drxDBUNyDB3C/pmv8rxR2EjdsdBAMsnDTPrL6ljN+vXWi2zfKOcbn+TFU5llnl/vcGPoaA==
   dependencies:
+    "@react-native-community/art" "^1.0.1"
     prop-types "^15.7.2"
 
 react-native-safe-area-view@0.11.0:
