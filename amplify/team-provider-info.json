@@ -15,5 +15,47 @@
                 "formyfertilityapp": {}
             }
         }
+    },
+    "test": {
+        "awscloudformation": {
+            "AuthRoleName": "formyfertilityapp-test-20191104174816-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityapp-test-20191104174816-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityapp-test-20191104174816-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "formyfertilityapp-test-20191104174816-deployment",
+            "UnauthRoleName": "formyfertilityapp-test-20191104174816-unauthRole",
+            "StackName": "formyfertilityapp-test-20191104174816",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityapp-test-20191104174816/30fe0e50-ff55-11e9-bed2-02dbe31f622a"
+        },
+        "categories": {
+            "auth": {
+                "formyfertilityapp": {}
+            },
+            "function": {
+                "formyfertilityfemaleodds": {},
+                "femalefertility": {}
+            }
+        }
+    },
+    "prod": {
+        "awscloudformation": {
+            "AuthRoleName": "formyfertilityapp-prod-20191104180255-authRole",
+            "UnauthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityapp-prod-20191104180255-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::741205893043:role/formyfertilityapp-prod-20191104180255-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "formyfertilityapp-prod-20191104180255-deployment",
+            "UnauthRoleName": "formyfertilityapp-prod-20191104180255-unauthRole",
+            "StackName": "formyfertilityapp-prod-20191104180255",
+            "StackId": "arn:aws:cloudformation:us-east-2:741205893043:stack/formyfertilityapp-prod-20191104180255/3cf249e0-ff57-11e9-8049-0ab3f1b1cb5a"
+        },
+        "categories": {
+            "auth": {
+                "formyfertilityapp": {}
+            },
+            "function": {
+                "formyfertilityfemaleodds": {},
+                "femalefertility": {}
+            }
+        }
     }
 }
