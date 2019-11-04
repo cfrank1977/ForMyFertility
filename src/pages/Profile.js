@@ -64,7 +64,6 @@ export default class Profile extends Component {
 
   storeListener() {
     const state = getState(this.store);
-    logger.info('state from redux', state);
     this.setState({ user: state.user, profile: state.profile });
   }
 
