@@ -5,7 +5,6 @@ import {
   Button,
   Icon,
   Text,
-  Header,
   Content,
   Item,
   Input,
@@ -55,20 +54,15 @@ export default class Profile extends Component {
     this.props.navigation.navigate('Home')
   }
 
- 
-
   saveSuccess(data) {
-    logger.info('saved user profile', data);
     this.store.dispatch(updateProfile(this.state.profile));
   }
 
   handleError(error) {
-    logger.info('load / save user attributes error', error);
     this.setState({ error: error.message || error });
   }
 
   storeListener() {
-    logger.info('redux notification');
     const state = getState(this.store);
     logger.info('state from redux', state);
     this.setState({ user: state.user, profile: state.profile });

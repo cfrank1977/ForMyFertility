@@ -22,7 +22,6 @@ export class Report extends Component {
             this.setState(formdata);
         } else {
             formdata = await formdata.addFormData(this.props.fertilityQuestions, user.username);
-            console.log(`user: ${JSON.stringify(formdata)}`)
             this.setState(formdata);
         }
         
