@@ -76,7 +76,7 @@
 				"Runtime": "nodejs10.x",
 				"Timeout": "25",
 				"Code": {
-					"S3Bucket": "formyfertilityapp-dev-20191103053535-deployment",
+					"S3Bucket": "formyfertilityapp-test-20191104174816-deployment",
 					"S3Key": "amplify-builds/formyfertilityfemaleodds-6d3259684d4377487077-build.zip"
 				}
 			}
