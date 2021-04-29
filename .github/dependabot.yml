@@ -1,0 +1,37 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: react-devtools-core
+    versions:
+    - 4.10.1
+    - 4.11.0
+    - 4.12.0
+    - 4.12.1
+    - 4.12.4
+  - dependency-name: react-redux
+    versions:
+    - 7.2.2
+    - 7.2.3
+  - dependency-name: react-navigation
+    versions:
+    - 4.4.3
+  - dependency-name: enzyme-to-json
+    versions:
+    - 3.6.1
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: react-dom
+    versions:
+    - 16.13.1
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+  - dependency-name: redux
+    versions:
+    - 4.0.5
